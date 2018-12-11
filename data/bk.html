@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google Map</title>
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            #info {
+                position: fixed;
+                z-index: 99999;
+                top: 10px;
+                background: #fff;
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+                font: 14px/1.4 Arial;
+                color: #333;
+                padding: 5px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div id="info">Loading...</div>
+        <script>
+            var map;
+            var xhttp;
+
+            function getMapInfo() {
+                var center = map.getCenter();
+                var lat = center.lat();
+                var lng = center.lng();
+                var info = document.getElementById('info');
+
+                try {
+                    xhttp.abort();
+                } catch (e) {}
+                xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState === 4 && this.status === 200) {
+                        var jsonData = JSON.parse(this.responseText);
+                        var components;
+
+                        try {
+                            components = jsonData.results[0].address_components;
+                        } catch (e) {
+                            console.log('ERROR ' + e);
+                        }
+
+                        var text = 'Unknown';
+                        var location = [];
+                        if (components && components.length > 0) {
+                            var i = components.length - 1;
+                            for(; i >= 0; i--) {
+                                var component = components[i];
+                                if (component.types.indexOf('administrative_area_level_1') !== -1 || component.types.indexOf('administrative_area_level_2') !== -1) {
+                                    location.push(component.short_name);
+                                }
+                            }
+                        }
+
+                        if (location.length > 0) {
+                            text = location.reverse().join(', ');
+                        }
+
+                        info.innerHTML = text;
+                    }
+                };
+
+                xhttp.open('GET', 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + lat + ',' + lng + '&sensor=true&key=AIzaSyBwdNXR1AkGxD5k49ZEfrQt29NFo-oXXz0', true);
+                xhttp.send();
+            }
+
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 21.042693416976917, lng: 105.82181343841057},
+                    zoom: 15
+                });
+                getMapInfo();
+
+                var timer;
+                map.addListener('dragend', function() {
+                    clearTimeout(timer);
+                    timer = window.setTimeout(function() {
+                        getMapInfo();
+                    }, 500);
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwdNXR1AkGxD5k49ZEfrQt29NFo-oXXz0&callback=initMap" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+@layout(layoutName)
+
+@section('content')
+    <div class="box">
+        <div class="box-body">
+            <form method="post" action="/image/upload" id="image-upload-widget" class="dropzone">
+                <div class="fallback">
+                    <input type="file" name="file" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="box-header with-border">
+            <h3 class="box-title"><i class="{{ ICONS.IMAGE }}"></i> Danh sách ảnh</h3>
+        </div>
+        <div class="box-body">
+            <div class="row" id="images-wrapper">
+                @each(file in files)
+                    @if(file !== '.gitignore')
+                        <div class="col-sm-4 col-md-3 col-lg-2">
+                            <div class="image" title="{{ file }}">
+                                <div class="image-bg" style="background-image: url('/public/uploads/image/{{ file }}')"></div>
+                                <div class="image-overlay">
+                                    <div class="image-overlay-inner text-center">
+                                        <a href="public/uploads/image/{{ file }}"
+                                           class="btn btn-primary btn-zoom-image" data-fancybox data-options='{"buttons": ["close"]}'>
+                                            <i class="{{ ICONS.SEARCH }} fa-fw"></i>
+                                        </a>
+                                        <a href="public/uploads/image/{{ file }}"
+                                           class="btn btn-success btn-select-image">
+                                            <i class="{{ ICONS.SELECT_IMAGE }} fa-fw"></i>
+                                        </a>
+                                        <a href="public/uploads/image/{{ file }}"
+                                           class="btn btn-danger btn-delete-image">
+                                            <i class="{{ ICONS.REMOVE }} fa-fw"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endeach
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('style')
+    <link rel="stylesheet" href="/public/plugins/cropperjs/cropper.min.css" />
+    <link rel="stylesheet" href="/public/plugins/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="/public/css/image.css" />
+@endsection
+
+@section('script')
+    <script src="/public/plugins/cropperjs/cropper.min.js"></script>
+    <script src="/public/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="/public/js/image.js"></script>
+@endsection

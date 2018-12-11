@@ -1,0 +1,34 @@
+@if( currentUser )
+    <li class="header text-uppercase">Quản trị hệ thống
+
+    @each( menu in menus )
+        @if( !menu.admin || menu.admin && currentUser.admin )
+            @if( menu.children )
+                <li class="treeview {{ menu.active ? 'menu-open' : '' }}" id="menu-{{ menu.id }}">
+                    <a href="javascript:void(0);">
+                        <i class="{{ menu.icon }}"></i>
+                        <span>{{ menu.text }}</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu" style="{{ menu.active ? 'display: block;' : '' }}">
+                        @each( subMenu in menu.children )
+                            <li class="{{ subMenu.active ? 'active' : '' }}" id="menu-{{ subMenu.id }}">
+                                <a href="{{ subMenu.href }}">
+                                    <i class="fa fa-circle-o"></i> <span>{{ subMenu.text }}</span>
+                                </a>
+                            </li>
+                        @endeach
+                    </ul>
+                </li>
+            @else
+                <li class="{{ menu.active ? 'active' : '' }}" id="menu-{{ menu.id }}">
+                    <a href="{{ menu.href }}">
+                        <i class="{{ menu.icon }}"></i> <span>{{ menu.text }}</span>
+                    </a>
+                </li>
+            @endif
+        @endif
+    @endeach
+@endif

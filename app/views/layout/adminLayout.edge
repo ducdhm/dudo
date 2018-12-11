@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
+        <title>{{ title }} | {{ app.title }}</title>
+
+        <!-- Bootstrap 3.3.7 -->
+        <link rel="stylesheet" href="/public/plugins/bootstrap/dist/css/bootstrap.min.css" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="/public/plugins/font-awesome/css/font-awesome.min.css" />
+        <!-- Select2 -->
+        <link rel="stylesheet" href="/public/plugins/select2/dist/css/select2.min.css" />
+        <!-- iCheck -->
+        <link rel="stylesheet" href="/public/plugins/iCheck/flat/blue.css" />
+        <!-- bootstrap-toggle -->
+        <link rel="stylesheet" href="/public/plugins/bootstrap-toggle-2.2.2/css/bootstrap-toggle.min.css" />
+        <!-- bootstrap-msg -->
+        <link rel="stylesheet" href="/public/plugins/bootstrap-msg-0.4.0/dist/css/bootstrap-msg-0.4.0.min.css" />
+        <!-- Dropzone -->
+        <link rel="stylesheet" href="/public/plugins/dropzone-4.3.0/min/dropzone.min.css" />
+        <!-- DateTimePicker -->
+        <link rel="stylesheet" href="/public/plugins/bootstrap-datetimepicker-4.17.47/build/css/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="/public/plugins/daterangepicker-3.0.3/daterangepicker.css" />
+        <!-- Theme style -->
+        <link rel="stylesheet" href="/public/plugins/AdminLTE-2.4.5/css/AdminLTE.min.css" />
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+             folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="/public/plugins/AdminLTE-2.4.5/css/skins/skin-blue.min.css" />
+        <!-- Custom -->
+        <link rel="stylesheet" href="/public/css/font.css" />
+        <link rel="stylesheet" href="/public/css/admin.css" />
+
+        @!section('style')
+    </head>
+
+    <body class="hold-transition skin-blue sidebar-mini {{ isIframeMode ? 'iframe-mode' : 'fixed' }} {{ bodyClass }}">
+        <div class="wrapper">
+            @if( !isIframeMode )
+            <header class="main-header">
+                <!-- Logo -->
+                <a href="/" class="logo">
+                    <!-- mini logo for sidebar mini 50x50 pixels -->
+                    <span class="logo-mini"><img src="/public/img/logo_white_mini.png" /></span>
+                    <!-- logo for regular state and mobile devices -->
+                    <span class="logo-lg"><img src="/public/img/logo_white.png" /></span>
+                </a>
+                <!-- Header Navbar: style can be found in header.less -->
+                <nav class="navbar navbar-static-top">
+                    <!-- Sidebar toggle button-->
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+
+                    <div class="navbar-custom-menu">
+                        @if( currentUser )
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a><i class="{{ ICONS.USER }}"></i> Xin chào <b> {{ currentUser.username }}</b></a>
+                                </li>
+                                <li>
+                                    <a href="/logout"><i class="{{ ICONS.LOGOUT }}"></i> Đăng xuất</a>
+                                </li>
+                            </ul>
+                        @endif
+                    </div>
+                </nav>
+            </header>
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+                <!-- sidebar: style can be found in sidebar.less -->
+                <section class="sidebar">
+                    <ul class="sidebar-menu" data-widget="tree">
+                        @!component('common/menus')
+                    </ul>
+                </section>
+                <!-- /.sidebar -->
+            </aside>
+            @endif
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>
+                        {{ title }}
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    @!section('content')
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
+
+
+            @if( !isIframeMode )
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    <b>Version</b> {{ app.version }}
+                </div>
+                <span>
+                    Copyright &copy; {{ helper.currentYear }}
+                    <a href="http://vpbank.com.vn" class="text-green" target="_blank"><b>VPB</b>ank</a>.</span>
+                    All rights reserved.
+            </footer>
+            @endif
+
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 3 -->
+        <script src="/public/plugins/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap 3.3.7 -->
+        <script src="/public/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- jquery.forms -->
+        <script type="text/javascript" src="/public/plugins/moment/min/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="/public/plugins/common/common.js"></script>
+        <script type="text/javascript" src="/public/plugins/common/jqExtras.js"></script>
+        <script type="text/javascript" src="/public/plugins/jquery.forms-1.1.1/jquery.forms-1.1.1-vn.js"></script>
+        <!-- iCheck -->
+        <script src="/public/plugins/iCheck/icheck.min.js"></script>
+        <!-- bootstrap-toggle -->
+        <script src="/public/plugins/bootstrap-toggle-2.2.2/js/bootstrap-toggle.min.js"></script>
+        <!-- bootstrap-msg -->
+        <script src="/public/plugins/bootstrap-msg-0.4.0/dist/js/bootstrap-msg-0.4.0.min.js"></script>
+        <!-- reloadFragment -->
+        <script src="/public/plugins/jquery.reload-fragment-1.0.2/jquery.reload-fragment-1.0.2.js"></script>
+        <!-- Dropzone -->
+        <script src="/public/plugins/dropzone-4.3.0/min/dropzone.min.js"></script>
+        <!-- Select2 -->
+        <script src="/public/plugins/select2/dist/js/select2.full.min.js"></script>
+        <!-- Datetime picker -->
+        <script src="/public/plugins/bootstrap-datetimepicker-4.17.47/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="/public/plugins/daterangepicker-3.0.3/daterangepicker.js"></script>
+        <!-- AdminLTE App -->
+        <script src="/public/plugins/AdminLTE-2.4.5/js/adminlte.min.js"></script>
+        <script src="/public/js/admin.js"></script>
+
+        @!section('script')
+    </body>
+</html>

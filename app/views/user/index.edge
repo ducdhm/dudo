@@ -1,0 +1,46 @@
+@layout(layoutName)
+
+@section('content')
+<div class="box">
+    <div class="box-header with-border">
+        <a href="/user/new" class="btn btn-xs btn-default"><i class="{{ ICONS.ADD }}"></i> Thêm người dùng</a>
+    </div>
+    <div class="box-body no-padding">
+        <table class="table table-striped table-list">
+            <colgroup>
+                <col />
+                <col />
+                <col style="width: 160px" />
+                <col style="width: 130px" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Tên đăng nhập</th>
+                    <th>Quyền phê duyệt</th>
+                    <th></th>
+                </tr>
+                @if( users.length > 0 )
+                    @each( user in users )
+                        <tr data-id="{{ user.id }}">
+                            <td>{{ user.username }}</td>
+                            <td>
+                                @if( user.admin )
+                                    <i class="{{ ICONS.CHECKED }} text-green"></i>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="{{ user.url }}" class="btn btn-xs btn-default"><i class="{{ ICONS.EDIT }}"></i> Sửa</a>
+                                <a href="{{ user.url }}/delete" class="btn btn-xs btn-default btn-delete"><i class="{{ ICONS.REMOVE }}"></i> Xóa</a>
+                            </td>
+                        </tr>
+                    @endeach
+                @else
+                    <tr>
+                        <td colspan="99" class="text-center">Không có bản ghi nào</td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
+@endsection

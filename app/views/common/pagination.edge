@@ -1,0 +1,29 @@
+<ul class="pagination pagination-sm no-margin">
+    @if(currentPage === 1)
+        <li class="disabled"><a>Đầu</a></li>
+    @else
+        <li><a href="/{{ moduleUrl }}/page-1">Đầu</a></li>
+    @endif
+
+    @if(currentPage - 1 > 0)
+        <li><a href="/{{ moduleUrl }}/page-{{ currentPage - 1 }}">Trước</a></li>
+    @endif
+
+    @each(page in range(1, totalPage + 1))
+        @if(page === currentPage)
+            <li class="active"><a>{{ page }}</a></li>
+        @else
+            <li><a href="/{{ moduleUrl }}/page-{{ page }}">{{ page }}</a></li>
+        @endif
+    @endeach
+
+    @if(currentPage + 1 <= totalPage)
+        <li><a href="/{{ moduleUrl }}/page-{{ currentPage + 1 }}">Tiếp</a></li>
+    @endif
+
+    @if(currentPage === totalPage)
+        <li class="disabled"><a>Cuối</a></li>
+    @else
+        <li><a href="/{{ moduleUrl }}/page-{{ totalPage }}">Cuối</a></li>
+    @endif
+</ul>
