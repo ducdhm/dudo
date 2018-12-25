@@ -13,7 +13,7 @@ module.exports = {
         timezone: 'Asia/Ho_Chi_Minh'
     },
     adminPort: 5000,
-    apiPort: 6000,
+    apiPort: 7000,
     session: {
         secret: 'promcms'
     },
@@ -22,6 +22,10 @@ module.exports = {
     },
     uploadPath: {
         image: 'public/uploads/image/'
+    },
+    jwt: {
+        secret: 'reno',
+        expires: 60 * 60 * 24
     },
     itemPerPage: 10
 };

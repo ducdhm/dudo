@@ -1,0 +1,28 @@
+{
+    "name": "reno",
+    "version": "0.1.0",
+    "private": true,
+    "proxy": "http://localhost:7000",
+    "dependencies": {
+        "axios": "^0.18.0",
+        "concurrently": "^3.5.1",
+        "node-sass-chokidar": "^1.2.2",
+        "qs": "^6.5.1",
+        "react": "^16.3.1",
+        "react-dom": "^16.3.1",
+        "react-redux": "^5.0.7",
+        "react-router-dom": "^4.2.2",
+        "react-scripts": "1.1.4",
+        "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0"
+    },
+    "scripts": {
+        "build-css": "node-sass-chokidar src/ -o src/",
+        "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+        "client-dev": "concurrently --kill-others-on-fail \"npm run watch-css\" \"npm run start\"",
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    }
+}

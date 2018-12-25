@@ -19,7 +19,9 @@ app.use(cors());
 
 // API Route Config
 // --------------------------------
-require('./app/api/userAPI')(app);
+require('./app/api/ping')(app);
+require('./app/api/user')(app);
+require('./app/api/todo')(app);
 
 
 // Test API Working
