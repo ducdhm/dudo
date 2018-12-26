@@ -15,7 +15,7 @@ module.exports = {
     adminPort: 5000,
     apiPort: 7000,
     session: {
-        secret: 'promcms'
+        secret: 'meen'
     },
     bcrypt: {
         salt: 10
@@ -24,7 +24,7 @@ module.exports = {
         image: 'public/uploads/image/'
     },
     jwt: {
-        secret: 'reno',
+        secret: 'meen',
         expires: 60 * 60 * 24
     },
     itemPerPage: 10
