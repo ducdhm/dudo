@@ -1,6 +1,6 @@
-const auth = require('../auth/api');
-const TodoModel = require('../models/Todo');
-const logger = require('../utils/logger')('api/todo');
+const auth = require('../../auth/api');
+const TodoModel = require('../../models/Todo');
+const logger = require('../../utils/logger')('api/todo');
 
 module.exports = app => {
     app.get('/api/todo/', auth, async (req, res, next) => {

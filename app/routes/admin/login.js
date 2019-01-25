@@ -1,5 +1,5 @@
-const app = require('../core/app');
-const loginController = require('../controllers/loginController');
+const app = require('../../core/app');
+const loginController = require('../../controllers/admin/login');
 
 app.get(
     '/login',

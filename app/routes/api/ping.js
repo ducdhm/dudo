@@ -1,4 +1,4 @@
-const auth = require('../auth/api');
+const auth = require('../../auth/api');
 
 module.exports = app => {
     app.get('/ping', (req, res, next) => {

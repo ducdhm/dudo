@@ -1,6 +1,6 @@
-const logger = require('../utils/logger')('controllers/userController');
-const errorHandlers = require('../utils/errorHandlers');
-const UserModel = require('../models/User');
+const logger = require('../../utils/logger')('controllers/userController');
+const errorHandlers = require('../../utils/errorHandlers');
+const UserModel = require('../../models/User');
 const bcrypt = require('bcryptjs');
 
 exports.resolver = async (req, res, next) => {

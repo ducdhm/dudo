@@ -1,5 +1,5 @@
-const app = require('../core/app');
-const dashboardController = require('../controllers/dashboardController');
+const app = require('../../core/app');
+const dashboardController = require('../../controllers/admin/dashboard');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 
 app.get(

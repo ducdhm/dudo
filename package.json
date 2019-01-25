@@ -21,7 +21,7 @@
     },
     "homepage": "https://github.com/ducdhm/meen#readme",
     "scripts": {
-        "server": "nodemon --inspect server.js",
+        "admin": "nodemon --inspect admin.js",
         "api": "nodemon api.js",
         "setup": "node setup.js"
     },

@@ -1,5 +1,5 @@
-const app = require('../core/app');
-const imageController = require('../controllers/imageController');
+const app = require('../../core/app');
+const imageController = require('../../controllers/admin/image');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 
 app.get(

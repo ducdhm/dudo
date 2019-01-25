@@ -1,9 +1,9 @@
-const auth = require('../auth/api');
-const UserModel = require('../models/User');
-const config = require('../utils/config');
+const auth = require('../../auth/api');
+const UserModel = require('../../models/User');
+const config = require('../../utils/config');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const logger = require('../utils/logger')('api/user');
+const logger = require('../../utils/logger')('api/user');
 
 module.exports = app => {
     app.get('/api/users/', auth, async (req, res, next) => {

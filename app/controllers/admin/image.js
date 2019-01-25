@@ -1,7 +1,7 @@
 const fs = require('fs');
-const config = require('../utils/config');
-const errorHandlers = require('../utils/errorHandlers');
-const utils = require('../utils');
+const config = require('../../utils/config');
+const errorHandlers = require('../../utils/errorHandlers');
+const utils = require('../../utils');
 
 const multer = require('multer');
 const storage = multer.diskStorage({

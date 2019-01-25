@@ -1,7 +1,7 @@
-const app = require('../core/app');
-const userController = require('../controllers/userController');
+const app = require('../../core/app');
+const userController = require('../../controllers/admin/user');
 const auth = require('connect-ensure-login').ensureLoggedIn();
-const adminAuth = require('../auth/admin');
+const adminAuth = require('../../auth/admin');
 
 app.get(
     '/user',

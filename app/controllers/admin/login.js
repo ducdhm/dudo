@@ -1,5 +1,5 @@
 const passport = require('passport');
-const logger = require('../utils/logger')('controllers/loginController');
+const logger = require('../../utils/logger')('controllers/loginController');
 
 module.exports = loginController = {
     checkLogin: (req, res) => {

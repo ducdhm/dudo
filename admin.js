@@ -1,7 +1,12 @@
 const app = require('./app/core');
 const config = require('./app/utils/config');
 const env = require('./app/utils/env');
-const log = require('./app/utils/logger')('adminSite');
+const log = require('./app/utils/logger')('admin');
+
+
+// Auth
+// --------------------------------
+require('./app/auth/local');
 
 
 // Set locals
@@ -31,43 +36,11 @@ app.use((req, res, next) => {
 
 // Import modules
 // --------------------------------
-require('./app/routes/loginRoute');
-require('./app/routes/dashboardRoute');
-require('./app/routes/userRoute');
-require('./app/routes/imageRoute');
-
-
-// Error page
-// --------------------------------
-const errorHandlers = require('./app/utils/errorHandlers');
-app.use((req, res, next) => {
-    next(errorHandlers.error404());
-});
-
-app.use((error, req, res, next) => {
-    error.status = error.status || 500;
-
-    // add this line to include winston logging
-    log.error(`${error.status} - ${error.message} - ${req.originalUrl} - ${req.method} - ${req.ip} \n${error.stack}`);
-
-    let debugMode = false;
-
-    if (req.query.hasOwnProperty('debug')) {
-        debugMode = true;
-    }
-
-    if (env === 'dev') {
-        debugMode = true;
-    }
-
-    return res.render('error/error', {
-        error: error,
-        debugMode: debugMode,
-        title: 'Lỗi ' + error.status,
-        bodyClass: 'page-error',
-        app: config.app
-    });
-});
+require('./app/routes/admin/login');
+require('./app/routes/admin/dashboard');
+require('./app/routes/admin/user');
+require('./app/routes/admin/image');
+require('./app/routes/admin/error');
 
 
 // Run app
