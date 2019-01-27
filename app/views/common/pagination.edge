@@ -1,12 +1,12 @@
 <ul class="pagination pagination-sm no-margin">
     @if(currentPage === 1)
-        <li class="disabled"><a>Đầu</a></li>
+        <li class="disabled"><a>First</a></li>
     @else
-        <li><a href="/{{ moduleUrl }}/page-1">Đầu</a></li>
+        <li><a href="/{{ moduleUrl }}/page-1">First</a></li>
     @endif
 
     @if(currentPage - 1 > 0)
-        <li><a href="/{{ moduleUrl }}/page-{{ currentPage - 1 }}">Trước</a></li>
+        <li><a href="/{{ moduleUrl }}/page-{{ currentPage - 1 }}">Prev</a></li>
     @endif
 
     @each(page in range(1, totalPage + 1))
@@ -18,12 +18,12 @@
     @endeach
 
     @if(currentPage + 1 <= totalPage)
-        <li><a href="/{{ moduleUrl }}/page-{{ currentPage + 1 }}">Tiếp</a></li>
+        <li><a href="/{{ moduleUrl }}/page-{{ currentPage + 1 }}">Next</a></li>
     @endif
 
     @if(currentPage === totalPage)
-        <li class="disabled"><a>Cuối</a></li>
+        <li class="disabled"><a>Last</a></li>
     @else
-        <li><a href="/{{ moduleUrl }}/page-{{ totalPage }}">Cuối</a></li>
+        <li><a href="/{{ moduleUrl }}/page-{{ totalPage }}">Last</a></li>
     @endif
 </ul>

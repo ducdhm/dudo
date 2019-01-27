@@ -1,5 +1,5 @@
 @if( currentUser )
-    <li class="header text-uppercase">Quản trị hệ thống
+    <li class="header text-uppercase">Navigation
 
     @each( menu in menus )
         @if( !menu.admin || menu.admin && currentUser.admin )

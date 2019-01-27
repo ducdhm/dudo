@@ -20,9 +20,9 @@ exports.getImages = (req, res, next) => {
         if (error) {
             return next(error);
         }
-
+        
         return res.render('image', {
-            title: req.query.hasOwnProperty('iframe') ? 'Danh sách ảnh' : 'Quản trị hình ảnh',
+            title: req.query.hasOwnProperty('iframe') ? 'Images list' : 'Manage images',
             files: items
         });
     })
@@ -30,7 +30,7 @@ exports.getImages = (req, res, next) => {
 
 exports.imageUpload = [
     upload.single('file'),
-
+    
     (req, res, next) => res.status(200).send(req.file)
 ];
 
@@ -39,7 +39,7 @@ exports.imageDelete = (req, res, next) => {
         if (error) {
             return errorHandlers.jsonError(error, next);
         }
-
+        
         res.json({
             status: true
         });

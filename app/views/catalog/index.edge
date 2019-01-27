@@ -1,0 +1,40 @@
+@layout(layoutName)
+
+@section('content')
+<div class="box">
+    <div class="box-header with-border">
+        <a href="/catalog/new" class="btn btn-xs btn-default"><i class="{{ ICONS.ADD }}"></i> Add catalog</a>
+    </div>
+    <div class="box-body no-padding">
+        <table class="table table-striped table-list">
+            <colgroup>
+                <col />
+                <col />
+                <col style="width: 160px" />
+                <col style="width: 130px" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+                @if( catalogs.length > 0 )
+                    @each( catalog in catalogs )
+                        <tr data-id="{{ catalog.id }}">
+                            <td>{{ catalog.name }}</td>
+                            <td class="text-right">
+                                <a href="{{ catalog.url }}" class="btn btn-xs btn-default"><i class="{{ ICONS.EDIT }}"></i> Edit</a>
+                                <a href="{{ catalog.url }}/delete" class="btn btn-xs btn-default btn-delete"><i class="{{ ICONS.REMOVE }}"></i> Delete</a>
+                            </td>
+                        </tr>
+                    @endeach
+                @else
+                    <tr>
+                        <td colspan="99" class="text-center">No record</td>
+                    </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
+@endsection

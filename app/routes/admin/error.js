@@ -24,10 +24,10 @@ app.use((error, req, res, next) => {
         debugMode = true;
     }
     
-    return res.render('site/error/error', {
+    return res.render('error/error', {
         error: error,
         debugMode: debugMode,
-        title: 'Lỗi ' + error.status,
+        title: 'Error ' + error.status,
         bodyClass: 'page-error',
         app: config.app
     });

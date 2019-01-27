@@ -2,7 +2,7 @@ module.exports = dashboardController = {
     showDashboard: async (req, res, next) => {
         try {
             return res.render('dashboard/index', {
-                title: 'Trang chủ'
+                title: 'Dashboard'
             });
         } catch (error) {
             return next(error);

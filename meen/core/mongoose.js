@@ -1,8 +1,8 @@
 // Connect to our database
 // --------------------------------
 module.exports = () => {
-    const config = require('../utils/config');
-    const mongooseLogger = require('../utils/logger')('MONGOOSE');
+    const config = require('@utils/config');
+    const mongooseLogger = require('@utils/logger')('MONGOOSE');
     const mongoose = require('mongoose');
 
     mongoose.set('useCreateIndex', true);

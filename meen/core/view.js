@@ -2,7 +2,7 @@
 // --------------------------------
 module.exports = (app) => {
     const path = require('path');
-    const env = require('../utils/env');
+    const env = require('@utils/env');
     const expressEdge = require('express-edge');
 
     app.use(expressEdge);

@@ -1,7 +1,7 @@
 // Setup for Session
 // --------------------------------
 module.exports = (app) => {
-    const config = require('../utils/config');
+    const config = require('@utils/config');
 
     const cookieParser = require('cookie-parser');
     app.use(cookieParser());

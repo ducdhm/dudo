@@ -1,3 +1,4 @@
+require('module-alias/register');
 const app = require('./app/core');
 const config = require('./app/utils/config');
 const env = require('./app/utils/env');

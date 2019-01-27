@@ -6,7 +6,7 @@ const bcrypt = require('bcryptjs');
 exports.resolver = async (req, res, next) => {
     const userId = req.params.userId;
     let user = null;
-
+    
     if (UserModel.isValidId(userId)) {
         user = await UserModel.findOne({
             query: {
@@ -15,15 +15,15 @@ exports.resolver = async (req, res, next) => {
             }
         });
     }
-
+    
     if (userId === 'new') {
         user = UserModel.create();
     }
-
+    
     if (user === null) {
         return next(errorHandlers.error404());
     }
-
+    
     req._user = user;
     next();
 };
@@ -34,9 +34,9 @@ exports.showUsers = async (req, res) => {
             query: {god: false}
         });
         logger.debug('getUsers =>%o', users);
-
+        
         return res.render('user/index', {
-            title: 'Quản trị người dùng',
+            title: 'Manage users',
             users
         });
     } catch (err) {
@@ -46,12 +46,12 @@ exports.showUsers = async (req, res) => {
 
 exports.showUserDetails = async (req, res, next) => {
     const userId = req.params.userId;
-
+    
     try {
         const user = userId === 'new' ? null : req._user;
-
+        
         return res.render('user/details', {
-            title: userId === 'new' ? 'Thêm người dùng' : 'Sửa người dùng',
+            title: userId === 'new' ? 'Add user' : 'Edit user',
             user
         });
     } catch (err) {
@@ -62,7 +62,7 @@ exports.showUserDetails = async (req, res, next) => {
 exports.saveUser = async (req, res, next) => {
     try {
         await UserModel.save(req._user, req.body, populateUser);
-
+        
         return res.json({
             status: true
         });
@@ -74,7 +74,7 @@ exports.saveUser = async (req, res, next) => {
 exports.deleteUser = async (req, res, next) => {
     try {
         await UserModel.delete(req._user);
-
+        
         return res.json({
             status: true
         });
@@ -86,10 +86,10 @@ exports.deleteUser = async (req, res, next) => {
 function populateUser(user, payload) {
     user.username = payload.username;
     user.admin = payload.admin;
-
+    
     if (payload.password) {
         user.password = bcrypt.hashSync(payload.password);
     }
-
+    
     return user;
 }

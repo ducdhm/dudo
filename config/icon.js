@@ -2,11 +2,6 @@ module.exports = {
     DASHBOARD: 'fa fa-dashboard',
     USER: 'fa fa-user-circle',
     USERS: 'fa fa-users',
-    CATEGORY: 'fa fa-circle-o',
-    PROMOTION: 'fa fa-certificate',
-    CARD_PROMOTION: 'fa fa-credit-card',
-    NOTIFICATION: 'fa fa-bell',
-    BANNER: 'fa fa-object-ungroup',
     IMAGE: 'fa fa-image',
     PASSWORD: 'fa fa-lock',
     LOGOUT: 'fa fa-power-off',
@@ -18,10 +13,14 @@ module.exports = {
     SAVE: 'fa fa-save',
     BACK: 'fa fa-chevron-left',
     CHECKED: 'fa fa-check-circle',
-    VIEW_MORE: 'fa fa-arrow-circle-right',
     REVIEW: 'fa fa-eye',
     ERROR: 'fa fa-warning',
     SEARCH: 'fa fa-search-plus',
     SELECT_IMAGE: 'fa fa-check',
-    TAG: 'fa fa-tags'
+    TAG: 'fa fa-tags',
+    NLP: 'fa fa-braille',
+    CATALOG: 'fa fa-circle-o',
+    CATEGORY: 'fa fa-circle-o',
+    FEATURE: 'fa fa-circle-o',
+    INTENT: 'fa fa-circle-o'
 };

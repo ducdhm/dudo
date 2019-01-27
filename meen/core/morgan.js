@@ -1,7 +1,7 @@
 // Morgan
 // --------------------------------
 module.exports = (app) => {
-    const httpLogger = require('../utils/logger')('HTTP');
+    const httpLogger = require('@utils/logger')('HTTP');
     const morgan = require('morgan');
 
     app.use(

@@ -1,0 +1,32 @@
+@layout(layoutName)
+
+@section('content')
+<div class="box">
+    <div class="box-header with-border">
+        <small><span class="text-red">*</span> is required</small>
+    </div>
+    <div class="box-body">
+        <form class="form-horizontal form-details" method="post" action="" autocomplete="off">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-12" for="name">Name <span class="text-red">*</span></label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control required" name="name" id="name" value="{{ catalog.name || '' }}" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <a href="/catalog" class="btn btn-default btn-sm"><i class="{{ ICONS.BACK }}"></i> Back</a>
+                    <button type="submit" class="btn btn-danger btn-sm"><i class="{{ ICONS.SAVE }}"></i> Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@endsection

@@ -3,20 +3,20 @@
 @section('content')
 <div class="box">
     <div class="box-header with-border">
-        <small><span class="text-red">*</span> là trường bắt buộc</small>
+        <small><span class="text-red">*</span> is required</small>
     </div>
     <div class="box-body">
         <form class="form-horizontal form-details" method="post" action="" autocomplete="off">
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="col-sm-12" for="username">Tên đăng nhập <span class="text-red">*</span></label>
+                        <label class="col-sm-12" for="username">Username <span class="text-red">*</span></label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control required" name="username" id="username" value="{{ user.username || '' }}" {{ user ? 'readonly' : '' }} />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12" for="admin">Quyền phê duyệt</label>
+                        <label class="col-sm-12" for="admin">Is admin</label>
                         <div class="col-sm-12">
                             <label>
                                 <input type="checkbox" name="admin" id="admin" value="true" class="toggler" {{ user.admin ? 'checked' : '' }} />
@@ -26,13 +26,13 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="col-sm-12" for="password">Mật khẩu mới <small class="text-muted">{{ user ? '(nhập nếu thay đổi)' : '' }}</small></label>
+                        <label class="col-sm-12" for="password">New password <small class="text-muted">{{ user ? '(enter if change)' : '' }}</small></label>
                         <div class="col-sm-12">
                             <input type="password" class="form-control password {{ user ? '' : 'required' }}" name="password" id="password" value="" />
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-sm-12" for="confirm-password">Xác thực mật khẩu</label>
+                        <label class="col-sm-12" for="confirm-password">Confirm password</label>
                         <div class="col-sm-12">
                             <input type="password" class="form-control confirm-password {{ user ? '' : 'required' }}" id="confirm-password" value="" />
                         </div>
@@ -42,7 +42,7 @@
             <hr />
             <div class="form-group">
                 <div class="col-sm-12">
-                    <a href="/user" class="btn btn-default btn-sm"><i class="{{ ICONS.BACK }}"></i> Quay về</a>
+                    <a href="/user" class="btn btn-default btn-sm"><i class="{{ ICONS.BACK }}"></i> Back</a>
                     <button type="submit" class="btn btn-danger btn-sm"><i class="{{ ICONS.SAVE }}"></i> Lưu</button>
                 </div>
             </div>

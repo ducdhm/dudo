@@ -11,26 +11,26 @@ module.exports = loginController = {
             res.redirect('/');
         }
     },
-
+    
     doLogin: (req, res, next) => {
         logger.info('doLogin');
         passport.authenticate('local', (err, user) => {
             if (err) {
                 return next(err);
             }
-
+            
             if (!user) {
                 return res.json({
                     status: false,
-                    message: 'Tên đăng nhập hoặc mật khẩu chưa chính xác'
+                    message: 'Username or password is invalid!'
                 });
             }
-
+            
             req.logIn(user, err => {
                 if (err) {
                     return next(err);
                 }
-
+                
                 return res.json({
                     status: true,
                     data: {
@@ -40,7 +40,7 @@ module.exports = loginController = {
             });
         })(req, res, next);
     },
-
+    
     doLogout: (req, res) => {
         logger.info('doLogout');
         req.logout();

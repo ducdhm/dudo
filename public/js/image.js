@@ -39,9 +39,9 @@
         maxFilesize: 3,
         acceptedFiles: 'image/*',
         autoProcessQueue: false,
-        dictDefaultMessage: 'Kéo thả file hoặc click để chọn file để tải lên',
-        dictFileTooBig: 'File bạn vừa chọn có dung lượng vượt quá {{maxFilesize}}MB',
-        dictInvalidFileType: 'File bạn vừa chọn không phải là file Image'
+        dictDefaultMessage: 'Drag &amp; drop or click to choose upload file',
+        dictFileTooBig: 'Your file has exceeded {{maxFilesize}}MB',
+        dictInvalidFileType: 'Your file is not image'
     });
 
     myDropzone.on('thumbnail', function (file) {
@@ -136,7 +136,7 @@
 
         var $image = $(this).closest('.image');
 
-        if (confirm('Bạn có chắc chắn muốn xóa hình ảnh này?')) {
+        if (confirm('Are you sure you want to delete this image?')) {
             $.ajax({
                 url: '/image/delete',
                 type: 'post',
@@ -146,7 +146,7 @@
                 }
             }).done(function (data) {
                 if (data && data.status) {
-                    Msg.success('Hình ảnh được xóa thành công!');
+                    Msg.success('Deleted!');
                     $('#images-wrapper').reloadFragment();
                 }
             })
