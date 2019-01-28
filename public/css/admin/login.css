@@ -1,0 +1,11 @@
+.login-page {
+  background: #5ec0f9 url('/public/img/bg_login.png');
+  padding: 5px;
+  overflow: auto;
+}
+.login-page .login-box .login-box-form {
+  padding: 30px;
+  background: #fff;
+  color: #111;
+  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);
+}

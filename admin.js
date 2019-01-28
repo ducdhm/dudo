@@ -1,13 +1,12 @@
-require('module-alias/register');
-const app = require('./app/core');
-const config = require('./app/utils/config');
-const env = require('./app/utils/env');
-const log = require('./app/utils/logger')('admin');
+const meen = require('meen');
+const app = meen('admin');
+const config = require('meen/utils/config');
+const log = app.logger('admin');
 
 
 // Auth
 // --------------------------------
-require('./app/auth/local');
+require('./admin/auth/local');
 
 
 // Set locals
@@ -21,7 +20,7 @@ app.use((req, res, next) => {
             currentYear: (new Date()).getFullYear()
         });
         edge.global('ICONS', require('./config/icon'));
-        edge.global('menus', require('./app/utils/menu')(require('./config/menu'), req));
+        edge.global('menus', require('meen/utils/menu')(require('./config/menu'), req));
         edge.global('uploadPath', config.uploadPath);
 
         let isIframeMode = req.query.hasOwnProperty('iframe');
@@ -37,11 +36,11 @@ app.use((req, res, next) => {
 
 // Import modules
 // --------------------------------
-require('./app/routes/admin/login');
-require('./app/routes/admin/dashboard');
-require('./app/routes/admin/user');
-require('./app/routes/admin/image');
-require('./app/routes/admin/error');
+require('./admin/routes/login')(app);
+require('./admin/routes/dashboard')(app);
+require('./admin/routes/user')(app);
+require('./admin/routes/image')(app);
+require('./admin/routes/error')(app);
 
 
 // Run app
