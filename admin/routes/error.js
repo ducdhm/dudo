@@ -32,4 +32,4 @@ module.exports = (app) => {
             app: config.app
         });
     });
-}
+};
