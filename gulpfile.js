@@ -12,7 +12,9 @@ gulp.task('build-css-dev',
             './public/less/**/*.less',
             '!./public/less/**/_*.less'
         ])
-        .pipe(less())
+        .pipe(less({
+            javascriptEnabled: true
+        }))
         .pipe(gulp.dest('./public/css/'))
 );
 
@@ -22,7 +24,9 @@ gulp.task('build-css-prod',
             './public/less/**/*.less',
             '!./public/less/**/_*.less'
         ])
-        .pipe(less())
+        .pipe(less({
+            javascriptEnabled: true
+        }))
         .pipe(sourceMaps.init())
         .pipe(cssmin())
         .pipe(sourceMaps.write('.'))
