@@ -8,7 +8,7 @@ module.exports = (app, appName) => {
     app.set('views', resolvePath(appName, 'views'));
 
     // View cache for production
-    if (env === 'prod') {
+    if (env.isProd) {
         app.enable('view cache');
     }
 };

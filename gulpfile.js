@@ -71,7 +71,8 @@ gulp.task('watch', gulp.parallel(
     )
 ));
 
-// Watch
+
+// Main tasks
 // ---------------------------------------------------------------
 gulp.task('dev', gulp.series(
     'build-css-dev',

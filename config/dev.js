@@ -27,5 +27,6 @@ module.exports = {
         secret: 'meen',
         expires: 60 * 60 * 24
     },
-    itemPerPage: 10
+    itemPerPage: 10,
+    logFile: false
 };
