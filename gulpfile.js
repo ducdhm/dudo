@@ -1,14 +1,11 @@
 const gulp = require('gulp');
-const less = require('gulp-less');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const replace = require('gulp-replace');
-const cssmin = require('gulp-cssmin');
 const sourceMaps = require('gulp-sourcemaps');
 
 
 // Build CSS
 // ---------------------------------------------------------------
+const less = require('gulp-less');
+const cssmin = require('gulp-cssmin');
 gulp.task('build-css-dev',
     () => gulp
         .src([
@@ -35,6 +32,9 @@ gulp.task('build-css-prod',
 
 // Build JS
 // ---------------------------------------------------------------
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const replace = require('gulp-replace');
 gulp.task('build-js-dev',
     () => gulp
         .src([
@@ -55,6 +55,25 @@ gulp.task('build-js-prod',
         .pipe(uglify())
         .pipe(sourceMaps.write('.'))
         .pipe(gulp.dest('./public/js/'))
+);
+
+
+// Generate retina images
+// ---------------------------------------------------------------
+const jimp = require('gulp-jimp');
+gulp.task('gen-retina-image',
+    () => gulp
+        .src([
+            './public/img/**/*.{jpg,png,bmp}',
+            '!./public/img/**/*@2x.{jpg,png,bmp}'
+        ])
+        .pipe(jimp({
+            '@2x': {
+                scale: 2,
+                quality: 100
+            }
+        }))
+        .pipe(gulp.dest('./public/img/'))
 );
 
 
@@ -82,5 +101,6 @@ gulp.task('dev', gulp.series(
 
 gulp.task('build', gulp.series(
     'build-css-prod',
-    'build-js-prod'
+    'build-js-prod',
+    'gen-retina-image'
 ));

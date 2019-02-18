@@ -1,15 +1,15 @@
 (function ($) {
     function dataURItoBlob(dataURI) {
-        var byteString = atob(dataURI.split(',')[1]);
-        var ab = new ArrayBuffer(byteString.length);
-        var ia = new Uint8Array(ab);
-        for (var i = 0; i < byteString.length; i++) {
+        let byteString = atob(dataURI.split(',')[1]);
+        let ab = new ArrayBuffer(byteString.length);
+        let ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {
             ia[i] = byteString.charCodeAt(i);
         }
         return new Blob([ab], {type: 'image/jpeg'});
     }
     
-    var modalTemplate = `
+    let modalTemplate = `
         <div class="modal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -35,7 +35,7 @@
     
     Dropzone.autoDiscover = false;
     
-    var myDropzone = new Dropzone('#image-upload-widget', {
+    let myDropzone = new Dropzone('#image-upload-widget', {
         paramName: 'file',
         maxFilesize: 3,
         acceptedFiles: 'image/*',
@@ -50,12 +50,12 @@
             return;
         }
         
-        var cachedFilename = file.name;
+        let cachedFilename = file.name;
         myDropzone.removeFile(file);
         
-        var $cropperModal = $(modalTemplate);
-        var $uploadCrop = $cropperModal.find('.crop-upload');
-        var $cancelCrop = $cropperModal.find('.crop-cancel');
+        let $cropperModal = $(modalTemplate);
+        let $uploadCrop = $cropperModal.find('.crop-upload');
+        let $cancelCrop = $cropperModal.find('.crop-cancel');
         
         $cropperModal.modal({
             backdrop: 'static',
@@ -69,9 +69,9 @@
             }
         }).modal('show');
         
-        var $img = $('<img class="img-responsive" />');
+        let $img = $('<img class="img-responsive" />');
         
-        var reader = new FileReader();
+        let reader = new FileReader();
         reader.onloadend = function () {
             $cropperModal.find('.image-container').html($img);
             $img.attr('src', reader.result);
@@ -83,11 +83,11 @@
                 movable: false,
                 cropBoxResizable: true,
                 crop: function (event) {
-                    var $cropModal = $(this).parents('.modal');
-                    var $cropBoxWidth = $cropModal.find('span[data-width]');
-                    var $cropBoxHeight = $cropModal.find('span[data-height]');
-                    var cbWidth = Math.round(event.detail.width);
-                    var cbHeight = Math.round(event.detail.height);
+                    let $cropModal = $(this).parents('.modal');
+                    let $cropBoxWidth = $cropModal.find('span[data-width]');
+                    let $cropBoxHeight = $cropModal.find('span[data-height]');
+                    let cbWidth = Math.round(event.detail.width);
+                    let cbHeight = Math.round(event.detail.height);
                     $cropBoxWidth.attr('data-width', cbWidth).text('Width: ' + cbWidth);
                     $cropBoxHeight.attr('data-width', cbHeight).text('Height: ' + cbHeight);
                 }
@@ -97,8 +97,8 @@
         reader.readAsDataURL(file);
         
         $uploadCrop.on('click', function () {
-            var blob = $img.cropper('getCroppedCanvas').toDataURL();
-            var newFile = dataURItoBlob(blob);
+            let blob = $img.cropper('getCroppedCanvas').toDataURL();
+            let newFile = dataURItoBlob(blob);
             newFile.cropped = true;
             newFile.name = cachedFilename;
             
@@ -123,8 +123,8 @@
     $('#images-wrapper').on('click', '.btn-select-image', function (e) {
         e.preventDefault();
         
-        var btn = $(this);
-        var imageURL = btn.attr('href');
+        let btn = $(this);
+        let imageURL = btn.attr('href');
         
         if (window.opener) {
             window.opener.onSelectImage(imageURL);
@@ -135,7 +135,7 @@
     $('#images-wrapper').on('click', '.btn-delete-image', function (e) {
         e.preventDefault();
         
-        var $image = $(this).closest('.image');
+        let $image = $(this).closest('.image');
         
         if (confirm('Are you sure you want to delete this image?')) {
             $.ajax({
