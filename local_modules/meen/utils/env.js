@@ -1,21 +1,21 @@
 // Environments
 // --------------------------------
-const ENV = {
-    DEV: 'dev',
-    PROD: 'prod',
-    TEST: 'test'
-};
+const ENVS = [
+    'dev',
+    'prod',
+    'test'
+];
 const env = {
-    name: (process.env.NODE_ENV || ENV.DEV).trim()
+    name: (process.env.NODE_ENV || ENVS[0]).trim()
 };
 
-if (!(env.name in ENV)) {
+if (ENVS.indexOf(env.name) === -1) {
     console.error('Could not get env. Stopping...');
     return;
 }
 
-env.isProd = env.name === ENV.PROD;
-env.isDev = env.name === ENV.DEV;
-env.isTest = env.name === ENV.TEST;
+env.isProd = env.name === ENVS[0];
+env.isDev = env.name === ENVS[1];
+env.isTest = env.name === ENVS[2];
 
 module.exports = env;
