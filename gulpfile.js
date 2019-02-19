@@ -62,25 +62,6 @@ gulp.task('build-js-prod',
 );
 
 
-// Generate retina images
-// ---------------------------------------------------------------
-const jimp = require('gulp-jimp');
-gulp.task('gen-retina-image',
-    () => gulp
-        .src([
-            './public/img/**/*.{jpg,png,bmp}',
-            '!./public/img/**/*@2x.{jpg,png,bmp}'
-        ])
-        .pipe(jimp({
-            '@2x': {
-                scale: 2,
-                quality: 100
-            }
-        }))
-        .pipe(gulp.dest('./public/img/'))
-);
-
-
 // Watch
 // ---------------------------------------------------------------
 gulp.task('watch', gulp.parallel(
@@ -105,6 +86,5 @@ gulp.task('dev', gulp.series(
 
 gulp.task('build', gulp.series(
     'build-css-prod',
-    'build-js-prod',
-    'gen-retina-image'
+    'build-js-prod'
 ));

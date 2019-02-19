@@ -37,7 +37,6 @@
         "gulp": "^4.0.0",
         "gulp-babel": "^8.0.0",
         "gulp-cssmin": "^0.2.0",
-        "gulp-jimp": "^1.2.9",
         "gulp-less": "^4.0.1",
         "gulp-rename": "^1.4.0",
         "gulp-replace": "^1.0.0",
