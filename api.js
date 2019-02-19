@@ -1,5 +1,5 @@
 const meen = require('meen');
-const app = meen('admin', {
+const app = meen('api', {
     isApi: true
 });
 const log = app.logger('api');
