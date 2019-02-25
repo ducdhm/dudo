@@ -46,6 +46,7 @@
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "deep-extend": "^0.6.0",
         "jsonwebtoken": "^8.4.0",
         "meen": "file:local_modules/meen",
         "models": "file:local_modules/models",
