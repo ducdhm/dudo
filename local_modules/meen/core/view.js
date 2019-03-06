@@ -3,9 +3,9 @@
 const resolvePath = require('../utils/resolvePath');
 const env = require('../utils/env');
 const expressEdge = require('express-edge');
-module.exports = (app, appName) => {
+module.exports = (app) => {
     app.use(expressEdge);
-    app.set('views', resolvePath(appName, 'views'));
+    app.set('views', resolvePath(app.name, 'views'));
 
     // View cache for production
     if (env.isProd) {

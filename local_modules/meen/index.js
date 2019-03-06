@@ -1,3 +1,1 @@
-module.exports = (appName, options) => {
-    return require('./core')(appName, options);
-};
+module.exports = require('./core');
