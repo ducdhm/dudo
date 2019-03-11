@@ -14,8 +14,8 @@ if (ENVS.indexOf(env.name) === -1) {
     return;
 }
 
-env.isProd = env.name === ENVS[0];
-env.isDev = env.name === ENVS[1];
+env.isDev = env.name === ENVS[0];
+env.isProd = env.name === ENVS[1];
 env.isTest = env.name === ENVS[2];
 
 module.exports = env;
