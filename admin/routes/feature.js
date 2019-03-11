@@ -1,8 +1,9 @@
-const featureController = require('../controllers/feature');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 const adminAuth = require('../auth/admin');
 
 module.exports = (app) => {
+    const featureController = require('../controllers/feature')(app);
+    
     app.get(
         '/feature',
         auth, adminAuth,

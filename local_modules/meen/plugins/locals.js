@@ -2,7 +2,7 @@ const edge = require('edge.js');
 const utilMenu = require('../utils/menu');
 const resolvePath = require('../utils/resolvePath');
 
-module.exports = (app, setLocals) => {
+module.exports = (app) => {
     const {config} = app;
     const log = app.logger('locals');
     
@@ -15,14 +15,14 @@ module.exports = (app, setLocals) => {
                 const configIcons = require(resolvePath('config', 'icon'));
                 edge.global('ICONS', configIcons);
             } catch (e) {
-                log.error(`Error when setting "ICONS" for locals: \n%o`, e);
+                log.warn(`Can not set "ICONS" for locals: \n%o`, e);
             }
             
             try {
                 const configMenus = require(resolvePath('config', 'menu'));
                 edge.global('menus', utilMenu(configMenus, req));
             } catch (e) {
-                log.error(`Error when setting "menus" for locals: \n%o`, e);
+                log.warn(`Can not set "menus" for locals: \n%o`, e);
             }
             
             edge.global('currentUser', req.user);
@@ -31,9 +31,9 @@ module.exports = (app, setLocals) => {
             let isIframeMode = req.query.hasOwnProperty('iframe');
             edge.global('isIframeMode', isIframeMode);
             
-            edge.global('layoutName', `layout/${app.name}Layout`);
+            edge.global('layoutName', `layout/${app.id}Layout`);
             
-            typeof setLocals === 'function' && setLocals.call(null, edge, req);
+            typeof config.locals === 'function' && config.locals.call(null, edge, req);
         }
         
         return next();

@@ -1,7 +1,8 @@
-const imageController = require('../controllers/image');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 
 module.exports = (app) => {
+    const imageController = require('../controllers/image')(app);
+    
     app.get(
         '/image',
         auth,

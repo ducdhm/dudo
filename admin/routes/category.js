@@ -1,8 +1,9 @@
-const categoryController = require('../controllers/category');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 const adminAuth = require('../auth/admin');
 
 module.exports = (app) => {
+    const categoryController = require('../controllers/category')(app);
+    
     app.get(
         '/category',
         auth, adminAuth,

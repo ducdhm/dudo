@@ -1,8 +1,9 @@
-const intentController = require('../controllers/intent');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 const adminAuth = require('../auth/admin');
 
 module.exports = (app) => {
+    const intentController = require('../controllers/intent')(app);
+    
     app.get(
         '/intent',
         auth, adminAuth,

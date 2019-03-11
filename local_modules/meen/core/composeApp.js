@@ -1,43 +1,40 @@
 const express = require('express');
-const logger = require('../utils/logger');
 const deepExtend = require('deep-extend');
-const plugins = require('./plugins');
-const DEFAULTS = {
-    isWebsite: false,
-    isApi: false,
-    passportEnabled: false
-};
+const logger = require('../utils/logger');
+const resolvePath = require('../utils/resolvePath');
+const env = require('../utils/env');
+let envConfig;
+try {
+    envConfig = require(resolvePath('config', env.name));
+} catch (e) {
+    console.log('ERROR when getting environment config: \n', e);
+}
 
-const composeApp = (appName, config = {}, ...extraPlugins) => {const app = express();
-    app.name = appName;
-    app.config = deepExtend(DEFAULTS, config);
+module.exports = (appName, config = {}, plugins) => {
+    if (Array.isArray(config)) {
+        plugins = config;
+        config = {};
+    }
+    
+    const app = express();
+    const log = logger('composeApp', 'meen-core');
+    app.id = appName;
+    app.config = deepExtend(envConfig, config);
+    
     app.logger = (category) => {
         return logger(category, appName);
     };
     
-    if (config.isWebsite) {
-        plugins.compression(app);
-        plugins.minify(app);
-        plugins.publicFolder(app);
-        plugins.view(app);
-        plugins.session(app);
-    }
+    app.run = () => {
+        let appPort = app.config[`${appName}Port`];
+        
+        app.listen(
+            appPort,
+            () => log.info(`Webserver started at http://localhost:${appPort}`)
+        );
+    };
     
-    if (config.isApi) {
-        plugins.cors(app);
-    }
-    
-    if (config.isWebsite || config.isApi) {
-        plugins.bodyParser(app);
-        plugins.mongoose(app);
-        plugins.morgan(app);
-    }
-    
-    if (config.passportEnabled) {
-        plugins.passport(app);
-    }
-    
-    extraPlugins.forEach(plugin => {
+    plugins.forEach(plugin => {
         if (typeof plugin === 'function') {
             plugin.call(null, app);
         }
@@ -45,5 +42,3 @@ const composeApp = (appName, config = {}, ...extraPlugins) => {const app = expre
     
     return app;
 };
-
-export default composeApp;

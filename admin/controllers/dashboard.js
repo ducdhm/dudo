@@ -1,5 +1,6 @@
-module.exports = dashboardController = {
-    showDashboard: async (req, res, next) => {
+module.exports = (app) => {
+    const dashboardController = {};
+    dashboardController.showDashboard = async (req, res, next) => {
         try {
             return res.render('dashboard/index', {
                 title: 'Dashboard'
@@ -7,5 +8,7 @@ module.exports = dashboardController = {
         } catch (error) {
             return next(error);
         }
-    }
+    };
+    
+    return dashboardController;
 };

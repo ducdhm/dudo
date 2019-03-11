@@ -1,22 +1,24 @@
-const meen = require('meen');
-const app = meen('api', {
-    isApi: true
-});
-const log = app.logger('api');
-const config = require('meen/utils/config');
-
-
-// API Route Config
-// --------------------------------
-require('./api/routes/ping')(app);
-require('./api/routes/user')(app);
-require('./api/routes/todo')(app);
-require('./api/routes/error')(app);
+const {
+    composeApp,
+    setupApi,
+    handleError
+} = require('meen');
+const app = composeApp('api',
+    {
+        handleError: {
+            isJson: true
+        }
+    },
+    [
+        setupApi,
+        require('./api/routes/ping'),
+        require('./api/routes/user'),
+        require('./api/routes/todo'),
+        handleError
+    ]
+);
 
 
 // Run app
 // --------------------------------
-app.listen(
-    config.apiPort,
-    () => log.info('Webservice started at http://localhost:' + config.apiPort)
-);
+app.run();

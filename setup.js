@@ -1,8 +1,14 @@
-const logger = require('meen/utils/logger')('setup');
+const {
+    composeApp,
+    mongoose
+} = require('meen');
+const app = composeApp('setup', [
+    mongoose
+]);
+
+const logger = app.logger('setup');
 const UserModel = require('models/User');
 const bcrypt = require('bcryptjs');
-
-require('meen/core/mongoose')();
 
 (async () => {
     try {

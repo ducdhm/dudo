@@ -1,8 +1,9 @@
-const catalogController = require('../controllers/catalog');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 const adminAuth = require('../auth/admin');
 
 module.exports = (app) => {
+    const catalogController = require('../controllers/catalog')(app);
+    
     app.get(
         '/catalog',
         auth, adminAuth,

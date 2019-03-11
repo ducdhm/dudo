@@ -1,8 +1,9 @@
-const userController = require('../controllers/user');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 const adminAuth = require('../auth/admin');
 
 module.exports = (app) => {
+    const userController = require('../controllers/user')(app);
+    
     app.get(
         '/user',
         auth, adminAuth,

@@ -1,6 +1,6 @@
-const loginController = require('../controllers/login');
-
 module.exports = (app) => {
+    const loginController = require('../controllers/login')(app);
+    
     app.get(
         '/login',
         loginController.checkLogin

@@ -1,7 +1,8 @@
-const dashboardController = require('../controllers/dashboard');
 const auth = require('connect-ensure-login').ensureLoggedIn();
 
 module.exports = (app) => {
+    const dashboardController = require('../controllers/dashboard')(app);
+    
     app.get(
         '/',
         auth,
