@@ -1,14 +1,12 @@
 const {
     composeApp,
     setupWebsite,
-    passport,
     locals,
     handleError
 } = require('meen');
 const app = composeApp('admin',
     [
         setupWebsite,
-        passport,
         require('./admin/auth/local'),
         locals,
         require('./admin/routes/login'),
