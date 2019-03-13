@@ -5,7 +5,6 @@ module.exports = {
     minify: require('../plugins/minify'),
     mongoose: require('../plugins/mongoose'),
     morgan: require('../plugins/morgan'),
-    passport: require('../plugins/passport'),
     session: require('../plugins/session'),
     publicFolder: require('../plugins/publicFolder'),
     view: require('../plugins/view'),

@@ -36,15 +36,10 @@ module.exports = (app) => {
                 message: error.message
             });
         } else {
-            let errorTitle = `Error ${error.status}`;
-            if (config.handleError && typeof config.handleError.title === 'function') {
-                errorTitle = config.handleError.title.call(null, error, error.status);
-            }
-            
             return res.render('error/error', {
                 error: error,
                 debugMode: debugMode,
-                title: errorTitle,
+                title: error.status,
                 bodyClass: 'page-error',
                 app: config.app
             });
