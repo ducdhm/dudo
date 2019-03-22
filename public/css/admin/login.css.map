@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["admin/login.css"],"sourcesContent":[".login-page {\n  background: #5ec0f9 url('/public/img/bg_login.png');\n  padding: 5px;\n  overflow: auto;\n}\n.login-page .login-box .login-box-form {\n  padding: 30px;\n  background: #fff;\n  color: #111;\n  box-shadow: 1px 1px 3px 3px rgba(0, 0, 0, 0.2);\n}\n"],"file":"login.css"}
