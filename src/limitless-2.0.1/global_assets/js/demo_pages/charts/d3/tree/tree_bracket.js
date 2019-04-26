@@ -148,7 +148,7 @@ var D3TreeBracket = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/tree/tree_bracket.json", function(json) {
+            d3.json("../../global_assets/demo_data/d3/tree/tree_bracket.json", function(json) {
                 root = json;
                 root.x0 = height / 2;
                 root.y0 = width / 2;

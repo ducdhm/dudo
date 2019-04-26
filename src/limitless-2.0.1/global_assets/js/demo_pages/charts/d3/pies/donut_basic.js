@@ -70,7 +70,7 @@ var D3PieDonutBasic = function() {
             // Load data
             // ------------------------------
 
-            d3.csv("../../../../global_assets/demo_data/d3/pies/pies_basic.csv", function(error, data) {
+            d3.csv("../../global_assets/demo_data/d3/pies/pies_basic.csv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

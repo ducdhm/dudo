@@ -147,7 +147,7 @@ var D3Streamgraph = function() {
             // Load data
             // ------------------------------
 
-            d3.csv("../../../../global_assets/demo_data/dashboard/traffic_sources.csv", function (error, data) {
+            d3.csv("../../global_assets/demo_data/dashboard/traffic_sources.csv", function (error, data) {
 
                 // Pull out values
                 data.forEach(function (d) {

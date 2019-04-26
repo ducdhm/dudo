@@ -102,7 +102,7 @@ var D3Treemap = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/other/treemap.json", function(data) {
+            d3.json("../../global_assets/demo_data/d3/other/treemap.json", function(data) {
                 node = root = data;
                 var nodes = treemap.nodes(root)
                     .filter(function(d) { return !d.children; });

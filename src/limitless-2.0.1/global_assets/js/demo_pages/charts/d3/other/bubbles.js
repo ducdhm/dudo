@@ -83,7 +83,7 @@ var D3Bubbles = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/other/bubble.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/other/bubble.json", function(error, root) {
 
 
                 //

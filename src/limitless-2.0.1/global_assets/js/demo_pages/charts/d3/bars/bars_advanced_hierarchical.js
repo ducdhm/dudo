@@ -95,7 +95,7 @@ var D3BarHierarchy = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/bars/bars_hierarchical.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/bars/bars_hierarchical.json", function(error, root) {
                 partition.nodes(root);
                 x.domain([0, root.value]).nice();
                 down(root, 0);

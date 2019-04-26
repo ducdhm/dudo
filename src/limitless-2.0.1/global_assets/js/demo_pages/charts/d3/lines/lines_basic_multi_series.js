@@ -108,7 +108,7 @@ var D3LineSeries = function() {
             // Load data
             // ------------------------------
 
-            d3.tsv("../../../../global_assets/demo_data/d3/lines/lines_multi_series.tsv", function(error, data) {
+            d3.tsv("../../global_assets/demo_data/d3/lines/lines_multi_series.tsv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

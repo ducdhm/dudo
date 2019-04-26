@@ -73,7 +73,7 @@ var D3SunburstDistortion = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(root) {
+            d3.json("../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(root) {
 
                 // Add sunbirst
                 path = svg.data([root]).selectAll("path")

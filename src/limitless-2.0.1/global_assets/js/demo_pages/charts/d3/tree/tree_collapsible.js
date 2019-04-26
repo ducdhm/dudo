@@ -76,7 +76,7 @@ var D3TreeCollapsible = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/tree/tree_data_collapsible.json", function(error, json) {
+            d3.json("../../global_assets/demo_data/d3/tree/tree_data_collapsible.json", function(error, json) {
 
                 root = json;
                 root.x0 = height/2;

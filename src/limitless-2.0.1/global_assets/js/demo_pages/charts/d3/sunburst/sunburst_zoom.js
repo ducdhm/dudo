@@ -87,7 +87,7 @@ var D3SunburstZoom = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
 
                 // Append sunbirst
                 var path = svg.selectAll(".d3-sunbirst")

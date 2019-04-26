@@ -85,7 +85,7 @@ var D3SunburstBasic = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
 
                 // Add sunbirst
                 var path = svg.datum(root).selectAll("path")

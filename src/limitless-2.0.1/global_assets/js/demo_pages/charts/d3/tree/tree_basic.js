@@ -74,7 +74,7 @@ var D3TreeBasic = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/tree/tree_data_basic.json", function(error, json) {
+            d3.json("../../global_assets/demo_data/d3/tree/tree_data_basic.json", function(error, json) {
 
                 var nodes = tree.nodes(json),
                     links = tree.links(nodes);

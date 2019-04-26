@@ -77,7 +77,7 @@ var D3AreaMultiples = function() {
             // Load data
             // ------------------------------
 
-            d3.csv("../../../../global_assets/demo_data/d3/lines/lines_small_multiples.csv", function(error, data) {
+            d3.csv("../../global_assets/demo_data/d3/lines/lines_small_multiples.csv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

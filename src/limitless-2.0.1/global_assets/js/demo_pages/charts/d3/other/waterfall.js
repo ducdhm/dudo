@@ -101,7 +101,7 @@ var D3Waterfall = function() {
             // Load data
             // ------------------------------
 
-            d3.csv("../../../../global_assets/demo_data/d3/other/waterfall.csv", function(error, data) {
+            d3.csv("../../global_assets/demo_data/d3/other/waterfall.csv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

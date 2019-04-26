@@ -69,7 +69,7 @@ var D3TreeDendrogramRadial = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/tree/tree_data_dendrogram_radial.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/tree/tree_data_dendrogram_radial.json", function(error, root) {
 
                 var nodes = cluster.nodes(root);
 

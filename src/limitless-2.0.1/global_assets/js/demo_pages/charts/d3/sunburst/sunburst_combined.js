@@ -102,7 +102,7 @@ var D3SunburstCombined = function() {
             // Keep track of the node that is currently being displayed as the root.
             var node;
 
-            d3.json("../../../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/sunburst/sunburst_basic.json", function(error, root) {
                 node = root;
 
                 // Append sunbirst

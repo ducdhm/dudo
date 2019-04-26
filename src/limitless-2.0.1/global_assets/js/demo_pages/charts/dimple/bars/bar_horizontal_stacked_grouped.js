@@ -38,7 +38,7 @@ var DimpleBarHorizontalStackedGrouped = function() {
             // Chart setup
             // ------------------------------
 
-            d3.tsv("../../../../global_assets/demo_data/dimple/demo_data.tsv", function (data) {
+            d3.tsv("../../global_assets/demo_data/dimple/demo_data.tsv", function (data) {
 
 
                 // Create chart

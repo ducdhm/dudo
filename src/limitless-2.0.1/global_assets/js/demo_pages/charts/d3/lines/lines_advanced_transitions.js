@@ -122,7 +122,7 @@ var D3ChainedTransitions = function() {
             // Load data
             // ------------------------------
             
-            d3.tsv("../../../../global_assets/demo_data/d3/lines/lines_transitions.tsv", function(error, data) {
+            d3.tsv("../../global_assets/demo_data/d3/lines/lines_transitions.tsv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

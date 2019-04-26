@@ -82,7 +82,7 @@ var D3PieDonutUpdateAnimation = function() {
             // Load data
             // ------------------------------
 
-            d3.tsv("../../../../global_assets/demo_data/d3/pies/donuts_update.tsv", function(error, data) {
+            d3.tsv("../../global_assets/demo_data/d3/pies/donuts_update.tsv", function(error, data) {
 
                 // Pull out values
                 data.forEach(function(d) {

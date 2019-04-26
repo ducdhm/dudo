@@ -43,7 +43,7 @@ var D3PieDonutMultipleNesting = function() {
             // Load data
             // ------------------------------
 
-            d3.csv("../../../../global_assets/demo_data/d3/pies/pies_nesting.csv", function(flights) {
+            d3.csv("../../global_assets/demo_data/d3/pies/pies_nesting.csv", function(flights) {
 
                 // Nest the flight data by originating airport
                 var airports = d3.nest()

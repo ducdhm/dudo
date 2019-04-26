@@ -74,7 +74,7 @@ var D3TreeDendrogram = function() {
             // Load data
             // ------------------------------
 
-            d3.json("../../../../global_assets/demo_data/d3/tree/tree_data_dendrogram.json", function(error, root) {
+            d3.json("../../global_assets/demo_data/d3/tree/tree_data_dendrogram.json", function(error, root) {
 
                 var nodes = cluster.nodes(root),
                     links = cluster.links(nodes);
