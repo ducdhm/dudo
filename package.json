@@ -55,7 +55,7 @@
         "bcryptjs": "^2.4.3",
         "bootstrap-msg": "^1.0.2",
         "font-awesome": "^4.7.0",
-        "jquery.niceform": "^1.0.3",
+        "jquery.niceform": "^1.0.4",
         "jsonwebtoken": "^8.4.0",
         "meen": "file:local_modules/meen",
         "models": "file:local_modules/models",
