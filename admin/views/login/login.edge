@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
         <title>Login | {{ app.title }}</title>
-
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="/public/vendors/bootstrap/dist/css/bootstrap.min.css" />
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="/public/vendors/font-awesome/css/font-awesome.min.css" />
-        <!-- Theme style -->
-        <link rel="stylesheet" href="/public/vendors/AdminLTE-2.4.5/css/AdminLTE.min.css" />
-        <link rel="stylesheet" href="/public/css/fonts.css" />
-        <link rel="stylesheet" href="/public/css/admin/admin.css" />
-        <link rel="stylesheet" href="/public/css/admin/login.css" />
+        
+        <link rel="stylesheet" href="/public/admin/admin.css" />
+        <link rel="stylesheet" href="/public/admin/login.css" />
     </head>
+    
+    <body class="login-page">
+        <div class="page-content login-cover">
+            <div class="content-wrapper">
+                <div class="content d-flex justify-content-center align-items-center">
+                    
+                    <!-- Login card -->
+                    <form action="/login" method="post" class="login-form" autocomplete="off" novalidate>
+                        <div class="card mb-0">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <a href="javascript:void(0);">
+                                        <img src="/public/img/meen_icon.png" class="img-fluid center-block" width="100" alt="{{ app.title }}" />
+                                    </a>
+                                    <h5 class="mb-0">Login to your account</h5>
+                                    <span class="d-block text-muted">Your credentials</span>
+                                </div>
+                                
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="text" class="form-control required" placeholder="Username" name="username" />
+                                    <div class="form-control-feedback">
+                                        <i class="{{ ICONS.USER }} text-muted"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group form-group-feedback form-group-feedback-left">
+                                    <input type="password" class="form-control required" placeholder="Password" name="password" />
+                                    <div class="form-control-feedback">
+                                        <i class="{{ ICONS.PASSWORD }} text-muted"></i>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group mb-0">
+                                    <button type="submit" class="btn btn-primary btn-block">Login <i class="icon-circle-right2 ml-2"></i></button>
+                                </div>
 
-    <body class="hold-transition login-page">
-        <div class="login-box">
-            <div class="login-box-form">
-                <div class="login-logo">
-                    <a href="javascript:void(0);">
-                        <img src="/public/img/logo.png" class="img-responsive center-block" alt="{{ app.title }}" />
-                    </a>
-                </div>
-                <form action="/login" method="post" autocomplete="off" novalidate>
-                    <div class="form-group has-feedback">
-                        <input type="text" class="form-control input-lg required" placeholder="Username" name="username" />
-                        <span class="{{ ICONS.USER }} fa-2x form-control-feedback"></span>
-                    </div>
-                    <div class="form-group has-feedback">
-                        <input type="password" class="form-control input-lg required" placeholder="Password" name="password" />
-                        <span class="{{ ICONS.PASSWORD }} fa-2x form-control-feedback"></span>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 text-right">
-                            <button type="submit" class="btn btn-lg btn-primary btn-block btn-flat">Login</button>
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                
+                </div>
             </div>
         </div>
-
-        <script type="text/javascript" src="/public/vendors/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="/public/vendors/moment/min/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="/public/vendors/common/common.js"></script>
-        <script type="text/javascript" src="/public/vendors/common/jqExtras.js"></script>
-        <script type="text/javascript" src="/public/vendors/jquery.forms-1.1.1/jquery.forms-1.1.1.js"></script>
-        <script type="text/javascript" src="/public/js/admin/login.js"></script>
+        
+        <script type="text/javascript" src="/public/admin/admin.js"></script>
+        <script type="text/javascript" src="/public/admin/login.js"></script>
     </body>
 </html>

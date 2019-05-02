@@ -1,9 +1,10 @@
-$(function () {
-    var form = $('form');
+import $ from 'jquery';
+import './styles/login.scss';
 
-    form.forms({
-        onSuccess: function (resp) {
-            window.location.href = resp.data.returnTo;
-        }
-    });
+$(function () {
+    // $('form').niceform({
+    //     onAjaxSuccess: function (resp) {
+    //         window.location.href = resp.data.returnTo;
+    //     }
+    // });
 });

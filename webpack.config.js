@@ -16,11 +16,12 @@ module.exports = {
     devtool: PROD ? 'source-map' : 'inline-source-map',
     
     entry: {
-        admin: './src/admin/index.js'
+        admin: './src/admin/index.js',
+        login: './src/admin/login.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/'),
-        filename: '[name]/[name].js'
+        filename: 'admin/[name].js'
     },
     
     optimization: {
@@ -38,18 +39,14 @@ module.exports = {
         ],
     },
     
-    plugins: PROD ? [
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'admin/[name].css'
+        }),
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            'windows.jQuery': 'jquery',
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name]/[name].css'
-        })
-    ] : [
-        new MiniCssExtractPlugin({
-            filename: '[name]/[name].css'
+            'windows.jQuery': 'jquery'
         })
     ],
     module: {
@@ -89,7 +86,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|ico)$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -113,7 +110,7 @@ module.exports = {
         ]
     },
     externals: {
-        jquery: 'jQuery'
+        // jquery: 'jQuery'
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],

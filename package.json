@@ -28,7 +28,9 @@
     },
     "nodemonConfig": {
         "ignore": [
-            "public/js/*.js"
+            "public/**/*.js",
+            "src/**/*.js",
+            "webpack.config.js"
         ]
     },
     "devDependencies": {

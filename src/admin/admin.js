@@ -1,5 +1,4 @@
 (function ($, window) {
-    Msg.iconMode = 'fa';
     Dropzone.autoDiscover = false;
     
     var initICheck = function () {

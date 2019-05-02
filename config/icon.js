@@ -1,6 +1,6 @@
 module.exports = {
     DASHBOARD: 'fa fa-dashboard',
-    USER: 'fa fa-user-circle',
+    USER: 'fa fa-user',
     USERS: 'fa fa-users',
     IMAGE: 'fa fa-image',
     PASSWORD: 'fa fa-lock',

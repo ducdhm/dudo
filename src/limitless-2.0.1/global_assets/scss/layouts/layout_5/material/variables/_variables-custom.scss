@@ -41,7 +41,7 @@ $hover-shadow-lighter:                    0 0 0 62.5rem rgba($black, 0.01) inset
 $hover-shadow-darker:                     0 0 0 62.5rem rgba($black, 0.04) inset !default;
 
 // Images
-$img-path:                                '../../../../../../global_assets/images' !default;
+$img-path:                                '../../../../global_assets/images' !default;
 $img-preview-max-height:                  5rem !default;
 
 // Wrappers for element spacers. Uses default $spacers map
@@ -340,7 +340,7 @@ $wizard-step-number-error-bg:        $color-danger-500 !default;
 // Summernote editor
 $summernote-border-width:            $border-width !default;
 $summernote-border-color:            $border-color !default;
-$summernote-font-path:               "../../../../../../global_assets/css/icons/summernote/" !default;
+$summernote-font-path:               "../../../../global_assets/css/icons/summernote/" !default;
 $summernote-icon-font-size:          0.875rem !default;
 $summernote-min-height:              rem-calc(150px) !default;
 

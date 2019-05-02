@@ -2612,8 +2612,8 @@ input[type=text].noui-height-helper:not(.noUi-target)[data-fouc] {
   font-family: 'summernote';
   font-style: normal;
   font-weight: normal;
-  src: url("../../../../../../global_assets/css/icons/summernote//summernote.eot?0d0d5fac99cc8774d89eb08b1a8323c4");
-  src: url("../../../../../../global_assets/css/icons/summernote//summernote.eot?#iefix") format("embedded-opentype"), url("../../../../../../global_assets/css/icons/summernote//summernote.woff?0d0d5fac99cc8774d89eb08b1a8323c4") format("woff"), url("../../../../../../global_assets/css/icons/summernote//summernote.ttf?0d0d5fac99cc8774d89eb08b1a8323c4") format("truetype"); }
+  src: url("../../../../global_assets/css/icons/summernote//summernote.eot?0d0d5fac99cc8774d89eb08b1a8323c4");
+  src: url("../../../../global_assets/css/icons/summernote//summernote.eot?#iefix") format("embedded-opentype"), url("../../../../global_assets/css/icons/summernote//summernote.woff?0d0d5fac99cc8774d89eb08b1a8323c4") format("woff"), url("../../../../global_assets/css/icons/summernote//summernote.ttf?0d0d5fac99cc8774d89eb08b1a8323c4") format("truetype"); }
 
 [class^="note-icon-"]:before,
 [class*=" note-icon-"]:before {
@@ -8360,19 +8360,19 @@ a.plupload_disabled {
   border-radius: 0.1875rem; }
 
 .ui-selectmenu-images .demo-img-amazon {
-  background: url("../../../../../../global_assets/images/brands/amazon.png") no-repeat; }
+  background: url("../../../../global_assets/images/brands/amazon.png") no-repeat; }
 
 .ui-selectmenu-images .demo-img-youtube {
-  background: url("../../../../../../global_assets/images/brands/youtube.png") no-repeat; }
+  background: url("../../../../global_assets/images/brands/youtube.png") no-repeat; }
 
 .ui-selectmenu-images .demo-img-twitter {
-  background: url("../../../../../../global_assets/images/brands/twitter.png") no-repeat; }
+  background: url("../../../../global_assets/images/brands/twitter.png") no-repeat; }
 
 .ui-selectmenu-images .demo-img-bing {
-  background: url("../../../../../../global_assets/images/brands/bing.png") no-repeat; }
+  background: url("../../../../global_assets/images/brands/bing.png") no-repeat; }
 
 .ui-selectmenu-images .demo-img-spotify {
-  background: url("../../../../../../global_assets/images/brands/spotify.png") no-repeat; }
+  background: url("../../../../global_assets/images/brands/spotify.png") no-repeat; }
 
 .ui-slider {
   position: relative;
@@ -13978,7 +13978,7 @@ textarea#HandsontableCopyPaste {
  *
  * ---------------------------------------------------------------------------- */
 .login-cover {
-  background: url(../../../../../../global_assets/images/login_cover.jpg) no-repeat;
+  background: url(../../../../global_assets/images/login_cover.jpg) no-repeat;
   background-size: cover; }
 
 .login-form {
