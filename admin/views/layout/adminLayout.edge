@@ -8,141 +8,181 @@
         <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
         <title>{{ title }} | {{ app.title }}</title>
 
-        <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="/public/vendors/bootstrap/dist/css/bootstrap.min.css" />
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="/public/vendors/font-awesome/css/font-awesome.min.css" />
-        <!-- Select2 -->
-        <link rel="stylesheet" href="/public/vendors/select2/dist/css/select2.min.css" />
-        <!-- iCheck -->
-        <link rel="stylesheet" href="/public/vendors/iCheck/flat/blue.css" />
-        <!-- bootstrap-toggle -->
-        <link rel="stylesheet" href="/public/vendors/bootstrap-toggle-2.2.2/css/bootstrap-toggle.min.css" />
-        <!-- bootstrap-msg -->
-        <link rel="stylesheet" href="/public/vendors/bootstrap-msg-0.4.0/dist/css/bootstrap-msg-0.4.0.min.css" />
-        <!-- Dropzone -->
-        <link rel="stylesheet" href="/public/vendors/dropzone-4.3.0/min/dropzone.min.css" />
-        <!-- DateTimePicker -->
-        <link rel="stylesheet" href="/public/vendors/bootstrap-datetimepicker-4.17.47/build/css/bootstrap-datetimepicker.min.css" />
-        <link rel="stylesheet" href="/public/vendors/daterangepicker-3.0.3/daterangepicker.css" />
-        <!-- Theme style -->
-        <link rel="stylesheet" href="/public/vendors/AdminLTE-2.4.5/css/AdminLTE.min.css" />
-        <!-- AdminLTE Skins. Choose a skin from the css/skins
-             folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="/public/vendors/AdminLTE-2.4.5/css/skins/skin-blue.min.css" />
-        <!-- Custom -->
-        <link rel="stylesheet" href="/public/css/fonts.css" />
-        <link rel="stylesheet" href="/public/css/admin/admin.css" />
-
+        <link rel="stylesheet" href="/public/admin/admin.css" />
         @!section('style')
     </head>
 
-    <body class="hold-transition skin-blue sidebar-mini {{ isIframeMode ? 'iframe-mode' : 'fixed' }} {{ bodyClass }}">
-        <div class="wrapper">
-            @if( !isIframeMode )
-            <header class="main-header">
-                <!-- Logo -->
-                <a href="/" class="logo">
-                    <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><img src="/public/img/logo_white_mini.png" /></span>
-                    <!-- logo for regular state and mobile devices -->
-                    <span class="logo-lg"><img src="/public/img/logo_white.png" /></span>
-                </a>
-                <!-- Header Navbar: style can be found in header.less -->
-                <nav class="navbar navbar-static-top">
-                    <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
+    <body class="navbar-top {{ isIframeMode ? 'iframe-mode' : 'fixed' }} {{ bodyClass }}">
+    
+    
+    
+        <!-- Main navbar -->
+        <div class="navbar navbar-expand-md navbar-light fixed-top">
+        
+            <!-- Header with logos -->
+            <div class="navbar-header navbar-dark d-none d-md-flex align-items-md-center">
+                <div class="navbar-brand navbar-brand-md">
+                    <a href="/" class="d-inline-block">
+                        <img src="/public/img/logo_white.png" />
                     </a>
-
-                    <div class="navbar-custom-menu">
-                        @if( currentUser )
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a><i class="{{ ICONS.USER }}"></i> Hi <b> {{ currentUser.username }}</b></a>
-                                </li>
-                                <li>
-                                    <a href="/logout"><i class="{{ ICONS.LOGOUT }}"></i> Logout</a>
-                                </li>
-                            </ul>
-                        @endif
-                    </div>
-                </nav>
-            </header>
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
-                <!-- sidebar: style can be found in sidebar.less -->
-                <section class="sidebar">
-                    <ul class="sidebar-menu" data-widget="tree">
-                        @!component('common/menus')
-                    </ul>
-                </section>
-                <!-- /.sidebar -->
-            </aside>
-            @endif
-
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <h1>
-                        {{ title }}
-                    </h1>
-                </section>
-
-                <!-- Main content -->
-                <section class="content">
-                    @!section('content')
-                </section>
-                <!-- /.content -->
-            </div>
-            <!-- /.content-wrapper -->
-
-
-            @if( !isIframeMode )
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> {{ app.version }}
                 </div>
-                <span>
-                    Copyright &copy; {{ formatter.currentYear }}
-                    <strong class="text-blue">{{ app.title }}</strong>.
-                    All rights reserved.
-                </span>
-            </footer>
-            @endif
-
+            
+                <div class="navbar-brand navbar-brand-xs">
+                    <a href="/" class="d-inline-block">
+                        <img src="/public/img/logo_white_mini.png" />
+                    </a>
+                </div>
+            </div>
+            <!-- /header with logos -->
+        
+        
+            <!-- Mobile controls -->
+            <div class="d-flex flex-1 d-md-none">
+                <div class="navbar-brand mr-auto">
+                    <a href="index.html" class="d-inline-block">
+                        <img src="/public/img/logo_color.png" />
+                    </a>
+                </div>
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-mobile">
+                    <i class="icon-tree5"></i>
+                </button>
+            
+                <button class="navbar-toggler sidebar-mobile-main-toggle" type="button">
+                    <i class="icon-paragraph-justify3"></i>
+                </button>
+            </div>
+            <!-- /mobile controls -->
+        
+        
+            <!-- Navbar content -->
+            <div class="collapse navbar-collapse" id="navbar-mobile">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#" class="navbar-nav-link sidebar-control sidebar-main-toggle d-none d-md-block">
+                            <i class="icon-paragraph-justify3"></i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-md-auto">
+                    <li class="nav-item dropdown dropdown-user">
+                        <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
+                            <span><i class="{{ ICONS.USER }}"></i> Hi <b> {{ currentUser.username }}</b></span>
+                        </a>
+                    
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="/profile" class="dropdown-item"><i class="{{ ICONS.USER_PROFILE }}"></i> My profile</a>
+                            <a href="/logout" class="dropdown-item"><i class="{{ ICONS.LOGOUT }}"></i> Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /navbar content -->
+    
         </div>
-        <!-- ./wrapper -->
+        <!-- /main navbar -->
+    
+    
+        <!-- Page content -->
+        <div class="page-content">
+        
+            <!-- Main sidebar -->
+            <div class="sidebar sidebar-dark sidebar-main sidebar-fixed sidebar-expand-md">
+            
+                <!-- Sidebar mobile toggler -->
+                <div class="sidebar-mobile-toggler text-center">
+                    <a href="#" class="sidebar-mobile-main-toggle">
+                        <i class="icon-arrow-left8"></i>
+                    </a>
+                    Navigation
+                    <a href="#" class="sidebar-mobile-expand">
+                        <i class="icon-screen-full"></i>
+                        <i class="icon-screen-normal"></i>
+                    </a>
+                </div>
+                <!-- /sidebar mobile toggler -->
+            
+            
+                <!-- Sidebar content -->
+                <div class="sidebar-content">
+                
+                    <!-- Main navigation -->
+                    <div class="card card-sidebar-mobile">
+                        <ul class="nav nav-sidebar" data-nav-type="accordion">
+                            @!component('common/menus')
+                        </ul>
+                    </div>
+                    <!-- /main navigation -->
+            
+                </div>
+                <!-- /sidebar content -->
+        
+            </div>
+            <!-- /main sidebar -->
+        
+        
+            <!-- Main content -->
+            <div class="content-wrapper">
+            
+                <!-- Page header -->
+                <div class="page-header">
+                    <div class="page-header-content header-elements-md-inline">
+                        <div class="page-title d-flex">
+                            <h4>{{ title }}</h4>
+                            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+                        </div>
+                    
+                        <!--<div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">-->
+                            <!--<div class="btn-group">-->
+                                <!--<button type="button" class="btn bg-indigo-400"><i class="icon-stack2 mr-2"></i> New report</button>-->
+                                <!--<button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown"></button>-->
+                                <!--<div class="dropdown-menu dropdown-menu-right">-->
+                                    <!--<div class="dropdown-header">Actions</div>-->
+                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-eye"></i> View reports</a>-->
+                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-plus"></i> Edit reports</a>-->
+                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-stats"></i> Statistics</a>-->
+                                    <!--<div class="dropdown-header">Export</div>-->
+                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Export to PDF</a>-->
+                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Export to CSV</a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <!-- /page header -->
+            
+            
+                <!-- Content area -->
+                <div class="content pt-0">
+                    @!section('content')
+                </div>
+                <!-- /content area -->
+            
+            
+                <!-- Footer -->
+                <div class="navbar navbar-expand-lg navbar-light">
+                    <div class="text-center d-lg-none w-100">
+                        <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+                            <i class="icon-unfold mr-2"></i>
+                            Footer
+                        </button>
+                    </div>
+                
+                    <div class="navbar-collapse collapse" id="navbar-footer">
+                        <span class="navbar-text">
+                            &copy; {{ formatter.currentYear }} <a href="/">{{ app.title }}</a> by <a href="mailto:ducdhm@gmail.com" target="_blank">Duc Doan</a>
+                        </span>
+                    </div>
+                </div>
+                <!-- /footer -->
+        
+            </div>
+            <!-- /main content -->
+    
+        </div>
+        <!-- /page content -->
 
-        <!-- jQuery 3 -->
-        <script src="/public/vendors/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="/public/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- jquery.forms -->
-        <script type="text/javascript" src="/public/vendors/moment/min/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="/public/vendors/common/common.js"></script>
-        <script type="text/javascript" src="/public/vendors/common/jqExtras.js"></script>
-        <script type="text/javascript" src="/public/vendors/jquery.forms-1.1.1/jquery.forms-1.1.1.js"></script>
-        <!-- iCheck -->
-        <script src="/public/vendors/iCheck/icheck.min.js"></script>
-        <!-- bootstrap-toggle -->
-        <script src="/public/vendors/bootstrap-toggle-2.2.2/js/bootstrap-toggle.min.js"></script>
-        <!-- bootstrap-msg -->
-        <script src="/public/vendors/bootstrap-msg-0.4.0/dist/js/bootstrap-msg-0.4.0.min.js"></script>
-        <!-- reloadFragment -->
-        <script src="/public/vendors/jquery.reload-fragment-1.0.2/jquery.reload-fragment-1.0.2.js"></script>
-        <!-- Dropzone -->
-        <script src="/public/vendors/dropzone-4.3.0/min/dropzone.min.js"></script>
-        <!-- Select2 -->
-        <script src="/public/vendors/select2/dist/js/select2.full.min.js"></script>
-        <!-- Datetime picker -->
-        <script src="/public/vendors/bootstrap-datetimepicker-4.17.47/build/js/bootstrap-datetimepicker.min.js"></script>
-        <script src="/public/vendors/daterangepicker-3.0.3/daterangepicker.js"></script>
-        <!-- AdminLTE App -->
-        <script src="/public/vendors/AdminLTE-2.4.5/js/adminlte.min.js"></script>
-        <script src="/public/js/admin/admin.js"></script>
-
+        <script src="/public/admin/admin.js"></script>
         @!section('script')
     </body>
 </html>

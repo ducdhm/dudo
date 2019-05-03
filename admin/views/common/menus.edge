@@ -1,31 +1,33 @@
 @if( currentUser )
-    <li class="header text-uppercase">Navigation
+    <li class="nav-item-header">
+        <div class="text-uppercase font-size-xs line-height-xs">Navigation</div>
+        <i class="icon-menu" title="Navigation"></i>
+    </li>
 
     @each( menu in menus )
         @if( !menu.admin || menu.admin && currentUser.admin )
             @if( menu.children )
-                <li class="treeview {{ menu.active ? 'menu-open' : '' }}" id="menu-{{ menu.id }}">
-                    <a href="javascript:void(0);">
+                <li class="nav-item nav-item-submenu {{ menu.active ? 'nav-item-open' : '' }}" id="menu-{{ menu.id }}">
+                    <a href="#" class="nav-link">
                         <i class="{{ menu.icon }}"></i>
                         <span>{{ menu.text }}</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
                     </a>
-                    <ul class="treeview-menu" style="{{ menu.active ? 'display: block;' : '' }}">
+                    
+                    <ul class="nav nav-group-sub" data-submenu-title="{{ menu.text }}"  style="{{ menu.active ? 'display: block;' : '' }}">
                         @each( subMenu in menu.children )
-                            <li class="{{ subMenu.active ? 'active' : '' }}" id="menu-{{ subMenu.id }}">
-                                <a href="{{ subMenu.href }}">
-                                    <i class="fa fa-circle-o"></i> <span>{{ subMenu.text }}</span>
+                            <li class="nav-item">
+                                <a href="{{ subMenu.href }}" class="nav-link {{ subMenu.active ? 'active' : '' }}">
+                                    <span>{{ subMenu.text }}</span>
                                 </a>
                             </li>
                         @endeach
                     </ul>
                 </li>
             @else
-                <li class="{{ menu.active ? 'active' : '' }}" id="menu-{{ menu.id }}">
-                    <a href="{{ menu.href }}">
-                        <i class="{{ menu.icon }}"></i> <span>{{ menu.text }}</span>
+                <li class="nav-item {{ menu.active ? 'active' : '' }}" id="menu-{{ menu.id }}">
+                    <a href="{{ menu.href }}" class="nav-link">
+                        <i class="{{ menu.icon }}"></i>
+                        <span>{{ menu.text }}</span>
                     </a>
                 </li>
             @endif

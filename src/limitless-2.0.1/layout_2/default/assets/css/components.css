@@ -8359,20 +8359,20 @@ a.plupload_disabled {
   height: 1.25003rem;
   border-radius: 0.1875rem; }
 
-.ui-selectmenu-images .demo-img-amazon {
-  background: url("../../../../global_assets/images/brands/amazon.png") no-repeat; }
+/*.ui-selectmenu-images .demo-img-amazon {*/
+  /*background: url("../../../../global_assets/images/brands/amazon.png") no-repeat; }*/
 
-.ui-selectmenu-images .demo-img-youtube {
-  background: url("../../../../global_assets/images/brands/youtube.png") no-repeat; }
+/*.ui-selectmenu-images .demo-img-youtube {*/
+  /*background: url("../../../../global_assets/images/brands/youtube.png") no-repeat; }*/
 
-.ui-selectmenu-images .demo-img-twitter {
-  background: url("../../../../global_assets/images/brands/twitter.png") no-repeat; }
+/*.ui-selectmenu-images .demo-img-twitter {*/
+  /*background: url("../../../../global_assets/images/brands/twitter.png") no-repeat; }*/
 
-.ui-selectmenu-images .demo-img-bing {
-  background: url("../../../../global_assets/images/brands/bing.png") no-repeat; }
+/*.ui-selectmenu-images .demo-img-bing {*/
+  /*background: url("../../../../global_assets/images/brands/bing.png") no-repeat; }*/
 
-.ui-selectmenu-images .demo-img-spotify {
-  background: url("../../../../global_assets/images/brands/spotify.png") no-repeat; }
+/*.ui-selectmenu-images .demo-img-spotify {*/
+  /*background: url("../../../../global_assets/images/brands/spotify.png") no-repeat; }*/
 
 .ui-slider {
   position: relative;

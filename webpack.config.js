@@ -62,7 +62,7 @@ module.exports = {
                         options: {
                             multiple: [
                                 {
-                                    search: '\\n\\s+',
+                                    search: '\'\\n\\s+\'',
                                     replace: '',
                                     flags: 'g'
                                 }
