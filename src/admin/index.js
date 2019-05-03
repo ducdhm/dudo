@@ -6,6 +6,9 @@ import 'limitless-2.0.1/global_assets/js/plugins/loaders/blockui.min';
 import 'limitless-2.0.1/global_assets/js/plugins/forms/styling/uniform.min';
 import 'jquery.niceform';
 
+// Pages scripts
+import './login.js';
+
 
 // Theme styles
 // -----------------------------------------------

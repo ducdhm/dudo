@@ -1,10 +1,7 @@
 import './styles/login.scss';
-import 'jquery.niceform';
 
-$(function () {
-    $('form').niceform({
-        onAjaxSuccess: function (resp) {
-            window.location.href = resp.data.returnTo;
-        }
-    });
+$('.login-page').length > 0 && $('form').niceform({
+    onAjaxSuccess: function (resp) {
+        window.location.href = resp.data.returnTo;
+    }
 });

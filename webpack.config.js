@@ -16,12 +16,11 @@ module.exports = {
     devtool: PROD ? 'source-map' : 'inline-source-map',
     
     entry: {
-        admin: './src/admin/index.js',
-        login: './src/admin/login.js'
+        admin: './src/admin/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/'),
-        filename: 'admin/[name].js'
+        filename: '[name]/[name].js'
     },
     
     optimization: {
@@ -41,7 +40,7 @@ module.exports = {
     
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'admin/[name].css'
+            filename: '[name]/[name].css'
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -110,7 +109,7 @@ module.exports = {
         ]
     },
     externals: {
-        // jquery: 'jQuery'
+        // jquery: 'jQuery',
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],
