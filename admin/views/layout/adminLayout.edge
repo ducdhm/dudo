@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
         <title>{{ title }} | {{ app.title }}</title>
 
+        <link rel="stylesheet" href="/public/admin/admin-libs.css" />
         <link rel="stylesheet" href="/public/admin/admin.css" />
         @!section('style')
     </head>
@@ -123,37 +124,25 @@
         
             <!-- Main content -->
             <div class="content-wrapper">
-            
+    
                 <!-- Page header -->
-                <div class="page-header">
-                    <div class="page-header-content header-elements-md-inline">
-                        <div class="page-title d-flex">
-                            <h4>{{ title }}</h4>
+                <div class="page-header page-header-light">
+                    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+                        <div class="d-flex">
+                            <div class="breadcrumb">
+                                <a href="/" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
+                                <span class="breadcrumb-item active">{{ title }}</span>
+                            </div>
+                
                             <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                         </div>
-                    
-                        <!--<div class="header-elements d-none text-center text-md-left mb-3 mb-md-0">-->
-                            <!--<div class="btn-group">-->
-                                <!--<button type="button" class="btn bg-indigo-400"><i class="icon-stack2 mr-2"></i> New report</button>-->
-                                <!--<button type="button" class="btn bg-indigo-400 dropdown-toggle" data-toggle="dropdown"></button>-->
-                                <!--<div class="dropdown-menu dropdown-menu-right">-->
-                                    <!--<div class="dropdown-header">Actions</div>-->
-                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-eye"></i> View reports</a>-->
-                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-plus"></i> Edit reports</a>-->
-                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-stats"></i> Statistics</a>-->
-                                    <!--<div class="dropdown-header">Export</div>-->
-                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-pdf"></i> Export to PDF</a>-->
-                                    <!--<a href="#" class="dropdown-item"><i class="icon-file-excel"></i> Export to CSV</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
                     </div>
                 </div>
                 <!-- /page header -->
             
             
                 <!-- Content area -->
-                <div class="content pt-0">
+                <div class="content">
                     @!section('content')
                 </div>
                 <!-- /content area -->
@@ -182,6 +171,7 @@
         </div>
         <!-- /page content -->
 
+        <script src="/public/admin/admin-libs.js"></script>
         <script src="/public/admin/admin.js"></script>
         @!section('script')
     </body>

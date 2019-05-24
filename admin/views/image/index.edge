@@ -1,60 +1,52 @@
 @layout(layoutName)
 
 @section('content')
-    <div class="box">
-        <div class="box-body">
-            <form method="post" action="/image/upload" id="image-upload-widget" class="dropzone">
-                <div class="fallback">
-                    <input type="file" name="file" />
-                </div>
-            </form>
+<div class="mb-3">
+    <form method="post" action="/image/upload" id="image-upload-widget" class="dropzone">
+        <div class="fallback">
+            <input type="file" name="file" />
         </div>
-    </div>
+    </form>
+</div>
 
-    <div class="box">
-        <div class="box-header with-border">
-            <h3 class="box-title"><i class="{{ ICONS.IMAGE }}"></i> Images list</h3>
-        </div>
-        <div class="box-body" id="images-container">
-            <div class="row" id="images-wrapper">
-                @each(file in files)
-                    @if(file !== '.gitignore')
-                        <div class="col-sm-4 col-md-3 col-lg-2">
-                            <div class="image" title="{{ file }}">
-                                <div class="image-bg" style="background-image: url('/public/uploads/image/{{ file }}')"></div>
-                                <div class="image-overlay">
-                                    <div class="image-overlay-inner text-center">
-                                        <a href="public/uploads/image/{{ file }}"
-                                           class="btn btn-primary btn-zoom-image" data-fancybox data-options='{"buttons": ["close"]}'>
-                                            <i class="{{ ICONS.SEARCH }} fa-fw"></i>
-                                        </a>
-                                        <a href="public/uploads/image/{{ file }}"
-                                           class="btn btn-success btn-select-image">
-                                            <i class="{{ ICONS.SELECT_IMAGE }} fa-fw"></i>
-                                        </a>
-                                        <a href="public/uploads/image/{{ file }}"
-                                           class="btn btn-danger btn-delete-image">
-                                            <i class="{{ ICONS.REMOVE }} fa-fw"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+<div class="row" id="images-wrapper">
+    @each(file in files)
+        @if(file !== '.gitignore')
+            <div class="col-sm-4 col-md-4 col-lg-3">
+                <div class="card image">
+                    <div class="card-img-actions m-1">
+                        <div class="card-img embed-responsive embed-responsive-1by1">
+                            <span class="embed-responsive-item" style="background-image: url('/public/uploads/image/{{ file }}')"></span>
                         </div>
-                    @endif
-                @endeach
+                        <div class="card-img-actions-overlay card-img">
+                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round" data-popup="lightbox" rel="group">
+                                <i class="{{ ICONS.SEARCH }}"></i>
+                            </a>
+                
+                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 btn-select-image">
+                                <i class="{{ ICONS.SELECT_IMAGE }}"></i>
+                            </a>
+                
+                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 btn-delete-image">
+                                <i class="{{ ICONS.REMOVE }}"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-2" title="{{ file }}">
+                        <div class="font-weight-semibold text-truncate">{{ file }}</div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
+        @endif
+    @endeach
+</div>
+
 @endsection
 
 @section('style')
-    <link rel="stylesheet" href="/public/vendors/cropperjs/cropper.min.css" />
-    <link rel="stylesheet" href="/public/vendors/fancybox/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="/public/css/admin/image.css" />
+    <link rel="stylesheet" href="/public/admin/image.css" />
 @endsection
 
 @section('script')
-    <script src="/public/vendors/cropperjs/cropper.min.js"></script>
-    <script src="/public/vendors/fancybox/jquery.fancybox.min.js"></script>
-    <script src="/public/js/admin/image.js"></script>
+    <script src="/public/admin/image.js"></script>
 @endsection

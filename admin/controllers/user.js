@@ -50,10 +50,21 @@ module.exports = (app) => {
         const userId = req.params.userId;
         
         try {
-            const user = userId === 'new' ? null : req._user;
+            let user;
+            let title;
+            if (userId === 'new') {
+                user = null;
+                title = 'Add user';
+            } else if (req._user) {
+                user = req._user;
+                title = 'Edit user';
+            } else if (req.url === '/profile') {
+                user = req.user;
+                title = 'Edit profile';
+            }
             
             return res.render('user/details', {
-                title: userId === 'new' ? 'Add user' : 'Edit user',
+                title,
                 user
             });
         } catch (err) {
@@ -63,7 +74,7 @@ module.exports = (app) => {
     
     userController.saveUser = async (req, res, next) => {
         try {
-            await UserModel.save(req._user, req.body, populateUser);
+            await UserModel.save(req.url === '/profile' ? req.user : req._user, req.body, populateUser);
             
             return res.json({
                 status: true

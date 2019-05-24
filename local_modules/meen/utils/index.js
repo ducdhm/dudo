@@ -4,7 +4,7 @@ exports.getUploadFileName = (fileName) => {
     let extension = fileName.substring(lastDotIndex + 1, fileName.length);
     let timestamp = Date.now();
 
-    return `${name}-${timestamp}.${extension}`;
+    return `${name}___${timestamp}.${extension}`;
 };
 
 exports.ensureArray = (value) => {

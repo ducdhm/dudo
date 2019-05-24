@@ -24,6 +24,18 @@ module.exports = (app) => {
         userController.saveUser
     );
     
+    app.get(
+        '/profile',
+        auth, adminAuth,
+        userController.showUserDetails
+    );
+    
+    app.post(
+        '/profile',
+        auth, adminAuth,
+        userController.saveUser
+    );
+    
     app.post(
         '/user/:userId/delete',
         auth, adminAuth,

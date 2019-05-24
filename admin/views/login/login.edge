@@ -8,7 +8,8 @@
         <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
         <title>Login | {{ app.title }}</title>
         
-        <link rel="stylesheet" href="/public/admin/admin.css" />
+        <link rel="stylesheet" href="/public/admin/admin-libs.css" />
+        <link rel="stylesheet" href="/public/admin/login.css" />
     </head>
     
     <body class="login-page">
@@ -36,7 +37,7 @@
                                 </div>
                                 
                                 <div class="form-group form-group-feedback form-group-feedback-left">
-                                    <input type="password" class="form-control required" placeholder="Password" name="password" />
+                                    <input type="password" class="form-control required" placeholder="Password" name="password" autocomplete="" />
                                     <div class="form-control-feedback">
                                         <i class="{{ ICONS.PASSWORD }} text-muted"></i>
                                     </div>
@@ -56,6 +57,7 @@
             </div>
         </div>
         
-        <script type="text/javascript" src="/public/admin/admin.js"></script>
+        <script type="text/javascript" src="/public/admin/admin-libs.js"></script>
+        <script type="text/javascript" src="/public/admin/login.js"></script>
     </body>
 </html>

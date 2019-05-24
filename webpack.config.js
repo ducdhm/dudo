@@ -16,11 +16,14 @@ module.exports = {
     devtool: PROD ? 'source-map' : 'inline-source-map',
     
     entry: {
-        admin: './src/admin/index.js'
+        'admin-libs': './src/admin/index.js',
+        admin: './src/admin/admin.js',
+        login: './src/admin/login.js',
+        image: './src/admin/image.js'
     },
     output: {
         path: path.resolve(__dirname, 'public/'),
-        filename: '[name]/[name].js'
+        filename: 'admin/[name].js'
     },
     
     optimization: {
@@ -40,16 +43,22 @@ module.exports = {
     
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name]/[name].css'
-        }),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'windows.jQuery': 'jquery'
+            filename: 'admin/[name].css'
         })
     ],
     module: {
+        noParse: /switchery/,
         rules: [
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: 'jQuery'
+                }, {
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
+            },
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
@@ -107,9 +116,6 @@ module.exports = {
                 }]
             },
         ]
-    },
-    externals: {
-        // jquery: 'jQuery',
     },
     resolve: {
         modules: [path.resolve('./node_modules'), path.resolve('./src')],

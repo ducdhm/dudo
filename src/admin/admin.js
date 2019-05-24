@@ -1,9 +1,136 @@
 import './styles/admin.scss';
 
-import PerfectScrollbar from 'limitless-2.0.1/global_assets/js/plugins/ui/perfect_scrollbar.min';
-$('.sidebar-fixed .sidebar-content').length > 0 && new PerfectScrollbar('.sidebar-fixed .sidebar-content', {
-    wheelSpeed: 2,
-    wheelPropagation: true
+const _showErrorField = (form, field, message) => {
+    let formGroup = field.closest('.form-group');
+    
+    field.addClass('is-invalid');
+    formGroup.addClass('has-error');
+    
+    let errorMessageEl = formGroup.find('.nf-error-message');
+    if (errorMessageEl.length === 0) {
+        errorMessageEl = $(`<div class="nf-error-message text-danger form-text small" style="display: none;"></div>`);
+        field.after(errorMessageEl);
+    }
+    
+    errorMessageEl.html(message);
+    form.niceform('showElement', errorMessageEl);
+};
+
+const setCustomDefaults = () => {
+    swal.setDefaults({
+        buttonsStyling: false,
+        confirmButtonClass: 'btn btn-primary',
+        cancelButtonClass: 'btn btn-light'
+    });
+    
+    Msg.extraClass = 'alert-styled-left alert-dismissible';
+    Msg.iconEnabled = false;
+    
+    NiceForm.DEFAULTS.showError = (form, errorFields, options) => {
+        errorFields.forEach(function (field) {
+            _showErrorField(form, field, field.attr('data-error-message'));
+        });
+    };
+    
+    NiceForm.DEFAULTS.onAjaxError = (jqXhr, form, options) => {
+        if (jqXhr.responseJSON) {
+            Msg.error(jqXhr.responseJSON.message || options.locale.unknownErrorMessage);
+        
+            jqXhr.responseJSON.errorFields && jqXhr.responseJSON.errorFields.forEach(function (error) {
+                _showErrorField(form, form.find(`[name="${error.name}"]`), error.message);
+            });
+        } else {
+            Msg.error(options.locale.unknownErrorMessage);
+        }
+    };
+    
+    NiceForm.DEFAULTS.onAjaxSuccess = (resp, form, options) => {
+        Msg.success(resp.message || options.locale.successMessage);
+    };
+    
+};
+
+const initSidebar = () => {
+    $('.sidebar-fixed .sidebar-content').length > 0 && new PerfectScrollbar('.sidebar-fixed .sidebar-content', {
+        wheelSpeed: 2,
+        wheelPropagation: true
+    });
+};
+
+const initTableList = () => {
+    const table = $('.table-list');
+    if (table.length > 0) {
+        table.on('click', '.btn-delete', function (e) {
+            e.preventDefault();
+            
+            const a = $(this);
+            
+            swal({
+                title: 'Are you sure?',
+                text: 'Are you sure you want to delete this record?',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                showLoaderOnConfirm: true,
+                preConfirm: function () {
+                    return new Promise(function (resolve) {
+                        $.ajax({
+                            url: a.attr('href'),
+                            dataType: 'json',
+                            type: 'post',
+                            success: function () {
+                                resolve();
+                            },
+                            error: function () {
+                                Msg.error('Error!');
+                            }
+                        });
+                    });
+                },
+                allowOutsideClick: false
+            }).then(function (result) {
+                result.value && $('#table-list-content').reloadFragment({
+                    whenComplete: function () {
+                        Msg.success('Deleted!');
+                    }
+                });
+            });
+        });
+    }
+};
+
+const initFormDetails = function () {
+    const form = $('.form-details');
+    if (form.length > 0) {
+        form.niceform({
+            onSuccess: function () {
+                Msg.success('Saved!');
+            }
+        });
+        
+        const trigger = $('[data-trigger=form-submit]');
+        if (trigger.length > 0) {
+            trigger.on('click', function (e) {
+                e.preventDefault();
+                
+                form.trigger('submit');
+            })
+        }
+    }
+};
+
+const initToggler = () => {
+    $('.toggler').each(function () {
+        new Switchery(this);
+    });
+};
+
+$(() => {
+    setCustomDefaults();
+    initSidebar();
+    initTableList();
+    initFormDetails();
+    initToggler();
 });
 
 // (function ($, window) {
@@ -16,55 +143,6 @@ $('.sidebar-fixed .sidebar-content').length > 0 && new PerfectScrollbar('.sideba
 //             inputs.iCheck({
 //                 checkboxClass: 'icheckbox_flat-green',
 //                 radioClass: 'iradio_flat-green'
-//             });
-//         }
-//     };
-//
-//     var initFormDetails = function () {
-//         var form = $('.form-details');
-//         if (form.length > 0) {
-//             form.forms({
-//                 onSuccess: function () {
-//                     Msg.success('Saved!');
-//                 }
-//             });
-//
-//             var trigger = $('[data-trigger=form-submit]');
-//             if (trigger.length > 0) {
-//                 trigger.on('click', function (e) {
-//                     e.preventDefault();
-//
-//                     form.trigger('submit');
-//                 })
-//             }
-//         }
-//     };
-//
-//     var initTableList = function () {
-//         var table = $('.table-list');
-//         if (table.length > 0) {
-//             table.on('click', '.btn-delete', function (e) {
-//                 e.preventDefault();
-//
-//                 if (confirm('Are you sure you want to delete this record?')) {
-//                     var a = $(this);
-//
-//                     $.ajax({
-//                         url: a.attr('href'),
-//                         dataType: 'json',
-//                         type: 'post',
-//                         success: function () {
-//                             $('#box-list').reloadFragment({
-//                                 whenComplete: function () {
-//                                     Msg.success('Deleted!');
-//                                 }
-//                             });
-//                         },
-//                         error: function () {
-//                             Msg.error('Error!');
-//                         }
-//                     });
-//                 }
 //             });
 //         }
 //     };
@@ -139,34 +217,4 @@ $('.sidebar-fixed .sidebar-content').length > 0 && new PerfectScrollbar('.sideba
 //             });
 //         });
 //     };
-//
-//     var initToggler = function () {
-//         $('.toggler').each(function () {
-//             var toggler = $(this);
-//
-//             toggler.bootstrapToggle({
-//                 on: 'ON',
-//                 off: 'OFF',
-//                 onstyle: 'success',
-//                 offstyle: 'default'
-//             });
-//         });
-//     };
-//
-//     $(function () {
-//         if (typeof CKEDITOR !== 'undefined') {
-//             CKEDITOR.config.language = 'en';
-//         }
-//
-//         initICheck();
-//         initFormDetails();
-//         initTableList();
-//         initDatePicker();
-//         initDateRangePicker();
-//         initDateTimerPicker();
-//         initSelect2();
-//         initToggler();
-//     });
-//
-// })(jQuery, window);
 //

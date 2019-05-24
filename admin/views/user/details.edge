@@ -1,16 +1,18 @@
 @layout(layoutName)
 
 @section('content')
-<div class="box">
-    <div class="box-header with-border">
-        <small><span class="text-red">*</span> is required</small>
+
+<div class="card">
+    <div class="card-header bg-light header-elements-inline">
+        <h6 class="card-title small"><span class="text-danger">*</span> is required</h6>
     </div>
-    <div class="box-body">
-        <form class="form-horizontal form-details" method="post" action="" autocomplete="off">
+    
+    <div class="card-body">
+        <form class="form-horizontal form-details" method="post" action="">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="form-group">
-                        <label class="col-sm-12" for="username">Username <span class="text-red">*</span></label>
+                        <label class="col-sm-12" for="username">Username <span class="text-danger">*</span></label>
                         <div class="col-sm-12">
                             <input type="text" class="form-control required" name="username" id="username" value="{{ user.username || '' }}" {{ user ? 'readonly' : '' }} />
                         </div>
@@ -24,29 +26,28 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="form-group">
                         <label class="col-sm-12" for="password">New password <small class="text-muted">{{ user ? '(enter if change)' : '' }}</small></label>
                         <div class="col-sm-12">
-                            <input type="password" class="form-control password {{ user ? '' : 'required' }}" name="password" id="password" value="" />
+                            <input type="password" class="form-control password {{ user ? '' : 'required' }}" name="password" id="password" value="" autocomplete="" />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-12" for="confirm-password">Confirm password</label>
                         <div class="col-sm-12">
-                            <input type="password" class="form-control confirm-password {{ user ? '' : 'required' }}" id="confirm-password" value="" />
+                            <input type="password" class="form-control confirm-password {{ user ? '' : 'required' }}" id="confirm-password" value="" autocomplete="" />
                         </div>
                     </div>
                 </div>
             </div>
-            <hr />
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <a href="/user" class="btn btn-default btn-sm"><i class="{{ ICONS.BACK }}"></i> Back</a>
-                    <button type="submit" class="btn btn-danger btn-sm"><i class="{{ ICONS.SAVE }}"></i> Lưu</button>
-                </div>
-            </div>
         </form>
     </div>
+    
+    <div class="card-footer">
+        <a href="/user" class="btn btn-light btn-sm"><i class="{{ ICONS.BACK }}"></i> Back</a>
+        <button type="button" data-trigger="form-submit" class="btn btn-danger btn-sm"><i class="{{ ICONS.SAVE }}"></i> Save</button>
+    </div>
 </div>
+
 @endsection

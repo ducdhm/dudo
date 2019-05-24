@@ -1,40 +1,17 @@
-(function ($) {
-    function dataURItoBlob(dataURI) {
-        let byteString = atob(dataURI.split(',')[1]);
-        let ab = new ArrayBuffer(byteString.length);
-        let ia = new Uint8Array(ab);
-        for (let i = 0; i < byteString.length; i++) {
-            ia[i] = byteString.charCodeAt(i);
-        }
-        return new Blob([ab], {type: 'image/jpeg'});
+import './styles/image.scss';
+
+const dataURItoBlob = (dataURI) => {
+    let byteString = atob(dataURI.split(',')[1]);
+    let ab = new ArrayBuffer(byteString.length);
+    let ia = new Uint8Array(ab);
+    for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
     }
-    
-    let modalTemplate = `
-        <div class="modal">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close crop-cancel" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Crop Image</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="image-container"></div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="pull-left">
-                            <span data-width></span> x <span data-height></span>
-                        </div>
-                        <button type="button" class="btn btn-default crop-cancel" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary crop-upload">Crop & Upload</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-    
-    Dropzone.autoDiscover = false;
-    
+    return new Blob([ab], {type: 'image/jpeg'});
+};
+
+Dropzone.autoDiscover = false;
+const initDropzone = () => {
     let myDropzone = new Dropzone('#image-upload-widget', {
         paramName: 'file',
         maxFilesize: 3,
@@ -53,7 +30,29 @@
         let cachedFilename = file.name;
         myDropzone.removeFile(file);
         
-        let $cropperModal = $(modalTemplate);
+        let $cropperModal = $(`
+            <div class="modal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close crop-cancel" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">Crop Image</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="image-container"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="pull-left">
+                                <span data-width></span> x <span data-height></span>
+                            </div>
+                            <button type="button" class="btn btn-default crop-cancel" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary crop-upload">Crop & Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `);
         let $uploadCrop = $cropperModal.find('.crop-upload');
         let $cancelCrop = $cropperModal.find('.crop-cancel');
         
@@ -118,9 +117,12 @@
         this.removeFile(file);
         $('#images-wrapper').reloadFragment();
     });
+};
+
+const initImageActions = () => {
+    const wrapper =  $('#images-wrapper');
     
-    // trigger select image
-    $('#images-wrapper').on('click', '.btn-select-image', function (e) {
+    wrapper.on('click', '.btn-select-image', function (e) {
         e.preventDefault();
         
         let btn = $(this);
@@ -131,8 +133,7 @@
         }
     });
     
-    // trigger delete image
-    $('#images-wrapper').on('click', '.btn-delete-image', function (e) {
+    wrapper.on('click', '.btn-delete-image', function (e) {
         e.preventDefault();
         
         let $image = $(this).closest('.image');
@@ -148,10 +149,14 @@
             }).done(function (data) {
                 if (data && data.status) {
                     Msg.success('Deleted!');
-                    $('#images-wrapper').reloadFragment();
+                    wrapper.reloadFragment();
                 }
             })
         }
     });
-    
-})(jQuery);
+};
+
+$(() => {
+    initDropzone();
+    initImageActions();
+});
