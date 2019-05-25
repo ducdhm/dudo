@@ -30,29 +30,7 @@ const initDropzone = () => {
         let cachedFilename = file.name;
         myDropzone.removeFile(file);
         
-        let $cropperModal = $(`
-            <div class="modal">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close crop-cancel" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">Crop Image</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="image-container"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <div class="pull-left">
-                                <span data-width></span> x <span data-height></span>
-                            </div>
-                            <button type="button" class="btn btn-default crop-cancel" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary crop-upload">Crop & Upload</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `);
+        let $cropperModal = $('#modal-crop');
         let $uploadCrop = $cropperModal.find('.crop-upload');
         let $cancelCrop = $cropperModal.find('.crop-cancel');
         
@@ -62,9 +40,8 @@ const initDropzone = () => {
         });
         
         $cropperModal.on('show.bs.modal', function (e) {
-            console.log('Fired');
-            if ($(".modal-backdrop").length > 1) {
-                $(".modal-backdrop").not(':first').remove();
+            if ($('.modal-backdrop').length > 1) {
+                $('.modal-backdrop').not(':first').remove();
             }
         }).modal('show');
         
@@ -115,12 +92,17 @@ const initDropzone = () => {
     
     myDropzone.on('success', function (file) {
         this.removeFile(file);
-        $('#images-wrapper').reloadFragment();
+        
+        $('#images-wrapper').reloadFragment({
+            whenComplete: () => {
+                initFancyBox();
+            }
+        });
     });
 };
 
 const initImageActions = () => {
-    const wrapper =  $('#images-wrapper');
+    const wrapper = $('#images-wrapper');
     
     wrapper.on('click', '.btn-select-image', function (e) {
         e.preventDefault();
@@ -136,27 +118,50 @@ const initImageActions = () => {
     wrapper.on('click', '.btn-delete-image', function (e) {
         e.preventDefault();
         
-        let $image = $(this).closest('.image');
-        
-        if (confirm('Are you sure you want to delete this image?')) {
-            $.ajax({
-                url: '/image/delete',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    file: $image.attr('title')
-                }
-            }).done(function (data) {
-                if (data && data.status) {
+        let a = $(this);
+    
+        swal({
+            title: 'Are you sure?',
+            text: 'Are you sure you want to delete this image?',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, delete it!',
+            showLoaderOnConfirm: true,
+            preConfirm: function () {
+                return new Promise(function (resolve) {
+                    $.ajax({
+                        url: '/image/delete',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            file: a.attr('data-image')
+                        }
+                    }).done(function (data) {
+                        if (data && data.status) {
+                            resolve();
+                        }
+                    });
+                });
+            },
+            allowOutsideClick: false
+        }).then(function (result) {
+            result.value && wrapper.reloadFragment({
+                whenComplete: () => {
                     Msg.success('Deleted!');
-                    wrapper.reloadFragment();
                 }
-            })
-        }
+            });
+        });
+    });
+};
+
+const initFancyBox = () => {
+    $('.btn-zoom-image').fancybox({
+        padding: 3
     });
 };
 
 $(() => {
     initDropzone();
     initImageActions();
+    initFancyBox();
 });

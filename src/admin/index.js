@@ -32,6 +32,7 @@ import 'vendors/limitless-2.0.1/global_assets/js/plugins/forms/styling/uniform.m
 import 'vendors/limitless-2.0.1/layout_2/default/assets/js/app';
 import 'vendors/jquery.reload-fragment-1.0.2/jquery.reload-fragment-1.0.2'
 import 'vendors/limitless-2.0.1/global_assets/js/plugins/media/cropper.min';
+import 'vendors/limitless-2.0.1/global_assets/js/plugins/media/fancybox.min';
 
 import moment from 'moment';
 window.moment = moment;

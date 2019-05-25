@@ -38,7 +38,7 @@ module.exports = (app) => {
     imageController.imageDelete = (req, res, next) => {
         fs.unlink(config.uploadPath.image + req.body.file, (error) => {
             if (error) {
-                return errorHandlers.jsonError(error, next);
+                return errorHandlers.jsonError(error, res);
             }
             
             res.json({

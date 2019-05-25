@@ -18,6 +18,7 @@ module.exports = {
     ERROR: 'fa fa-warning',
     SEARCH: 'fa fa-search-plus',
     SELECT_IMAGE: 'fa fa-check',
+    CROP_IMAGE: 'icon-crop2',
     TAG: 'fa fa-tags',
     NLP: 'icon-yin-yang'
 };

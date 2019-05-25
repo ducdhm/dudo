@@ -19,7 +19,7 @@
                             <span class="embed-responsive-item" style="background-image: url('/public/uploads/image/{{ file }}')"></span>
                         </div>
                         <div class="card-img-actions-overlay card-img">
-                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round" data-popup="lightbox" rel="group">
+                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round btn-zoom-image" rel="group">
                                 <i class="{{ ICONS.SEARCH }}"></i>
                             </a>
                 
@@ -27,7 +27,7 @@
                                 <i class="{{ ICONS.SELECT_IMAGE }}"></i>
                             </a>
                 
-                            <a href="/public/uploads/image/{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 btn-delete-image">
+                            <a href="/public/uploads/image/{{ file }}" data-image="{{ file }}" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 btn-delete-image">
                                 <i class="{{ ICONS.REMOVE }}"></i>
                             </a>
                         </div>
@@ -39,6 +39,29 @@
             </div>
         @endif
     @endeach
+</div>
+
+<div id="modal-crop" class="modal fade" data-backdrop="false" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="{{ ICONS.CROP_IMAGE }} mr-2"></i> Crop Image</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="image-container"></div>
+            </div>
+            
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <span data-width></span> x <span data-height></span>
+                </div>
+                <button type="button" class="btn btn-light btn-sm crop-cancel" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary crop-upload">Crop & Upload</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection
