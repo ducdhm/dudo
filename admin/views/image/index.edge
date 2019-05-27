@@ -41,8 +41,8 @@
     @endeach
 </div>
 
-<div id="modal-crop" class="modal fade" data-backdrop="false" data-keyboard="false" tabindex="-1">
-    <div class="modal-dialog">
+<div id="modal-crop" class="modal" data-backdrop="false" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-full">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title"><i class="{{ ICONS.CROP_IMAGE }} mr-2"></i> Crop Image</h5>
@@ -54,10 +54,10 @@
             </div>
             
             <div class="modal-footer">
-                <div class="pull-left">
+                <div class="mr-auto">
                     <span data-width></span> x <span data-height></span>
                 </div>
-                <button type="button" class="btn btn-light btn-sm crop-cancel" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-link crop-cancel" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary crop-upload">Crop & Upload</button>
             </div>
         </div>

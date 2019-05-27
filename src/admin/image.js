@@ -62,8 +62,8 @@ const initDropzone = () => {
                     let $cropModal = $(this).parents('.modal');
                     let $cropBoxWidth = $cropModal.find('span[data-width]');
                     let $cropBoxHeight = $cropModal.find('span[data-height]');
-                    let cbWidth = Math.round(event.detail.width);
-                    let cbHeight = Math.round(event.detail.height);
+                    let cbWidth = Math.round(event.width);
+                    let cbHeight = Math.round(event.height);
                     $cropBoxWidth.attr('data-width', cbWidth).text('Width: ' + cbWidth);
                     $cropBoxHeight.attr('data-width', cbHeight).text('Height: ' + cbHeight);
                 }
