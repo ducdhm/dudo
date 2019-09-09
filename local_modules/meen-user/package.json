@@ -1,0 +1,11 @@
+{
+    "name": "meen-user",
+    "version": "0.0.0",
+    "author": "ducdhm@gmail.com",
+    "license": "MIT",
+    "dependencies": {
+        "meen": "0.0.0",
+        "mongoose": "^5.2.13",
+        "mongoose-unique-validator": "^2.0.2"
+    }
+}

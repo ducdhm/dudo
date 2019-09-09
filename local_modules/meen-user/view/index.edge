@@ -1,0 +1,55 @@
+@layout(layoutName)
+
+@section('content')
+
+<div class="card">
+    <div class="card-header header-elements-inline">
+        <a href="/user/new" class="btn btn-sm btn-light"><i class="{{ ICONS.ADD }}"></i> Add user</a>
+    </div>
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-list">
+            <colgroup>
+                <col style="width: 40px" />
+                <col />
+                <col style="width: 160px" />
+                <col style="width: 130px" />
+            </colgroup>
+            <tbody id="table-list-content">
+                <tr>
+                    <th>#</th>
+                    <th>Username</th>
+                    <th>Is admin</th>
+                    <th></th>
+                </tr>
+                @if( users.length > 0 )
+                    @each( user in users )
+                    <tr data-id="{{ user.id }}">
+                        <td>{{ ($loop.index + 1) }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>
+                            @if( user.admin )
+                            <span class="text-success">
+                                <i class="{{ ICONS.CHECKED }}"></i>
+                            </span>
+                            @endif
+                        </td>
+                        <td class="text-right">
+                            <div class="list-icons">
+                                <a href="{{ user.url }}" class="list-icons-item" title="Edit"><i class="{{ ICONS.EDIT }}"></i></a>
+                                <a href="{{ user.url }}/delete" class="list-icons-item btn-delete" title="Delete"><i class="{{ ICONS.REMOVE }}"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    @endeach
+                @else
+                <tr>
+                    <td colspan="99" class="text-center">No record</td>
+                </tr>
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@endsection
