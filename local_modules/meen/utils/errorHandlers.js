@@ -1,9 +1,9 @@
 const logger = require('./logger')('utils/errorHandlers');
 
 const errorHandlers = {
-    newError: (code, msg) => {
+    newError: (code = 500, msg) => {
         let error = new Error(msg);
-        error.status = code;
+        error.code = code;
         
         return error;
     },
@@ -13,6 +13,7 @@ const errorHandlers = {
         
         return res.json({
             status: false,
+            code: error.code,
             message: error.message,
             error: error
         });

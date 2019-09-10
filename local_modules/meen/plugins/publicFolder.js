@@ -1,12 +1,11 @@
 // Static folder
 // --------------------------------
 const express = require('express');
-const resolvePath = require('../utils/resolvePath');
-module.exports = (app) => {
+module.exports = (app, config) => {
     app.use(
         '/public',
         express.static(
-            resolvePath('public')
+            config.publicFolder.path
         )
     );
 };

@@ -1,28 +1,20 @@
 const express = require('express');
 const deepExtend = require('deep-extend');
 const logger = require('../utils/logger');
-const resolvePath = require('../utils/resolvePath');
-const env = require('../utils/env');
-let envConfig;
-try {
-    envConfig = require(resolvePath('config', env.name));
-} catch (e) {
-    console.log('ERROR when getting environment config: \n', e);
-}
+const defaultConfig = require('./defaultConfig');
 
-module.exports = (appName, config = {}, plugins) => {
+module.exports = (appName, config, plugins) => {
     if (Array.isArray(config)) {
         plugins = config;
-        config = {};
     }
     
     const app = express();
     const log = logger('composeApp', 'meen-core');
     app.id = appName;
-    app.config = deepExtend(envConfig, config);
+    app.config = deepExtend(defaultConfig, config);
     
     app.logger = (category) => {
-        return logger(category, appName);
+        return logger(category, appName, app.config.logFile);
     };
     
     app.run = () => {
@@ -36,9 +28,13 @@ module.exports = (appName, config = {}, plugins) => {
     
     plugins.forEach(plugin => {
         if (typeof plugin === 'function') {
-            plugin.call(null, app);
+            plugin.call(null, app, app.config);
         }
     });
+    
+    if (config.handleError) {
+        require('./handleError')(app, app.config);
+    }
     
     return app;
 };

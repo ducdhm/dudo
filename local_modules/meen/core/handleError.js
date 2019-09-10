@@ -1,45 +1,37 @@
-const env = require('../utils/env');
-const errorHandlers = require('../utils/errorHandlers');
+const {errorHandlers} = require('../utils/');
 
-module.exports = (app) => {
+module.exports = (app, config) => {
     const log = app.logger('ERROR');
-    const {config} = app;
     
     app.use((req, res, next) => {
         next(errorHandlers.error404());
     });
     
     app.use((error, req, res, next) => {
-        error.status = error.status || 500;
+        error.code = error.code || 500;
         
         // add this line to include winston logging
-        log.error(`${error.status} - ${error.message} - ${req.originalUrl} - ${req.method} - ${req.ip} \n${error.stack}`);
+        log.error(`${error.code} - ${error.message} - ${req.originalUrl} - ${req.method} - ${req.ip} \n${error.stack}`);
         
         let debugMode = false;
-        
         if (req.query.hasOwnProperty('debug')) {
             debugMode = true;
         }
-        
-        if (env.isDev) {
+        if (config.handleError.debug) {
             debugMode = true;
         }
         
-        if (!debugMode && error.status === 500) {
+        if (!debugMode && error.code === 500) {
             error.message = 'Server Internal Error';
         }
         
         if (config.handleError && config.handleError.isJson) {
-            return res.status(error.status).json({
-                status: false,
-                code: error.status,
-                message: error.message
-            });
+            return errorHandlers.jsonError(error, res);
         } else {
             return res.render('error/error', {
                 error: error,
                 debugMode: debugMode,
-                title: error.status,
+                title: error.code,
                 bodyClass: 'page-error',
                 app: config.app
             });

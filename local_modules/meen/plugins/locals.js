@@ -2,8 +2,7 @@ const edge = require('edge.js');
 const utilMenu = require('../utils/menu');
 const resolvePath = require('../utils/resolvePath');
 
-module.exports = (app) => {
-    const {config} = app;
+module.exports = (app, config) => {
     const log = app.logger('locals');
     
     app.use((req, res, next) => {

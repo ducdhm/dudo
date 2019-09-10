@@ -1,22 +1,46 @@
 const resolvePath = require('../utils/resolvePath');
 const {loggers, format, transports} = require('winston');
 const {combine, timestamp, printf, splat, label} = format;
-const config = require('../utils/config');
+const colors = require('colors/safe');
 require('winston-daily-rotate-file');
 
 const myFormat = printf(info => {
+    let timestamp = colors.yellow(info.timestamp);
     let level = info.level.toUpperCase();
+    switch (level.toString()) {
+        case 'DEBUG':
+            level = colors.cyan(level);
+            break;
+            
+        case 'INFO':
+            level = colors.blue(level);
+            break;
+            
+        case 'WARN':
+            level = colors.yellow(level);
+            break;
+            
+        case 'ERROR':
+            level = colors.red(level);
+            break;
+            
+        default:
+            // Do nothing
+    }
     
-    return `[${info.timestamp}]  [${level}]  [${info.label}]  ${info.message}`;
+    let label = info.label;
+    let message = info.message;
+    
+    return `[${timestamp}]  [${level}]  [${label}]  ${message}`;
 });
 
-function getLogger(category, appName = 'application') {
+function getLogger(category, appName = 'application', logFile = false) {
     let appTransports = [
         new transports.Console({
             level: 'debug'
         })
     ];
-    if (config.logFile) {
+    if (logFile) {
         appTransports.push(
             new transports.DailyRotateFile({
                 level: 'debug',
@@ -34,7 +58,7 @@ function getLogger(category, appName = 'application') {
             timestamp(),
             label({label: category}),
             splat(),
-            myFormat
+            myFormat,
         ),
         transports: appTransports,
         exitOnError: false
@@ -42,7 +66,7 @@ function getLogger(category, appName = 'application') {
     
     const logger = loggers.get(category);
     logger.stream = {
-        write: (message, encoding) => {
+        write: (message) => {
             logger.info(message);
         }
     };

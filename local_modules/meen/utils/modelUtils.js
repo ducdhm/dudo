@@ -10,14 +10,16 @@ const makeQueryBuilder = (model, options = {}, findOne) => {
         populate,
         sort,
         page,
-        select
+        select,
+        itemPerPage
     } = options;
     let queryBuilder = model[findOne ? 'findOne' : 'find'](query);
+    itemPerPage = itemPerPage || 10;
 
     populate && queryBuilder.populate(populate);
     sort && queryBuilder.sort(sort);
     select && queryBuilder.select(select);
-    page && queryBuilder.skip((config.itemPerPage * page) - config.itemPerPage).limit(config.itemPerPage);
+    page && queryBuilder.skip((itemPerPage * page) - itemPerPage).limit(itemPerPage);
 
     return queryBuilder;
 };

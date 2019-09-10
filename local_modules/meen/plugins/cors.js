@@ -1,8 +1,8 @@
 // CORS setup
 // --------------------------------
 const cors = require('cors');
-module.exports = (app) => {
+module.exports = (app, config) => {
     app.use(
-        cors(app.config.cors || '*')
+        cors(config.cors)
     );
 };
