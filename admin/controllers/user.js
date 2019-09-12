@@ -1,4 +1,4 @@
-const errorHandlers = require('meen/utils/errorHandlers');
+const {errorHandlers} = require('meen-core').utils;
 const UserModel = require('models/User');
 const bcrypt = require('bcryptjs');
 

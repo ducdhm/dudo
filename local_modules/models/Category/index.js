@@ -24,4 +24,4 @@ categorySchema
 // Export
 // --------------------------------
 const CategoryModel = mongoose.model('Category', categorySchema);
-module.exports = require('meen/utils/modelUtils')(CategoryModel);
+module.exports = require('meen-core').utils.modelUtil(CategoryModel);

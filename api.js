@@ -1,24 +1,17 @@
-const {
-    composeApp,
-    setupApi,
-    handleError
-} = require('meen');
-const app = composeApp('api',
+const meen = require('meen-core');
+
+meen.composeApp(
+    'api',
     {
+        preset: 'api',
         handleError: {
+            enabled: true,
             isJson: true
         }
     },
     [
-        setupApi,
         require('./api/routes/ping'),
         require('./api/routes/user'),
         require('./api/routes/todo'),
-        handleError
     ]
-);
-
-
-// Run app
-// --------------------------------
-app.run();
+).run();

@@ -1,4 +1,4 @@
-const errorHandlers = require('meen/utils/errorHandlers');
+const {errorHandlers} = require('meen-core').utils;
 const FeatureModel = require('models/Feature');
 
 module.exports = (app) => {

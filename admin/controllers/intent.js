@@ -1,4 +1,4 @@
-const errorHandlers = require('meen/utils/errorHandlers');
+const {errorHandlers} = require('meen-core').utils;
 const IntentModel = require('models/Intent');
 
 module.exports = (app) => {

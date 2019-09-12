@@ -1,10 +1,9 @@
-const auth = require('../auth/api');
 const UserModel = require('models/User');
-const config = require('meen/utils/config');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-module.exports = app => {
+module.exports = (app, config) => {
+    const auth = require('../auth/api')(app);
     const logger = app.logger('routes/user');
     
     app.get('/api/users/', auth, async (req, res, next) => {

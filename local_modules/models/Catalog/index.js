@@ -20,4 +20,4 @@ catalogSchema
 // Export
 // --------------------------------
 const CatalogModel = mongoose.model('Catalog', catalogSchema);
-module.exports = require('meen/utils/modelUtils')(CatalogModel);
+module.exports = require('meen-core').utils.modelUtil(CatalogModel);

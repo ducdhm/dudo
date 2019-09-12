@@ -1,13 +1,5 @@
-const {
-    composeApp,
-    mongoose
-} = require('meen');
-const app = composeApp('setup',
-    [
-        mongoose
-    ]
-);
-
+const meen = require('meen-core');
+const app = meen.composeApp('setup', [meen.mongoose]);
 const logger = app.logger('setup');
 const UserModel = require('models/User');
 const bcrypt = require('bcryptjs');
@@ -17,7 +9,9 @@ const bcrypt = require('bcryptjs');
         let admin = await UserModel.findOne({
             query: {username: 'god'}
         });
-        
+
+        logger.info(admin);
+
         admin = admin || UserModel.create();
         await UserModel.save(admin, {}, populateAdmin);
         logger.info('Setup admin is done!');
@@ -33,6 +27,6 @@ function populateAdmin(admin) {
     admin.god = true;
     admin.username = 'god';
     admin.password = bcrypt.hashSync('Meen@2018');
-    
+
     return admin;
 }

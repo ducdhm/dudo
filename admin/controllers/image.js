@@ -1,7 +1,6 @@
 const fs = require('fs');
-const utils = require('meen/utils');
 const multer = require('multer');
-const errorHandlers = require('meen/utils/errorHandlers');
+const {errorHandlers, getUploadFileName} = require('meen-core').utils;
 
 module.exports = (app) => {
     const config = app.config;
@@ -10,7 +9,7 @@ module.exports = (app) => {
             next(null, config.uploadPath.image);
         },
         filename: (req, file, next) => {
-            next(null, utils.getUploadFileName(file.originalname));
+            next(null, getUploadFileName(file.originalname));
         }
     });
     const upload = multer({storage});

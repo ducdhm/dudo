@@ -1,7 +1,8 @@
-const auth = require('../auth/api');
 const TodoModel = require('models/Todo');
 
-module.exports = app => {
+module.exports = (app) => {
+    const auth = require('../auth/api')(app);
+
     app.get('/api/todo/', auth, async (req, res, next) => {
         try {
             const todos = await TodoModel.find();

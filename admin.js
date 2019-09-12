@@ -1,23 +1,19 @@
-const {
-    composeApp,
-    setupWebsite,
-    locals,
-    handleError
-} = require('meen');
-const app = composeApp('admin',
+const meen = require('meen-core');
+
+meen.composeApp(
+    'admin',
+    {
+        preset: 'website',
+        handleError: {
+            enabled: true
+        }
+    },
     [
-        setupWebsite,
         require('./admin/auth/local'),
-        locals,
+        require('./admin/views/helper'),
         require('./admin/routes/login'),
         require('./admin/routes/dashboard'),
         require('./admin/routes/user'),
         require('./admin/routes/image'),
-        handleError
     ]
-);
-
-
-// Run app
-// --------------------------------
-app.run();
+).run();

@@ -42,4 +42,4 @@ userSchema.plugin(uniqueValidator);
 // Export
 // --------------------------------
 const UserModel = mongoose.model('User', userSchema);
-module.exports = require('meen/utils/modelUtils')(UserModel);
+module.exports = require('meen-core').utils.modelUtil(UserModel);
