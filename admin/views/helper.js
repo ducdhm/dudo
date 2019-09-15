@@ -1,5 +1,5 @@
 const edge = require('edge.js');
-const {menuUtil, resolvePath, formatter} = require('meen-core').utils;
+const {buildMenu, resolvePath, formatter} = require('meen-core').utils;
 
 module.exports = (app, config) => {
     app.use((req, res, next) => {
@@ -19,7 +19,7 @@ module.exports = (app, config) => {
             edge.global('ICONS', configIcons);
     
             const configMenus = require(resolvePath('config', 'menu'));
-            edge.global('menus', menuUtil(configMenus, req));
+            edge.global('menus', buildMenu(configMenus, req));
         }
         
         return next();

@@ -24,4 +24,4 @@ featureSchema
 // Export
 // --------------------------------
 const FeatureModel = mongoose.model('Feature', featureSchema);
-module.exports = require('meen-core').utils.modelUtil(FeatureModel);
+module.exports = require('meen-core').utils.composeModel(FeatureModel);

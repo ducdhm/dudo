@@ -24,4 +24,4 @@ todoSchema.set('toJSON', {
 // Export
 // --------------------------------
 const TodoModel = mongoose.model('Todo', todoSchema);
-module.exports = require('meen-core').utils.modelUtil(TodoModel);
+module.exports = require('meen-core').utils.composeModel(TodoModel);

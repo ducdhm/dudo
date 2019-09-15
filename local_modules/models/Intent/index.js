@@ -32,4 +32,4 @@ intentSchema
 // Export
 // --------------------------------
 const IntentModel = mongoose.model('Intent', intentSchema);
-module.exports = require('meen-core').utils.modelUtil(IntentModel);
+module.exports = require('meen-core').utils.composeModel(IntentModel);

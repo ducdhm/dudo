@@ -25,7 +25,7 @@ const bcrypt = require('bcryptjs');
 function populateAdmin(admin) {
     admin.admin = true;
     admin.god = true;
-    admin.username = 'god';
+    admin.username = 'meen';
     admin.password = bcrypt.hashSync('Meen@2018');
 
     return admin;
