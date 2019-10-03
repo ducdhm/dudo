@@ -6,7 +6,6 @@ module.exports = {
         version: packageJson.version,
     },
     mongoose: {
-        debug: true,
         url: `mongodb://localhost/${packageJson.name}`
     },
     uploadPath: {
@@ -16,6 +15,14 @@ module.exports = {
         secret: packageJson.name,
         expires: 60 * 60 * 24
     },
+    handleError: {
+        enabled: true,
+    },
     adminPort: 5000,
-    apiPort: 9000
+    apiPort: 9000,
+    session: {
+        secret: packageJson.description,
+    }
 };
+
+

@@ -4,9 +4,6 @@ meen.composeApp(
     'admin',
     {
         preset: 'website',
-        handleError: {
-            enabled: true
-        }
     },
     [
         require('./admin/auth/local'),

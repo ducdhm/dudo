@@ -1,23 +1,13 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { composeModel } = require('meen-core');
 
-// Schema
-// --------------------------------
-const catalogSchema = new Schema({
+module.exports = composeModel('Catalog', {
     name: {
         type: String
     }
-}, { timestamps: true });
-
-// Virtual
-// --------------------------------
-catalogSchema
-    .virtual('url')
-    .get(function () {
-        return '/catalog/' + this._id;
-    });
-
-// Export
-// --------------------------------
-const CatalogModel = mongoose.model('Catalog', catalogSchema);
-module.exports = require('meen-core').utils.modelUtil(CatalogModel);
+}, {
+    virtual: {
+        url: function () {
+            return `/catalog/${this._id}`;
+        }
+    }
+});

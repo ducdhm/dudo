@@ -1,27 +1,19 @@
+const { composeModel } = require('meen-core');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Schema
-// --------------------------------
-const categorySchema = new Schema({
+module.exports = composeModel('Category', {
     catalog: {
-        type: Schema.Types.ObjectId, 
+        type: Schema.Types.ObjectId,
         ref: 'Catalog'
     },
     name: {
         type: String
     }
-}, { timestamps: true });
-
-// Virtual
-// --------------------------------
-categorySchema
-    .virtual('url')
-    .get(function () {
-        return '/category/' + this._id;
-    });
-
-// Export
-// --------------------------------
-const CategoryModel = mongoose.model('Category', categorySchema);
-module.exports = require('meen-core').utils.modelUtil(CategoryModel);
+}, {
+    virtual: {
+        url: function () {
+            return `/category/${this._id}`;
+        }
+    }
+});

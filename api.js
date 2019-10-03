@@ -1,11 +1,10 @@
-const meen = require('meen-core');
+const { composeApp } = require('meen-core');
 
-meen.composeApp(
+composeApp(
     'api',
     {
         preset: 'api',
         handleError: {
-            enabled: true,
             isJson: true
         }
     },

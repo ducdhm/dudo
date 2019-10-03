@@ -1,92 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="shortcut icon" href="/public/img/favicon.ico" type="image/x-icon" />
         <title>Error {{ title }} | {{ app.title }}</title>
-        
+
         <link rel="stylesheet" href="/public/admin/admin-libs.css" />
     </head>
-    
+
     <body class="navbar-top error-page">
-        
+
         <!-- Page content -->
         <div class="page-content">
-            
+
             <!-- Main content -->
             <div class="content-wrapper">
-                
+
                 <!-- Content area -->
                 <div class="content d-flex justify-content-center align-items-center">
                     <div class="flex-fill">
-        
                         <!-- Error title -->
                         <div class="text-center mb-3">
-                            <h1 class="error-title">{{ error.status }}</h1>
+                            <h1 class="error-title">{{ error.code }}</h1>
                             <h5>Oops, an error has occurred. {{ error.message }}</h5>
                         </div>
                         <!-- /error title -->
-        
+
                         <!-- Error content -->
                         <div class="row">
                             <div class="col-xl-4 offset-xl-4 col-md-8 offset-md-2">
-                
+
                                 <!-- Buttons -->
                                 <div class="row">
                                     @if( debugMode )
                                     <div class="col-sm-6">
                                         <a href="/" class="btn btn-primary btn-block"><i class="{{ ICONS.DASHBOARD }} mr-2"></i> Dashboard</a>
                                     </div>
-                    
+
                                     <div class="col-sm-6">
-                                        <a data-target="#modal-error-stack" data-toggle="modal" class="btn btn-light btn-block mt-3 mt-sm-0"><i class="{{ ICONS.SEARCH }} mr-2"></i> Show error stack</a>
+                                        <a data-target="#modal-error-stack" data-toggle="modal" class="btn btn-light btn-block mt-3 mt-sm-0">
+                                            <i class="{{ ICONS.SEARCH }} mr-2"></i> Show error stack
+                                        </a>
                                     </div>
                                     @else
-                                        <div class="col-sm-6 offset-sm-3">
-                                            <a href="/" class="btn btn-primary btn-block"><i class="{{ ICONS.DASHBOARD }} mr-2"></i> Dashboard</a>
-                                        </div>
+                                    <div class="col-sm-6 offset-sm-3">
+                                        <a href="/" class="btn btn-primary btn-block"><i class="{{ ICONS.DASHBOARD }} mr-2"></i> Dashboard</a>
+                                    </div>
                                     @endif
                                 </div>
                                 <!-- /buttons -->
-            
+
                             </div>
                         </div>
                         <!-- /error wrapper -->
-    
+
                     </div>
                 </div>
                 <!-- /content area -->
             </div>
             <!-- /main content -->
-    
-    
+
+
             @if( debugMode )
-                <div id="modal-error-stack" class="modal fade" tabindex="-1">
-                    <div class="modal-dialog modal-full">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title"><i class="{{ ICONS.ERROR }} mr-2"></i> Error stack</h5>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                    
-                            <div class="modal-body">
-                                <pre>{{ error.stack }}</pre>
-                            </div>
-                    
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary btn-sm crop-cancel" data-dismiss="modal">Close</button>
-                            </div>
+            <div id="modal-error-stack" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-full">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title"><i class="{{ ICONS.ERROR }} mr-2"></i> Error stack</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <pre>{{ error.stack }}</pre>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-sm crop-cancel" data-dismiss="modal">Close</button>
                         </div>
                     </div>
                 </div>
+            </div>
             @endif
-        
+
         </div>
         <!-- /page content -->
-        
+
         <script src="/public/admin/admin-libs.js"></script>
     </body>
 </html>

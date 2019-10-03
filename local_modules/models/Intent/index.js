@@ -1,9 +1,8 @@
+const { composeModel } = require('meen-core');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Schema
-// --------------------------------
-const intentSchema = new Schema({
+module.exports = composeModel('Intent', {
     text: {
         type: String
     },
@@ -19,17 +18,10 @@ const intentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Feature'
     }]
-}, { timestamps: true });
-
-// Virtual
-// --------------------------------
-intentSchema
-    .virtual('url')
-    .get(function () {
-        return '/intent/' + this._id;
-    });
-
-// Export
-// --------------------------------
-const IntentModel = mongoose.model('Intent', intentSchema);
-module.exports = require('meen-core').utils.modelUtil(IntentModel);
+}, {
+    virtual: {
+        url: function () {
+            return `/intent/${this._id}`;
+        }
+    }
+});

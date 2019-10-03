@@ -1,27 +1,19 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { composeModel } = require('meen-core');
 
-// Schema
-// --------------------------------
-const todoSchema = new Schema({
+module.exports = composeModel('Todo', {
     text: String,
     completed: {
         type: Boolean,
         default: false
     }
-}, {timestamps: true});
-
-// Ensure virtual fields are serialised.
-// --------------------------------
-todoSchema.set('toJSON', {
-    virtuals: true,
-    versionKey: false,
-    transform: function (doc, ret) {
-        delete ret._id
+}, {
+    set: {
+        toJSON: {
+            virtuals: true,
+            versionKey: false,
+            transform: function (doc, ret) {
+                delete ret._id
+            }
+        }
     }
 });
-
-// Export
-// --------------------------------
-const TodoModel = mongoose.model('Todo', todoSchema);
-module.exports = require('meen-core').utils.modelUtil(TodoModel);

@@ -1,10 +1,7 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { composeModel } = require('meen-core');
 const uniqueValidator = require('mongoose-unique-validator');
 
-// Schema
-// --------------------------------
-const userSchema = new Schema({
+module.exports = composeModel('User', {
     password: {
         type: String,
         select: false
@@ -25,21 +22,13 @@ const userSchema = new Schema({
         type: Boolean,
         default: false
     }
-}, { timestamps: true });
-
-// Virtual
-// --------------------------------
-userSchema
-    .virtual('url')
-    .get(function () {
-        return '/user/' + this._id;
-    });
-
-// Plugin for mongoose
-// ------------------------------------------
-userSchema.plugin(uniqueValidator);
-
-// Export
-// --------------------------------
-const UserModel = mongoose.model('User', userSchema);
-module.exports = require('meen-core').utils.modelUtil(UserModel);
+}, {
+    virtual: {
+        url: function () {
+            return `/user/${this._id}`;
+        }
+    },
+    plugin: [
+        uniqueValidator
+    ]
+});
