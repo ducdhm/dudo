@@ -8,9 +8,9 @@ meen.composeApp(
     [
         require('./admin/auth/local'),
         require('./admin/views/helper'),
-        require('./admin/routes/login'),
-        require('./admin/routes/dashboard'),
-        require('./admin/routes/user'),
-        require('./admin/routes/image'),
+        require('./admin/modules/login'),
+        require('./admin/modules/dashboard'),
+        require('./admin/modules/user'),
+        require('./admin/modules/image'),
     ]
 ).run();

@@ -9,8 +9,8 @@ composeApp(
         }
     },
     [
-        require('./api/routes/ping'),
-        require('./api/routes/user'),
-        require('./api/routes/todo'),
+        require('./api/modules/ping'),
+        require('./api/modules/user'),
+        require('./api/modules/todo'),
     ]
 ).run();
