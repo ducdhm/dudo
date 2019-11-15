@@ -1,4 +1,4 @@
-const {errorHandlers} = require('meen-core').utils;
+const {errorHandlers} = require('meen-utils');
 const CatalogModel = require('models/Catalog');
 
 module.exports = (app) => {

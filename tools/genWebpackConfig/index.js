@@ -1,4 +1,4 @@
-const { resolvePath } = require('meen-core').utils;
+const { resolvePath } = require('meen-utils');
 const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const multer = require('multer');
-const {errorHandlers, getUploadFileName} = require('meen-core').utils;
+const {errorHandlers, getUploadFileName} = require('meen-utils');
 
 module.exports = (app) => {
     const config = app.config;

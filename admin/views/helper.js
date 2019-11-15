@@ -1,5 +1,5 @@
 const edge = require('edge.js');
-const { buildMenu, resolvePath, formatter } = require('meen-core').utils;
+const { buildMenu, resolvePath, formatter } = require('meen-utils');
 
 module.exports = (app, config) => {
     app.use((req, res, next) => {
