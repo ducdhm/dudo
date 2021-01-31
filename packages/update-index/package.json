@@ -16,6 +16,5 @@
     "homepage": "https://github.com/ducdhm/update-index#readme",
     "devDependencies": {
         "handlebars": "^4.7.6",
-        "publish-new-version": "^1.0.0"
     }
 }
