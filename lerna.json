@@ -1,0 +1,15 @@
+{
+    "packages": [
+        "packages/*"
+    ],
+    "version": "independent",
+    "command": {
+        "publish": {
+            "ignoreChanges": [
+                "ignored-file",
+                "*.md",
+                "package-lock.json"
+            ]
+        }
+    }
+}

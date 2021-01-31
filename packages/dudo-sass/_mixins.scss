@@ -1,0 +1,185 @@
+@import "./variables";
+
+@mixin screen-retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+    only screen and (min--moz-device-pixel-ratio: 1.25),
+    only screen and (-o-min-device-pixel-ratio: 1.25/1),
+    only screen and (min-device-pixel-ratio: 1.25),
+    only screen and (min-resolution: 200dpi),
+    only screen and (min-resolution: 1.25dppx) {
+        @content;
+    }
+}
+
+@mixin background-retina($image, $extension, $width, $height, $position: center, $repeat: no-repeat) {
+    background: url($image + '.' + $extension) $repeat $position;
+
+    @include screen-retina {
+        background: url($image + '@2x' + '.' + $extension) $repeat $position;
+        background-size: $width $height;
+    }
+}
+
+@mixin screen-sm() {
+    @media only screen and (min-width: $screen-sm) {
+        @content;
+    }
+}
+
+@mixin screen-md() {
+    @media only screen and (min-width: $screen-md) {
+        @content;
+    }
+}
+
+@mixin screen-lg() {
+    @media only screen and (min-width: $screen-lg) {
+        @content;
+    }
+}
+
+@mixin screen-xl() {
+    @media only screen and (min-width: $screen-xl) {
+        @content;
+    }
+}
+
+@mixin placeholder($color) {
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color;
+        opacity: 1; /* Firefox */
+    }
+
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color;
+    }
+
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        opacity: 1; /* Firefox */
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        opacity: 1; /* Firefox */
+    }
+}
+
+@mixin customScrollBar() {
+    $scrollbar-color: #c8c8c8;
+
+    & {
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        scrollbar-color: $scrollbar-color transparent;
+        scrollbar-width: thin
+    }
+
+    html &::-webkit-scrollbar-button:horizontal:increment {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEXM09b///8OmaLeAAAAAnRSTlP/AOW3MEoAAAAgSURBVHgBY2BEA+QLMGAIMGAIMGAIMBAUIGQoZU5HAwB+ZgDtGYq3fgAAAABJRU5ErkJggg==)
+    }
+
+    html &::-webkit-scrollbar-button:horizontal:increment:hover {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEWdtMT///8YSU3FAAAAAnRSTlP/AOW3MEoAAAAgSURBVHgBY2BEA+QLMGAIMGAIMGAIMBAUIGQoZU5HAwB+ZgDtGYq3fgAAAABJRU5ErkJggg==)
+    }
+
+    html &::-webkit-scrollbar-button:horizontal:decrement {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEXM09b///8OmaLeAAAAAnRSTlP/AOW3MEoAAAAiSURBVHgBY2BEAxQJMKAJMKAJMKAJMOATgIkQMBTBooZfAH56AO2yINTrAAAAAElFTkSuQmCC)
+    }
+
+    html &::-webkit-scrollbar-button:horizontal:decrement:hover {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEWdtMT///8YSU3FAAAAAnRSTlP/AOW3MEoAAAAiSURBVHgBY2BEAxQJMKAJMKAJMKAJMOATgIkQMBTBooZfAH56AO2yINTrAAAAAElFTkSuQmCC)
+    }
+
+    html &::-webkit-scrollbar-button:vertical:increment {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEXM09b///8OmaLeAAAAAnRSTlP/AOW3MEoAAAAfSURBVHgBY2BEA7QTYIAChAoYH6EFxkeYwQBj0MelAH3GAO2C9+AaAAAAAElFTkSuQmCC)
+    }
+
+    html &::-webkit-scrollbar-button:vertical:increment:hover {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEWdtMT///8YSU3FAAAAAnRSTlP/AOW3MEoAAAAfSURBVHgBY2BEA7QTYIAChAoYH6EFxkeYwQBj0MelAH3GAO2C9+AaAAAAAElFTkSuQmCC)
+    }
+
+    html &::-webkit-scrollbar-button:vertical:decrement {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEXM09b///8OmaLeAAAAAnRSTlP/AOW3MEoAAAAgSURBVHgBY2BEAzQVYIAzYHwGGAvOZ4AyIXyECH1cCgB/GgDtpWTgqAAAAABJRU5ErkJggg==)
+    }
+
+    html &::-webkit-scrollbar-button:vertical:decrement:hover {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABlBMVEWdtMT///8YSU3FAAAAAnRSTlP/AOW3MEoAAAAgSURBVHgBY2BEAzQVYIAzYHwGGAvOZ4AyIXyECH1cCgB/GgDtpWTgqAAAAABJRU5ErkJggg==)
+    }
+
+    &::-webkit-scrollbar {
+        height: 18px;
+        width: 18px
+    }
+
+    &::-webkit-scrollbar:disabled {
+        display: none
+    }
+
+    &::-webkit-scrollbar-button,
+    &::-webkit-scrollbar-corner {
+        cursor: pointer
+    }
+
+    html &::-webkit-scrollbar-button,
+    html &::-webkit-scrollbar-corner {
+        background: transparent
+    }
+
+    &::-webkit-scrollbar-button:horizontal:decrement,
+    &::-webkit-scrollbar-button:horizontal:decrement:hover,
+    &::-webkit-scrollbar-button:horizontal:increment,
+    &::-webkit-scrollbar-button:horizontal:increment:hover,
+    &::-webkit-scrollbar-button:vertical:decrement,
+    &::-webkit-scrollbar-button:vertical:decrement:hover,
+    &::-webkit-scrollbar-button:vertical:increment,
+    &::-webkit-scrollbar-button:vertical:increment:hover {
+        height: 18px;
+        width: 18px
+    }
+
+    html &::-webkit-scrollbar-button:horizontal:decrement,
+    html &::-webkit-scrollbar-button:horizontal:decrement:hover,
+    html &::-webkit-scrollbar-button:horizontal:increment,
+    html &::-webkit-scrollbar-button:horizontal:increment:hover,
+    html &::-webkit-scrollbar-button:vertical:decrement,
+    html &::-webkit-scrollbar-button:vertical:decrement:hover,
+    html &::-webkit-scrollbar-button:vertical:increment,
+    html &::-webkit-scrollbar-button:vertical:increment:hover {
+        background-position: 50%
+    }
+
+    html &::-webkit-scrollbar-track {
+        background: white;
+    }
+
+    html &::-webkit-scrollbar-thumb,
+    html &::-webkit-scrollbar-thumb:hover {
+        border-radius: 9px;
+        border: solid 6px transparent;
+        background-clip: content-box
+    }
+
+    html &::-webkit-scrollbar-thumb {
+        background-color: $scrollbar-color
+    }
+
+    html &::-webkit-scrollbar-thumb:hover {
+        background-color: #98a3a6
+    }
+
+    &::-webkit-scrollbar-thumb:vertical {
+        min-height: 50px
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        min-width: 50px
+    }
+}

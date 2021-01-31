@@ -1,0 +1,21 @@
+{
+    "name": "update-index",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/update-index.git"
+    },
+    "keywords": [],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/update-index/issues"
+    },
+    "homepage": "https://github.com/ducdhm/update-index#readme",
+    "devDependencies": {
+        "handlebars": "^4.7.6",
+        "publish-new-version": "^1.0.0"
+    }
+}

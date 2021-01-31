@@ -1,0 +1,22 @@
+// Previewable image
+// -----------------------------------------------
+.previewable-image-wrapper {
+    p:first-child {
+        margin-bottom: 0.5rem;
+    }
+
+    .previewer-wrapper {
+        .previewer {
+            transition: all 0.3s;
+            opacity: 1;
+            max-width: 100%;
+        }
+
+        &.loading {
+            .previewer {
+                opacity: 0;
+                //height: 40px;
+            }
+        }
+    }
+}
