@@ -1,11 +1,12 @@
-# M.E.E.N
-M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS
+# DudoJS
+Stack of awesome!
 
 
 ## Packages
- * [@meenjs/core](./packages/meen-core)
- * [@meenjs/cli](./packages/meen-cli)
- * [@meenjs/utils](./packages/meen-utils)
+ * [@dudojs/adminui](./packages/dudo-adminui)
+ * [@dudojs/fonts](./packages/dudo-fonts)
+ * [@dudojs/sass](./packages/dudo-sass)
+ * [@dudojs/webpack](./packages/dudo-webpack)
 
 
 ## License
