@@ -42,5 +42,5 @@ module.exports = ({ name, outputPath, publicPath, entry, options }) => composeWe
                 },
             ],
         },
-    }, options],
+    }, options || {}],
 });
