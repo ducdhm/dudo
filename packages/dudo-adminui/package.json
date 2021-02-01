@@ -29,6 +29,7 @@
         "clipboard": "^2.0.6",
         "cropperjs": "^1.5.9",
         "dropzone": "^5.7.2",
+        "expose-loader": "^1.0.3",
         "jquery": "^3.5.1",
         "jquery-cropper": "^1.0.1",
         "jquery.niceform": "^1.1.9",
