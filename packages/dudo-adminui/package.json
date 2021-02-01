@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/adminui",
-    "version": "1.0.4",
+    "version": "1.0.6",
     "description": "Awesome admin UIKit based-on AdminLTE v3!",
     "repository": {
         "type": "git",
@@ -40,5 +40,6 @@
     "devDependencies": {
         "get-root-path": "^2.0.2",
         "handlebars": "^4.7.6"
-    }
+    },
+    "gitHead": "31983a5d82e75c41955bc5fe69da83dc2b4f75ae"
 }
