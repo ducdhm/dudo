@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/webpack",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Compose webpack.config.js with awesome style!",
     "main": "index.js",
     "repository": {
