@@ -1,10 +1,10 @@
 {
     "name": "@dudojs/sass",
-    "version": "1.0.2",
+    "version": "1.0.1",
     "description": "Collection of awesome SASS variables and mixins!",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo-sass.git"
+        "url": "git+https://github.com/ducdhm/dudo.git"
     },
     "keywords": [
         "sass",
@@ -14,7 +14,7 @@
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ducdhm/dudo-sass/issues"
+        "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo-sass#readme"
+    "homepage": "https://github.com/ducdhm/dudo#readme"
 }

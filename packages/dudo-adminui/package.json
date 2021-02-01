@@ -1,10 +1,10 @@
 {
     "name": "@dudojs/adminui",
-    "version": "1.0.5",
+    "version": "1.0.2",
     "description": "Awesome admin UIKit based-on AdminLTE v3!",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo-adminui.git"
+        "url": "git+https://github.com/ducdhm/dudo.git"
     },
     "keywords": [
         "admin",
@@ -16,28 +16,28 @@
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ducdhm/dudo-adminui/issues"
+        "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo-adminui#readme",
+    "homepage": "https://github.com/ducdhm/dudo#readme",
     "dependencies": {
-        "@dudojs/fonts": "^1.0.2",
-        "@dudojs/sass": "^1.0.2",
-        "@dudojs/webpack": "^1.0.5",
-        "@sweetalert2/theme-bootstrap-4": "^4.0.2",
+        "@dudojs/fonts": "^1.0.1",
+        "@dudojs/sass": "^1.0.1",
+        "@dudojs/webpack": "^1.0.4",
+        "@sweetalert2/theme-bootstrap-4": "^3.2.0",
         "admin-lte": "^3.0.5",
         "bootstrap-switch": "^3.4.0",
         "clipboard": "^2.0.6",
-        "cropperjs": "^1.5.9",
-        "dropzone": "^5.7.2",
-        "expose-loader": "^1.0.3",
+        "cropperjs": "^1.5.7",
+        "dropzone": "^5.7.1",
         "jquery": "^3.5.1",
         "jquery-cropper": "^1.0.1",
         "jquery.niceform": "^1.1.9",
         "jquery.reload": "^1.0.3",
-        "sweetalert2": "^10.13.3",
-        "urijs": "^1.19.5"
+        "sweetalert2": "^9.17.0",
+        "urijs": "^1.19.2"
     },
     "devDependencies": {
+        "get-root-path": "^2.0.2",
         "handlebars": "^4.7.6"
     }
 }

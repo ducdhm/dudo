@@ -1,11 +1,11 @@
 {
     "name": "@dudojs/webpack",
-    "version": "1.0.5",
+    "version": "1.0.4",
     "description": "Compose webpack.config.js with awesome style!",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo-webpack.git"
+        "url": "git+https://github.com/ducdhm/dudo.git"
     },
     "keywords": [
         "webpack"
@@ -13,9 +13,9 @@
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ducdhm/dudo-webpack/issues"
+        "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo-webpack#readme",
+    "homepage": "https://github.com/ducdhm/dudo#readme",
     "dependencies": {
         "@babel/core": "^7.12.10",
         "@babel/plugin-proposal-class-properties": "^7.12.1",
