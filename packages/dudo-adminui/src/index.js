@@ -64,6 +64,7 @@ import initDropzoneUploader from './initDropzoneUploader';
 import initImageUploader from './initImageUploader';
 import initLightBox from './initLightBox';
 import initChkAll from './initChkAll';
+import initTimeAgo from './initTimeAgo';
 
 // Common style
 // -----------------------------------------------
@@ -97,4 +98,5 @@ $(() => {
     initImageUploader();
     initLightBox();
     initChkAll();
+    initTimeAgo();
 });
