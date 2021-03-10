@@ -1,18 +1,14 @@
 {
     "name": "@dudojs/utils",
     "version": "0.9.9",
-    "description": "M.E.E.N Utilities",
+    "description": "Collection of awesome utilities!",
     "main": "index.js",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ducdhm/meen.git"
+        "url": "git+https://github.com/ducdhm/dudo.git"
     },
     "keywords": [
-        "meen",
-        "mongodb",
-        "nodejs",
-        "expressjs",
-        "edgejs"
+        "util"
     ],
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
