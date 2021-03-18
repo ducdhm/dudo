@@ -98,10 +98,14 @@ const composeWebpack = ({ name, outputPath, publicPath, entry, options }) => {
         },
     };
 
-    if (Array.isArray(options)) {
+    if (!options) {
+        return baseConfig;
+    } else if (Array.isArray(options)) {
         return merge(baseConfig, ...options);
-    } else {
+    } else if (Object.prototype.toString.call(options) === '[object Object]') {
         return merge(baseConfig, options);
+    } else {
+        return baseConfig;
     }
 };
 
