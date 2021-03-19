@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/dom-utils",
-    "version": "0.9.9",
+    "version": "1.0.0",
     "description": "Collection of awesome DOM utilities!",
     "main": "index.js",
     "repository": {
