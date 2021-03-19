@@ -1,0 +1,26 @@
+{
+    "name": "@dudojs/dom-utils",
+    "version": "0.9.9",
+    "description": "Collection of awesome DOM utilities!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "dom",
+        "dom-util",
+        "util"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo#readme",
+    "dependencies": {
+        "@dudojs/easing": "^1.0.0"
+    }
+}

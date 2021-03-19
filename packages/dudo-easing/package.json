@@ -1,0 +1,21 @@
+{
+    "name": "@dudojs/easing",
+    "version": "0.9.9",
+    "description": "Collection of awesome easing functions!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "easing"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo#readme"
+}
