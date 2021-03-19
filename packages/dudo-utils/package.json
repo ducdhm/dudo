@@ -8,6 +8,8 @@
         "url": "git+https://github.com/ducdhm/dudo.git"
     },
     "keywords": [
+        "javascript",
+        "js",
         "util"
     ],
     "author": "Duc Doan <ducdhm@gmail.com>",
