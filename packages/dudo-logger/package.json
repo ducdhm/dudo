@@ -1,0 +1,24 @@
+{
+    "name": "@dudojs/logger",
+    "version": "0.0.0",
+    "description": "Awesome logger!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "logger"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-logger#readme",
+    "dependencies": {
+        "colors": "^1.4.0"
+    }
+}
