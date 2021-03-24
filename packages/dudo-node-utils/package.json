@@ -1,6 +1,6 @@
 {
 	"name": "@dudojs/node-utils",
-	"version": "0.9.1",
+	"version": "0.9.2",
 	"description": "Collection of awesome NodeJS utilities!",
 	"main": "index.js",
 	"repository": {
@@ -31,7 +31,7 @@
 		"xlsx": "^0.16.3"
 	},
 	"devDependencies": {
-		"@dudojs/logger": "^1.0.1",
+		"@dudojs/logger": "^1.0.2",
 		"jest": "^26.1.0",
 		"make-dir": "^3.1.0",
 		"update-index": "^1.0.3"
