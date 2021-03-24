@@ -20,5 +20,6 @@
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-logger#readme",
     "dependencies": {
         "colors": "^1.4.0"
-    }
+    },
+    "gitHead": "fdc5cd1ec77a8ef2714861a9b8cb87341878012c"
 }

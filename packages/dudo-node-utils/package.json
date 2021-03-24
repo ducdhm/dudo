@@ -35,5 +35,6 @@
 		"jest": "^26.1.0",
 		"make-dir": "^3.1.0",
 		"update-index": "^1.0.3"
-	}
+	},
+	"gitHead": "fdc5cd1ec77a8ef2714861a9b8cb87341878012c"
 }

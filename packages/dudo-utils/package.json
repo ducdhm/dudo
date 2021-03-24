@@ -26,5 +26,6 @@
         "@dudojs/logger": "^1.0.1",
         "jest": "^26.1.0",
         "update-index": "^1.0.3"
-    }
+    },
+    "gitHead": "fdc5cd1ec77a8ef2714861a9b8cb87341878012c"
 }
