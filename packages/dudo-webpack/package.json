@@ -15,7 +15,7 @@
     "bugs": {
         "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo#readme",
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-webpack#readme",
     "dependencies": {
         "@babel/core": "^7.12.10",
         "@babel/plugin-proposal-class-properties": "^7.12.1",

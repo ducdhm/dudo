@@ -19,7 +19,7 @@
     "bugs": {
         "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo#readme",
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-dom-utils#readme",
     "dependencies": {
         "@dudojs/easing": "^1.0.0"
     }
