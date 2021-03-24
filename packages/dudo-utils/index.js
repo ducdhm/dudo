@@ -1,7 +1,6 @@
 module.exports = {
     ensureArray: require('./src/ensureArray'),
     formatCurrency: require('./src/formatCurrency'),
-    getLogger: require('./src/getLogger'),
     getObjectValues: require('./src/getObjectValues'),
     getUploadFileName: require('./src/getUploadFileName'),
     isValidJsonString: require('./src/isValidJsonString'),
