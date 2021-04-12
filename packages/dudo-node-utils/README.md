@@ -11,6 +11,7 @@ const { ... } = require('@dudojs/utils');
  * [getExcelSheetData](./src/getExcelSheetData.js)
  * [getFileList](./src/getFileList.js)
  * [getFolderList](./src/getFolderList.js)
+ * [getWinstonLogger](./src/getWinstonLogger.js)
  * [resolvePath](./src/resolvePath.js)
  * [writeExcel](./src/writeExcel.js)
  * [writeExcelToFile](./src/writeExcelToFile.js)
