@@ -5,9 +5,10 @@ const logUpdate = require('log-update');
 const moment = require('moment');
 const fs = require('fs');
 
-module.exports = (logger) => (name, cmdObj) => {
+module.exports = (logger) => (options) => {
+    const { script = 'npm run build' } = options;
     logger.info('Building source...');
-    // execSync('npm run build');
+    execSync(script);
 
     const targetPackage = require(getTargetPath('./package.json'));
     const zipName = getFileName(getTargetPath(), `${targetPackage.name}-${moment().format('YYYYMMDD')}`, '.zip') + '.zip';
