@@ -4,7 +4,7 @@
     "description": "Awesome React CLI!",
     "main": "bin/dreact.js",
     "bin": {
-        "meen": "bin/dreact.js"
+        "dreact": "bin/dreact.js"
     },
     "repository": {
         "type": "git",
