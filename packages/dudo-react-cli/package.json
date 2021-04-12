@@ -1,0 +1,37 @@
+{
+    "name": "@dudojs/react-cli",
+    "version": "1.0.2",
+    "description": "Awesome React CLI!",
+    "main": "bin/dreact.js",
+    "bin": {
+        "meen": "bin/dreact.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "react",
+        "cli"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-cli#readme",
+    "dependencies": {
+        "@dudojs/logger": "^1.0.2",
+        "@dudojs/utils": "^1.0.4",
+        "archiver": "^5.3.0",
+        "clear": "^0.1.0",
+        "colors": "^1.4.0",
+        "commander": "^6.0.0",
+        "figlet": "^1.5.0",
+        "log-update": "^4.0.0",
+        "make-dir": "^3.1.0",
+        "moment": "^2.29.1"
+    }
+}
