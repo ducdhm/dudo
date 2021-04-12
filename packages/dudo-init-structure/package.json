@@ -1,0 +1,27 @@
+{
+    "name": "@dudojs/init-structure",
+    "version": "0.0.0",
+    "description": "The awesome tool to initialize folder structure with pre-defined structure and template!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "react",
+        "cli"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-init-structure#readme",
+    "dependencies": {
+        "@dudojs/logger": "^1.0.2",
+        "handlebars": "^4.7.7",
+        "make-dir": "^3.1.0"
+    }
+}
