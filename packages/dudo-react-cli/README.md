@@ -1,9 +1,14 @@
 # @dudojs/react-cli
 Awesome React CLI!
 
-## Usage
-```javascript
+## Installation
+```shell
+npm install -g @dudojs/react-cli
+```
 
+## Usage
+```shell
+dreact --help
 ```
 
 ## License
