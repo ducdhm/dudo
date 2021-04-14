@@ -1,0 +1,21 @@
+{
+    "name": "@dudojs/regex",
+    "version": "0.0.0",
+    "description": "Collection of awesome regular expression!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "regex"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-regex#readme"
+}
