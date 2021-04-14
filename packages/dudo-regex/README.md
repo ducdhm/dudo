@@ -15,6 +15,7 @@ REGEX.EMAIL.test('ducdhm@gmail.com');
  * EMAIL
  * URL
  * UUID
+ * IPV4
 
 ## License
 Please read at [here](./LICENSE.md)
