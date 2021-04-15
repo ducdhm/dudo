@@ -23,6 +23,7 @@ module.exports = (logger) => (options) => {
     output.on('close', function () {
         let size = archive.pointer() / 1024 / 1024;
 
+        logUpdate.clear();
         logUpdate.done();
         logger.info(`"${zipName}" is created (size: ${size.toFixed(2)} MB)`);
     });
