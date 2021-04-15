@@ -6,12 +6,12 @@ const moment = require('moment');
 const fs = require('fs');
 
 module.exports = (logger) => (options) => {
-    const { script = 'npm run build' } = options;
+    const { script = 'npm run build', prefix } = options;
     logger.info('Building source...');
     execSync(script);
 
     const targetPackage = require(getTargetPath('./package.json'));
-    const zipName = getFileName(getTargetPath(), `${targetPackage.name}-${moment().format('YYYYMMDD')}`, '.zip') + '.zip';
+    const zipName = getFileName(getTargetPath(), `${prefix ? prefix + '_' : ''}${targetPackage.name}-${moment().format('YYYYMMDD')}`, '.zip') + '.zip';
     const zipPath = getTargetPath(zipName);
     logger.info('Zipping "build" folder...');
 
