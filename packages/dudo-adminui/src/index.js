@@ -74,7 +74,7 @@ import './admin.scss';
 // -----------------------------------------------
 $(document).ajaxComplete(function (e, xhr) {
     const { responseJSON } = xhr;
-    if (responseJSON && responseJSON.status && responseJSON.data.reload) {
+    if (responseJSON && responseJSON.status && responseJSON.data && responseJSON.data.reload) {
         window.location.reload();
     }
 });
