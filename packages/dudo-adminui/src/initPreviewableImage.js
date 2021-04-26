@@ -1,6 +1,6 @@
 import './initPreviewableImage.scss';
 
-const NO_PHOTO = '/public/admin/img/no_photo.png';
+const NO_PHOTO = '/public/admin/images/no_photo.png';
 const initPreviewableImage = (target) => {
     let previewWidth = target.attr('data-preview-width');
     let wrapper = target.parent();
