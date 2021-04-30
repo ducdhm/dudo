@@ -1,0 +1,14 @@
+import { all, fork } from 'redux-saga/effects';
+{{#each list}}
+import {{this}}Saga from './{{this}}/{{this}}.saga';
+{{/each}}
+
+export default function* rootSaga() {
+    const globalSagasForks = [
+{{#each list}}
+        ...{{this}}Saga,
+{{/each}}
+    ].map((saga) => fork(saga));
+
+    yield all([...globalSagasForks]);
+}

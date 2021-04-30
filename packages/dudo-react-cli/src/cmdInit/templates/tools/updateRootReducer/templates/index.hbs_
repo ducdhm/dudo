@@ -1,0 +1,12 @@
+import { combineReducers } from 'redux';
+{{#each list}}
+import {{this}}Reducer from './{{this}}/{{this}}.reducer';
+{{/each}}
+
+const rootReducer = combineReducers({
+{{#each list}}
+    {{this}}: {{this}}Reducer,
+{{/each}}
+});
+
+export default rootReducer;

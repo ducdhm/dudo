@@ -1,0 +1,14 @@
+import { {{nameUppercase}}_LOAD, {{nameUppercase}}_LOADED } from './{{name}}.type';
+
+export const doLoad{{nameTitle}} = () => {
+    return {
+        type: {{nameUppercase}}_LOAD,
+    };
+};
+
+export const doSet{{nameTitle}} = (settings) => {
+    return {
+        type: {{nameUppercase}}_LOADED,
+        payload: settings,
+    };
+};

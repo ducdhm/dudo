@@ -1,0 +1,39 @@
+const argv = require('yargs').argv;
+const initStructure = require('@dudojs/init-structure');
+const path = require('path');
+const { toTitleCase } = require('@dudojs/utils');
+
+if (!argv.name) {
+    console.error('"name" is required!');
+    return;
+}
+
+const reduxName = argv.name;
+
+let structure = {};
+structure[reduxName] = {};
+structure[reduxName][`${reduxName}.action.js`] = path.join(__dirname, './templates/redux.action.hbs');
+structure[reduxName][`${reduxName}.reducer.js`] = path.join(__dirname, './templates/redux.reducer.hbs');
+structure[reduxName][`${reduxName}.saga.js`] = path.join(__dirname, './templates/redux.saga.hbs');
+structure[reduxName][`${reduxName}.type.js`] = path.join(__dirname, './templates/redux.type.hbs');
+
+initStructure(
+    path.join(__dirname, '../../src/redux'),
+    structure,
+    {
+        name: reduxName,
+        nameUppercase: reduxName.toUpperCase(),
+        nameTitle: toTitleCase(reduxName),
+    },
+    {
+        beforeCreate: (options, logger) => {
+            logger.info(`Creating "${reduxName}" redux...`);
+        },
+        onCreated: (options, logger) => {
+            logger.info('========== DONE!');
+        },
+    },
+);
+
+require('../updateRootReducer');
+require('../updateRootSaga');

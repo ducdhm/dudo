@@ -1,0 +1,21 @@
+import { {{nameUppercase}}_LOADED } from './{{name}}.type';
+
+const INIT_STATE = {
+    isLoaded: false,
+};
+
+export default function {{name}}Reducer (state = INIT_STATE, { type, payload }) {
+    switch (type) {
+        case {{nameUppercase}}_LOADED:
+            return {
+                ...state,
+                isLoaded: true,
+                ...payload,
+            };
+
+        default:
+            return {
+                ...state,
+            };
+    }
+};
