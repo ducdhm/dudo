@@ -6,6 +6,8 @@ const { execSync } = require('child_process');
 
 module.exports = (logger) => (target, options) => {
     const targetPath = getTargetPath(target);
+    !fs.existsSync(targetPath) && fs.mkdirSync(targetPath);
+
     logger.info(`Initializing react app at "${targetPath}"...`);
 
     const children = fs.readdirSync(targetPath);
@@ -28,7 +30,9 @@ module.exports = (logger) => (target, options) => {
     });
     
     logger.info(`Installing npm depencencies...`);
-    execSync('npm install');
+    execSync('npm install', {
+        cwd: targetPath,
+    });
     
     logger.info(`=> DONE!`);
 };
