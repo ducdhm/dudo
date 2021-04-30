@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/easing",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Collection of awesome easing functions!",
     "main": "index.js",
     "repository": {
