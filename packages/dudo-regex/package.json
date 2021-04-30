@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/regex",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Collection of awesome regular expression!",
     "main": "index.js",
     "repository": {

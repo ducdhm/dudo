@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/sass",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Collection of awesome SASS variables and mixins!",
     "repository": {
         "type": "git",
