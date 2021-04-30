@@ -36,6 +36,10 @@ const createFolder = (target, data, fileData) => {
 const createFromTemplate = (target, templatePath, fileData) => {
     const children = fs.readdirSync(templatePath);
     for (let child of children) {
+        if (child === '.initStructureIgnore') {
+            continue;
+        }
+
         const childPath = path.join(templatePath, child);
         const stat = fs.statSync(childPath);
         const info = path.parse(childPath);
@@ -47,19 +51,17 @@ const createFromTemplate = (target, templatePath, fileData) => {
             createFromTemplate(folderPath, childPath, fileData);
         } else {
             let filePath;
-            if (info.ext.indexOf('.hbs') === 0) {
-                if (info.ext === '.hbs_') {
-                    filePath = path.join(target, info.name + '.hbs');
-                    logger.info(`-> Create "${filePath}"`);
-                    fs.copyFileSync(childPath, filePath);
-                } else {
-                    filePath = path.join(target, info.name);
-                    logger.info(`-> Create "${filePath}"`);
-                    fs.writeFileSync(
-                        filePath,
-                        genContent(childPath, fileData),
-                    );
-                }
+            if (info.ext === '.hbs') {
+                filePath = path.join(target, info.name);
+                logger.info(`-> Create "${filePath}"`);
+                fs.writeFileSync(
+                    filePath,
+                    genContent(childPath, fileData),
+                );
+            } else if (info.ext === '.hbs_') {
+                filePath = path.join(target, info.name + '.hbs');
+                logger.info(`-> Create "${filePath}"`);
+                fs.copyFileSync(childPath, filePath);
             } else {
                 filePath = path.join(target, child);
                 logger.info(`-> Create "${filePath}"`);
