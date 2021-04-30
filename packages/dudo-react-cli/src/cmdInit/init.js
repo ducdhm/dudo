@@ -20,7 +20,7 @@ module.exports = (logger) => (target, options) => {
     logger.info(`Creating structure...`);
     initStructure({
         target: targetPath,
-        structure: path.join(__dirname, './template'),
+        structure: path.join(__dirname, './templates'),
         fileData: {
             name: options.name || 'dreact',
             title: options.title || 'Dreact App',            
