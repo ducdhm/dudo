@@ -1,0 +1,32 @@
+const argv = require('yargs').argv;
+const initStructure = require('@dudojs/init-structure');
+const path = require('path');
+
+if (!argv.name) {
+    console.error('"name" is required!');
+    return;
+}
+
+const componentName = argv.name;
+
+let structure = {};
+structure[componentName] = {};
+structure[componentName][`index.js`] = path.join(__dirname, './templates/component.index.hbs');
+structure[componentName][`${componentName}.component.js`] = path.join(__dirname, './templates/component.component.hbs');
+structure[componentName][`${componentName}.style.scss`] = path.join(__dirname, './templates/component.style.hbs');
+
+initStructure(
+    path.join(__dirname, '../../src/components'),
+    structure,
+    {
+        name: argv.name,
+    },
+    {
+        beforeCreate: (options, logger) => {
+            logger.info(`Creating "${componentName}" component...`);
+        },
+        onCreated: (options, logger) => {
+            logger.info('========== DONE!');
+        },
+    },
+);
