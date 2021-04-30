@@ -3,7 +3,7 @@
 const packageJson = require('./package');
 const program = require('commander');
 const printBanner = require('./src/utils/printBanner')
-const logger = require('@dudojs/logger')(true);
+const logger = require('@dudojs/logger')();
 
 // Setup program
 // -----------------------------------------
