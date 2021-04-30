@@ -12,19 +12,16 @@ const folderList = fs.readdirSync(reduxFolder, { withFileTypes: true })
     })
     .map(folder => folder.name)
 
-initStructure(
-    reduxFolder,
+initStructure({
+    target: reduxFolder,
     structure,
-    {
+    fileData: {
         list: folderList,
     },
-    {
-        beforeCreate: (options, logger) => {
-            logger.info(`Updating rootSaga.js...`);
-        },
-        onCreated: (options, logger) => {
-            logger.info('========== DONE!');
-        },
+    beforeCreate: (options, logger) => {
+        logger.info(`Updating rootSaga.js...`);
     },
-)
-
+    onCreated: (options, logger) => {
+        logger.info('========== DONE!');
+    },
+});

@@ -1,5 +1,5 @@
 const argv = require('yargs').argv;
-const initStructure = require('init-structure');
+const initStructure = require('@dudojs/init-structure');
 const path = require('path');
 
 if (!argv.name) {
@@ -15,18 +15,16 @@ structure[viewName][`index.js`] = path.join(__dirname, './templates/view.index.h
 structure[viewName][`${viewName}.component.js`] = path.join(__dirname, './templates/view.component.hbs');
 structure[viewName][`${viewName}.style.scss`] = path.join(__dirname, './templates/view.style.hbs');
 
-initStructure(
-    path.join(__dirname, '../../src/views'),
+initStructure({
+    target: path.join(__dirname, '../../src/views'),
     structure,
-    {
+    fileData: {
         name: argv.name,
     },
-    {
-        beforeCreate: (options, logger) => {
-            logger.info(`Creating "${viewName}" view...`);
-        },
-        onCreated: (options, logger) => {
-            logger.info('========== DONE!');
-        },
+    beforeCreate: (options, logger) => {
+        logger.info(`Creating "${viewName}" view...`);
     },
-);
+    onCreated: (options, logger) => {
+        logger.info('========== DONE!');
+    },
+});

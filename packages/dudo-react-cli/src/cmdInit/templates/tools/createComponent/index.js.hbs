@@ -15,18 +15,16 @@ structure[componentName][`index.js`] = path.join(__dirname, './templates/compone
 structure[componentName][`${componentName}.component.js`] = path.join(__dirname, './templates/component.component.hbs');
 structure[componentName][`${componentName}.style.scss`] = path.join(__dirname, './templates/component.style.hbs');
 
-initStructure(
-    path.join(__dirname, '../../src/components'),
+initStructure({
+    target: path.join(__dirname, '../../src/components'),
     structure,
-    {
+    fileData: {
         name: argv.name,
     },
-    {
-        beforeCreate: (options, logger) => {
-            logger.info(`Creating "${componentName}" component...`);
-        },
-        onCreated: (options, logger) => {
-            logger.info('========== DONE!');
-        },
+    beforeCreate: (options, logger) => {
+        logger.info(`Creating "${componentName}" component...`);
     },
-);
+    onCreated: (options, logger) => {
+        logger.info('========== DONE!');
+    },
+});

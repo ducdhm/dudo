@@ -17,23 +17,21 @@ structure[reduxName][`${reduxName}.reducer.js`] = path.join(__dirname, './templa
 structure[reduxName][`${reduxName}.saga.js`] = path.join(__dirname, './templates/redux.saga.hbs');
 structure[reduxName][`${reduxName}.type.js`] = path.join(__dirname, './templates/redux.type.hbs');
 
-initStructure(
-    path.join(__dirname, '../../src/redux'),
+initStructure({
+    target: path.join(__dirname, '../../src/redux'),
     structure,
-    {
+    fileData: {
         name: reduxName,
         nameUppercase: reduxName.toUpperCase(),
         nameTitle: toTitleCase(reduxName),
     },
-    {
-        beforeCreate: (options, logger) => {
-            logger.info(`Creating "${reduxName}" redux...`);
-        },
-        onCreated: (options, logger) => {
-            logger.info('========== DONE!');
-        },
+    beforeCreate: (options, logger) => {
+        logger.info(`Creating "${reduxName}" redux...`);
     },
-);
+    onCreated: (options, logger) => {
+        logger.info('========== DONE!');
+    },
+});
 
 require('../updateRootReducer');
 require('../updateRootSaga');
