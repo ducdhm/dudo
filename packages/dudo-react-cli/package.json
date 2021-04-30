@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/react-cli",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Awesome React CLI!",
     "main": "index.js",
     "bin": {
@@ -23,10 +23,10 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-cli#readme",
     "dependencies": {
-        "@dudojs/init-structure": "^1.0.0",
-        "@dudojs/logger": "^1.0.2",
-        "@dudojs/node-utils": "^0.9.2",
-        "@dudojs/utils": "^1.0.4",
+        "@dudojs/init-structure": "^1.0.1",
+        "@dudojs/logger": "^1.0.3",
+        "@dudojs/node-utils": "^0.9.3",
+        "@dudojs/utils": "^1.0.5",
         "archiver": "^5.3.0",
         "clear": "^0.1.0",
         "colors": "^1.4.0",
