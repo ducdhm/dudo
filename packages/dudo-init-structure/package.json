@@ -23,5 +23,6 @@
         "@dudojs/logger": "^1.0.4",
         "handlebars": "^4.7.7",
         "make-dir": "^3.1.0"
-    }
+    },
+    "gitHead": "02b4143729bb26457a6a8b4fadf1fd997047880a"
 }

@@ -33,38 +33,31 @@ const getLabel = (level, isIcon) => {
 
 const genDepth = (depth) => ''.padStart(depth * 4, ' ');
 
-const log = (level, iconLabel, msg, ...rest) => {
+const log = (level, iconLabel, msg, depth = 0) => {
     const label = `[${getLabel(level, iconLabel)}]`;
-    let others = [...rest];
-    let depth = others.pop();
-
-    if (isNaN(depth)) {
-        others = others.push(depth);
-        depth = 0;
-    }
     
-    console.log(`${label} ${genDepth(depth)}${msg}`, ...others);
+    console.log(`${label} ${genDepth(depth)}${msg}`);
 };
 
 module.exports = (iconLabel) => {
     return {
-        info: (msg, ...others) => {
-            log('info', iconLabel, msg, ...others);
+        info: (msg, depth) => {
+            log('info', iconLabel, msg, depth);
         },
-        debug: (msg, ...others) => {
-            log('debug', iconLabel, msg, ...others);
+        debug: (msg, depth) => {
+            log('debug', iconLabel, msg, depth);
         },
-        success: (msg, ...others) => {
-            log('success', iconLabel, msg, ...others);
+        success: (msg, depth) => {
+            log('success', iconLabel, msg, depth);
         },
-        warn: (msg, ...others) => {
-            log('warn', iconLabel, msg, ...others);
+        warn: (msg, depth) => {
+            log('warn', iconLabel, msg, depth);
         },
-        error: (msg, ...others) => {
-            log('error', iconLabel, msg, ...others);
+        error: (msg, depth) => {
+            log('error', iconLabel, msg, depth);
         },
-        question: (msg, ...others) => {
-            log('question', iconLabel, msg, ...others);
+        question: (msg, depth) => {
+            log('question', iconLabel, msg, depth);
         },
     };
 };
