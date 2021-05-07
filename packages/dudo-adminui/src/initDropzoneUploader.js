@@ -22,6 +22,9 @@ const initUploader = (input) => {
         dictDefaultMessage: LOCALE.UPLOADER__DEFAULT_MESSAGE,
         dictFileTooBig: maxSizeMessage,
         dictInvalidFileType: acceptedFilesMessage,
+        headers: {
+            'x-dropzone': 'true',
+        },
     });
 
     setTimeout(() => {

@@ -108,6 +108,9 @@ const initUploader = (wrapper, paramName) => {
         dictDefaultMessage: LOCALE.UPLOADER__DEFAULT_MESSAGE,
         dictFileTooBig: LOCALE.UPLOADER__SIZE_ERROR_MESSAGE,
         dictInvalidFileType: LOCALE.IMAGE_UPLOADER__TYPE_ERROR_MESSAGE,
+        headers: {
+            'x-dropzone': 'true',
+        },
     });
 
     uploader.on('addedfile', function (file) {
