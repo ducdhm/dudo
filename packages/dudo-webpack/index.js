@@ -27,12 +27,6 @@ const composeWebpack = ({ name, outputPath, publicPath, entry, options }) => {
                         },
                     },
                     minify: CssMinimizerPlugin.cssnanoMinify,
-                    preset: [
-                        'default',
-                        {
-                            discardComments: { removeAll: true },
-                        },
-                    ],
                 }),
             ],
         },
