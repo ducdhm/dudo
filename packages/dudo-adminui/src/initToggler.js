@@ -1,4 +1,4 @@
-import 'bootstrap-switch/dist/js/bootstrap-switch.min';
+import 'admin-lte/plugins/bootstrap-switch/js/bootstrap-switch.min';
 
 const initToggler = (target) => {
     target.bootstrapSwitch({
