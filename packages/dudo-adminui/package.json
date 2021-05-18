@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/adminui",
-    "version": "1.0.16",
+    "version": "1.0.17",
     "description": "Awesome admin UIKit based-on AdminLTE v3!",
     "repository": {
         "type": "git",
@@ -25,7 +25,7 @@
     "dependencies": {
         "@dudojs/fonts": "^1.0.7",
         "@dudojs/sass": "^1.0.7",
-        "@dudojs/webpack": "^1.0.11",
+        "@dudojs/webpack": "^1.1.0",
         "@sweetalert2/theme-bootstrap-4": "^4.0.2",
         "admin-lte": "^3.0.5",
         "bootstrap-switch": "^3.4.0",
