@@ -1,7 +1,6 @@
 const { merge } = require('webpack-merge');
-const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const argv = require('yargs').argv;
 
 const composeWebpack = ({ name, outputPath, publicPath, entry, options }) => {
@@ -18,13 +17,22 @@ const composeWebpack = ({ name, outputPath, publicPath, entry, options }) => {
 
         optimization: {
             minimizer: [
-                new TerserJSPlugin(),
-                new OptimizeCSSAssetsPlugin({
-                    cssProcessorOptions: {
-                        map: {
-                            inline: false,
+                `...`,
+                new CssMinimizerPlugin({
+                    minimizerOptions: {
+                        level: {
+                            1: {
+                                roundingPrecision: 'all=3,px=5',
+                            },
                         },
                     },
+                    minify: CssMinimizerPlugin.cssnanoMinify,
+                    preset: [
+                        'default',
+                        {
+                            discardComments: { removeAll: true },
+                        },
+                    ],
                 }),
             ],
         },
@@ -65,9 +73,19 @@ const composeWebpack = ({ name, outputPath, publicPath, entry, options }) => {
                                 publicPath: publicPath,
                             },
                         },
-                        'css-loader',
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
                         'resolve-url-loader',
-                        'sass-loader',
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true,
+                            },
+                        },
                     ],
                 },
                 {
