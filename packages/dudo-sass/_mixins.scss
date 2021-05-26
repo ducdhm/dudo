@@ -20,6 +20,8 @@
     }
 }
 
+// Old screen mixins
+// ===============================================================
 @mixin screen-sm() {
     @media only screen and (min-width: $screen-sm) {
         @content;
@@ -44,6 +46,93 @@
     }
 }
 
+
+// Screen-up
+// ===============================================================
+@mixin screen-sm-up() {
+    @media only screen and (min-width: $screen-sm) {
+        @content;
+    }
+}
+
+@mixin screen-md-up() {
+    @media only screen and (min-width: $screen-md) {
+        @content;
+    }
+}
+
+@mixin screen-lg-up() {
+    @media only screen and (min-width: $screen-lg) {
+        @content;
+    }
+}
+
+@mixin screen-xl-up() {
+    @media only screen and (min-width: $screen-xl) {
+        @content;
+    }
+}
+
+// Screen-down
+// ===============================================================
+@mixin screen-xs-down() {
+    @media only screen and (max-width: ($screen-sm - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-sm-down() {
+    @media only screen and (max-width: ($screen-md - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-md-down() {
+    @media only screen and (max-width: ($screen-lg - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-lg-down() {
+    @media only screen and (max-width: ($screen-xl - 0.02px)) {
+        @content;
+    }
+}
+
+// Screen-only
+// ===============================================================
+@mixin screen-xs-only() {
+    @media only screen and (max-width: ($screen-sm - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-sm-only() {
+    @media only screen and (min-width: $screen-sm) and (max-width: ($screen-md - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-md-only() {
+    @media only screen and (min-width: $screen-md) and (max-width: ($screen-lg - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-lg-only() {
+    @media only screen and (min-width: $screen-lg) and (max-width: ($screen-xl - 0.02px)) {
+        @content;
+    }
+}
+
+@mixin screen-xl-only() {
+    @media only screen and (min-width: $screen-xl) {
+        @content;
+    }
+}
+
+// Placeholder
+// ===============================================================
 @mixin placeholder($color) {
     &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
         color: $color;
@@ -73,6 +162,8 @@
     }
 }
 
+// Custom scroll bar
+// ===============================================================
 @mixin customScrollBar() {
     $scrollbar-color: #c8c8c8;
 
