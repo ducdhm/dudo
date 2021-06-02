@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/react-cli",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "Awesome React CLI!",
     "main": "index.js",
     "bin": {
@@ -26,7 +26,7 @@
         "@dudojs/init-structure": "^1.1.0",
         "@dudojs/logger": "^1.0.5",
         "@dudojs/node-utils": "^1.0.1",
-        "@dudojs/utils": "^1.0.7",
+        "@dudojs/utils": "^1.0.8",
         "archiver": "^5.3.0",
         "clear": "^0.1.0",
         "colors": "^1.4.0",

@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/utils",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Collection of awesome utilities!",
     "main": "index.js",
     "repository": {
