@@ -14,4 +14,5 @@ module.exports = {
     toSentenceCase: require('./src/toSentenceCase'),
     toSnakeCase: require('./src/toSnakeCase'),
     toTitleCase: require('./src/toTitleCase'),
+    tryParseJson: require('./src/tryParseJson'),
 };
