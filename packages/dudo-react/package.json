@@ -1,0 +1,35 @@
+{
+    "name": "@dudojs/react",
+    "version": "0.9.9",
+    "description": "Awesome React staffs!",
+    "main": "index.js",
+    "bin": {
+        "dreact": "index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "javascript",
+        "js",
+        "react"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
+    "dependencies": {
+        "@dudojs/utils": "^1.0.9",
+        "react": "^17.0.2"
+    },
+    "scripts": {
+        "prepare": "node tools/genIndex"
+    },
+    "devDependencies": {
+        "@dudojs/logger": "^1.0.5",
+        "update-index": "^1.0.3"
+    }
+}
