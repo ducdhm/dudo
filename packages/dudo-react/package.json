@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/react",
-    "version": "0.9.9",
+    "version": "1.0.0",
     "description": "Awesome React staffs!",
     "main": "index.js",
     "bin": {
@@ -22,7 +22,7 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
     "dependencies": {
-        "@dudojs/utils": "^1.0.9",
+        "@dudojs/utils": "^1.1.0",
         "react": "^17.0.2"
     },
     "scripts": {
