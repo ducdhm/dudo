@@ -7,6 +7,7 @@ module.exports = {
     loopArray: require('./src/loopArray'),
     newError: require('./src/newError'),
     normalizeSpace: require('./src/normalizeSpace'),
+    range: require('./src/range'),
     removeTone: require('./src/removeTone'),
     toCamelCase: require('./src/toCamelCase'),
     toKebabCase: require('./src/toKebabCase'),

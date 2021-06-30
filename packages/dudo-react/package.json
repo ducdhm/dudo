@@ -24,12 +24,5 @@
     "dependencies": {
         "@dudojs/utils": "^1.1.0",
         "react": "^17.0.2"
-    },
-    "scripts": {
-        "prepare": "node tools/genIndex"
-    },
-    "devDependencies": {
-        "@dudojs/logger": "^1.0.5",
-        "update-index": "^1.0.3"
     }
 }
