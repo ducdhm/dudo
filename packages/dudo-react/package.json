@@ -23,6 +23,6 @@
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
     "dependencies": {
         "@dudojs/utils": "^1.1.1",
-        "react": "^17.0.2"
+        "react": "^17.0.1"
     }
 }
