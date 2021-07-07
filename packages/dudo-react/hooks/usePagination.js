@@ -81,7 +81,7 @@ export default function usePagination({ total, pageSize, pageStep = 2, currentPa
 
         array.push({
             active: currentPage - 1 <= 0,
-            disabled: currentPage === totalPage,
+            disabled: total === 0 || currentPage === totalPage,
             text: 'NEXT',
             goPage: currentPage + 1,
         });
