@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/utils",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "Collection of awesome utilities!",
     "main": "index.js",
     "repository": {
@@ -23,7 +23,7 @@
         "prepare": "node tools/genIndex"
     },
     "devDependencies": {
-        "@dudojs/logger": "^1.0.5",
+        "@dudojs/logger": "^1.0.6",
         "jest": "^26.1.0",
         "update-index": "^1.0.3"
     },

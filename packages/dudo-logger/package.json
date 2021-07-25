@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/logger",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "description": "Awesome logger with text or icon label!",
     "main": "index.js",
     "repository": {
