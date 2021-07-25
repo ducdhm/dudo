@@ -1,5 +1,5 @@
 # @dudojs/logger
-Awesome logger!
+Awesome logger with text or icon label!
 
 ## Usage
 ```javascript
