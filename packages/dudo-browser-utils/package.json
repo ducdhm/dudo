@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/browser-utils",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Collection of awesome browser utilities!",
     "main": "index.js",
     "repository": {
