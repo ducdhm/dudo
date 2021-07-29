@@ -1,9 +1,9 @@
-module.exports = (money, toFixed = 0) => {
-    if (!money) {
+module.exports = (value, toFixed = 0) => {
+    if (!value || isNaN(value)) {
         return '0';
     }
 
-    let fixed = money.toFixed(toFixed);
+    let fixed = (+value).toFixed(toFixed);
     let decimal = '';
     let number = fixed;
     if (fixed.indexOf('.')) {

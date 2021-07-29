@@ -8,7 +8,7 @@ const { ... } = require('@dudojs/utils');
 
 ## List utilities
  * [ensureArray](./src/ensureArray.js)
- * [formatCurrency](./src/formatCurrency.js)
+ * [formatNumber](src/formatNumber.js)
  * [getObjectValues](./src/getObjectValues.js)
  * [getUploadFileName](./src/getUploadFileName.js)
  * [isValidJsonString](./src/isValidJsonString.js)

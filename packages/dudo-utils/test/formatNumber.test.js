@@ -1,4 +1,4 @@
-const formatCurrency = require('../src/formatCurrency');
+const formatCurrency = require('../src/formatNumber');
 
 it('normalizeSpace', () => {
     expect(formatCurrency()).toEqual('0');
