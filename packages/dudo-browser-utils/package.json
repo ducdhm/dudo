@@ -1,7 +1,7 @@
 {
-    "name": "@dudojs/dom-utils",
+    "name": "@dudojs/browser-utils",
     "version": "1.0.3",
-    "description": "Collection of awesome DOM utilities!",
+    "description": "Collection of awesome browser utilities!",
     "main": "index.js",
     "repository": {
         "type": "git",
@@ -11,7 +11,7 @@
         "javascript",
         "js",
         "dom",
-        "dom-util",
+        "browser-util",
         "util"
     ],
     "author": "Duc Doan <ducdhm@gmail.com>",
@@ -19,7 +19,7 @@
     "bugs": {
         "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-dom-utils#readme",
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-browser-utils#readme",
     "dependencies": {
         "@dudojs/easing": "^1.0.2"
     },

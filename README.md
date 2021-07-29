@@ -4,7 +4,7 @@ Stack of awesome!
 
 ## Packages
  * [@dudojs/adminui](./packages/dudo-adminui): Awesome admin UIKit based-on AdminLTE v3!
- * [@dudojs/dom-utils](./packages/dudo-dom-utils): Collection of awesome DOM utilities! 
+ * [@dudojs/browser-utils](packages/dudo-browser-utils): Collection of awesome browser utilities! 
  * [@dudojs/easing](./packages/dudo-easing): Collection of awesome easing functions!
  * [@dudojs/fonts](./packages/dudo-fonts): Collection of awesome web fonts!
  * [@dudojs/init-structure](./packages/dudo-init-structure): The awesome tool to initialize folder structure with pre-defined structure and template!
