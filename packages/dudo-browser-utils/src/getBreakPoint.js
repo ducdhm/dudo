@@ -24,7 +24,7 @@ const DEFAULTS = [
     },
 ];
 
-export default function getBreakPoint(option = DEFAULTS) {
+export const getBreakPoint = (option = DEFAULTS) => {
     const width = window.innerWidth;
 
     for (let opt of option) {
@@ -44,3 +44,5 @@ export default function getBreakPoint(option = DEFAULTS) {
         }
     }
 };
+
+export default getBreakPoint;

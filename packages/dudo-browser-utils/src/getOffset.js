@@ -1,4 +1,4 @@
-const getOffset = (element) => {
+export const getOffset = (element) => {
     if (typeof element === 'string') {
         element = document.querySelector(element);
     }

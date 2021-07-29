@@ -1,4 +1,4 @@
-export default function dataUriToBlob(dataURI) {
+export const dataUriToBlob = (dataURI) => {
     // convert base64 to raw binary data held in a string
     // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
     const byteString = atob(dataURI.split(',')[1]);
@@ -21,3 +21,5 @@ export default function dataUriToBlob(dataURI) {
     const blob = new Blob([ab], { type: mimeString });
     return blob;
 };
+
+export default dataUriToBlob;

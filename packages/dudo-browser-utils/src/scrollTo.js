@@ -1,7 +1,7 @@
 import getOffset from './getOffset';
 import easingList from '@dudojs/easing';
 
-const scrollTo = (element, duration = 200, offset = 0, easing = 'linear') => {
+export const scrollTo = (element, duration = 200, offset = 0, easing = 'linear') => {
     let startingY = window.pageYOffset;
     let elementY = getOffset(element).top + offset;
 

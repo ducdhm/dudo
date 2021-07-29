@@ -1,15 +1,5 @@
-import dataUriToBlob from './src/dataUriToBlob';
-import getBreakPoint from './src/getBreakPoint';
-import getOffset from './src/getOffset';
-import getScrollbarWidth from './src/getScrollbarWidth';
-import scrollTo from './src/scrollTo';
-
-const browserUtils = {
-    dataUriToBlob,
-    getBreakPoint,
-    getOffset,
-    getScrollbarWidth,
-    scrollTo,
-};
-
-export default browserUtils;
+export { dataUriToBlob } from './src/dataUriToBlob';
+export { getBreakPoint } from './src/getBreakPoint';
+export { getOffset } from './src/getOffset';
+export { getScrollbarWidth } from './src/getScrollbarWidth';
+export { scrollTo } from './src/scrollTo';
