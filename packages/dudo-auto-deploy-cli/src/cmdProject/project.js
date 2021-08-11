@@ -76,7 +76,7 @@ const deployProject = async (selected) => {
     logger.info(`Coping build to ${selected.server.host}...`);
     await client.uploadDir(`${selected.localFolder}/${selected.buildFolder}`, `${selected.remoteFolder}`);
 
-    logger.info('Running build script...');
+    logger.info('Running deploy script...');
     for (let script of selected.deployScript.split('   ')) {
 
     }
