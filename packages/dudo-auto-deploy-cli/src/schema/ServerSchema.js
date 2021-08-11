@@ -1,5 +1,5 @@
 const ServerSchema = {
-    name: 'server',
+    name: 'Server',
     properties: {
         _id: 'string',
         name: 'string',

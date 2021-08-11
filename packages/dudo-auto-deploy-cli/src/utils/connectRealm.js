@@ -1,9 +1,15 @@
-const ServerSchema = require('../schema/ServerSchema')
+const ServerSchema = require('../schema/ServerSchema');
+const ProjectSchema = require('../schema/ProjectSchema');
 const Realm = require('realm');
 
-module.exports = () => {
+const connectRealm = () => {
     return Realm.open({
         path: 'auto-deploy',
-        schema: [ServerSchema],
+        schema: [
+            ServerSchema,
+            ProjectSchema,
+        ],
     });
 };
+
+module.exports = connectRealm;

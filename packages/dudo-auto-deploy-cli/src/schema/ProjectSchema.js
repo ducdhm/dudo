@@ -1,16 +1,13 @@
 const ProjectSchema = {
-    name: 'project',
+    name: 'Project',
     properties: {
         _id: 'string',
         name: 'string',
         localFolder: 'string',
+        buildFolder: 'string',
         remoteFolder: 'string',
         buildScript: 'string?',
         deployScript: 'string?',
-        deploying: {
-            type: 'bool',
-            default: false,
-        },
         server: 'Server',
     },
     primaryKey: '_id',

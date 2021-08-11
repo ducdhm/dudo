@@ -2,8 +2,7 @@
 
 const packageJson = require('./package');
 const program = require('commander');
-const printBanner = require('./src/utils/printBanner')
-const logger = require('@dudojs/logger')();
+const printBanner = require('./src/utils/printBanner');
 
 // Setup program
 // -----------------------------------------
@@ -16,7 +15,8 @@ program.usage(`[command] [options] `);
 
 // Commands
 // -----------------------------------------
-require('./src/cmdServer')(program, logger);
+require('./src/cmdServer')(program);
+require('./src/cmdProject')(program);
 
 
 // Invalid command

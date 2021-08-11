@@ -2,11 +2,11 @@ const clear = require('clear');
 const figlet = require('figlet');
 const color = require('colors/safe');
 
-module.exports = () => {
+const printBanner = () => {
     clear();
     console.log(
         color.blue(
-            '======================[ (c) Duc Doan ]======================'
+            '===============================[ (c) Duc Doan ]==============================='
             +
             '\n'
             +
@@ -16,7 +16,9 @@ module.exports = () => {
             +
             '\n'
             +
-            '====================[ ducdhm@gmail.com ]===================='
+            '=============================[ ducdhm@gmail.com ]============================='
         )
     );
 };
+
+module.exports = printBanner;

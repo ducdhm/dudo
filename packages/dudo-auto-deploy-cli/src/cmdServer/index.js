@@ -1,6 +1,7 @@
-module.exports = (program, logger) => {
+module.exports = (program) => {
     program
-        .command('server <action> [id]')
+        .command('server [action]')
         .description('manage server. <action> can be "list", "add", "edit" or "delete"')
-        .action(require('./server')(logger));
+        .option('-i, --insecure', 'show password as plain text')
+        .action(require('./server'));
 };
