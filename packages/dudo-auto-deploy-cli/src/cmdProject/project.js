@@ -8,7 +8,8 @@ const inquirer = require('inquirer');
 const getCommandSyntax = require('../utils/getCommandSyntax');
 const path = require('path');
 const { execSync } = require('child_process');
-const Client = require('ssh2-sftp-client');
+const SftpClient = require('ssh2-sftp-client');
+const colors = require('colors/safe');
 
 module.exports = async (action, option) => {
     try {
@@ -62,25 +63,33 @@ const deployProject = async (selected) => {
         });
     }
 
-    let client = new Client();
-    await client.connect({
+    let sftpClient = new SftpClient();
+    await sftpClient.connect({
         host: selected.server.host,
         port: selected.server.port,
         username: selected.server.username,
         password: selected.server.password,
     }, true);
 
-    logger.info(`Cleaning remote folder...`);
-    await client.rmdir(`${selected.remoteFolder}`, true);
+    logger.info('Checking existing of remote folder...');
+    const isExisted = await sftpClient.exists(selected.remoteFolder);
+
+    if (!isExisted) {
+        logger.info('Creating remote folder...');
+        await sftpClient.mkdir(selected.remoteFolder, true);
+    } else {
+        logger.info(`Cleaning remote folder...`);
+        await sftpClient.rmdir(selected.remoteFolder, true);
+    }
 
     logger.info(`Coping build to ${selected.server.host}...`);
-    await client.uploadDir(`${selected.localFolder}/${selected.buildFolder}`, `${selected.remoteFolder}`);
+    await sftpClient.uploadDir(`${selected.localFolder}/${selected.buildFolder}`, `${selected.remoteFolder}`);
 
     logger.info('Running deploy script...');
     for (let script of selected.deployScript.split('   ')) {
-
+        sftpClient.client.exec(script);
     }
-    client.end();
+    sftpClient.end();
 
     logger.info('=> Done!');
 
@@ -236,13 +245,15 @@ const listProject = async () => {
 
     printHeading('Project');
     printTable(
-        ['Name', 'Server', 'Local folder', 'Build folder', 'Remote folder', 'Build script', 'Deploy script'],
+        ['Name', 'Server', 'Folder', 'Build script', 'Deploy script'],
         projectList.map(task => [
             task.name,
             getServerDisplayText(task.server),
-            task.localFolder,
-            path.join(task.localFolder, task.buildFolder),
-            task.remoteFolder,
+            [
+                `${colors.bold('Local : ')}${task.localFolder}`,
+                `${colors.bold('Build : ')}${path.join(task.localFolder, task.buildFolder)}`,
+                `${colors.bold('Remote: ')}${task.remoteFolder}`,
+            ].join('\n'),
             task.buildScript.replace(/\s{3}/g, '\n').replace(/\s{3}/g, '\n'),
             task.deployScript.replace(/\s{3}/g, '\n').replace(/\s{3}/g, '\n'),
         ]),
