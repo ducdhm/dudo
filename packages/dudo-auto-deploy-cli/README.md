@@ -16,7 +16,7 @@ npm install -g @dudojs/auto-deploy-cli
  /_/   \_\  \__,_|  \__|  \___/    |____/   \___| | .__/  |_|  \___/   \__, |
                                                   |_|                  |___/ 
 =============================[ ducdhm@gmail.com ]=============================
-Usage: index [command] [options]
+Usage: auto-deploy [command] [options]
 
 Awesome Auto Deploy CLI!
 
