@@ -7,8 +7,28 @@ npm install -g @dudojs/react-cli
 ```
 
 ## Usage
-```shell
-dreact --help
+```
+======================[ (c) Duc Doan ]======================
+      ____    ____    _____      _       ____   _____ 
+     |  _ \  |  _ \  | ____|    / \     / ___| |_   _|
+     | | | | | |_) | |  _|     / _ \   | |       | |  
+     | |_| | |  _ <  | |___   / ___ \  | |___    | |  
+     |____/  |_| \_\ |_____| /_/   \_\  \____|   |_|  
+                                                      
+====================[ ducdhm@gmail.com ]====================
+Usage: dreact [command] [options]
+
+Awesome React CLI!
+
+Options:
+  -v, --version            output the version number
+  -h, --help               display help for command
+
+Commands:
+  build [options]          build and zip "build" folder
+  init [options] [target]  init react app with enhance "create-react-app" strcture
+  help [command]           display help for command
+
 ```
 
 ## License
