@@ -2,11 +2,35 @@
 
 const packageJson = require('./package');
 const program = require('commander');
-const printBanner = require('./src/utils/printBanner')
 const logger = require('@dudojs/logger')();
+const clear = require('clear');
+const figlet = require('figlet');
+const color = require('colors/safe');
+
+const printBanner = () => {
+    clear();
+    console.log(
+        color.blue(
+            '======================[ (c) Duc Doan ]======================'
+            +
+            '\n'
+            +
+            figlet.textSync('  DREACT', {
+                horizontalLayout: 'full',
+            })
+            +
+            '\n'
+            +
+            '====================[ ducdhm@gmail.com ]===================='
+        )
+    );
+};
+
+
 
 // Setup program
 // -----------------------------------------
+program.name('dreact');
 program.storeOptionsAsProperties(false);
 program.passCommandToAction(false);
 program.version(packageJson.version, '-v, --version', 'output the version number');
