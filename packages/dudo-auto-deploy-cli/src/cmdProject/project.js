@@ -63,6 +63,7 @@ const deployProject = async (selected) => {
         });
     }
 
+    logger.info(`Establishing connection to remote server...`);
     let sftpClient = new SftpClient();
     await sftpClient.connect({
         host: selected.server.host,
@@ -82,12 +83,20 @@ const deployProject = async (selected) => {
         await sftpClient.rmdir(selected.remoteFolder, true);
     }
 
-    logger.info(`Coping build to ${selected.server.host}...`);
+    logger.info(`Copying build folder to remote folder...`);
     await sftpClient.uploadDir(`${selected.localFolder}/${selected.buildFolder}`, `${selected.remoteFolder}`);
 
     logger.info('Running deploy script...');
     for (let script of selected.deployScript.split('   ')) {
-        sftpClient.client.exec(script);
+        await new Promise((resolve, reject) => {
+            sftpClient.client.exec(script, (error, result) => {
+                if (error) {
+                    return reject(error);
+                }
+
+                resolve(result);
+            });
+        });
     }
     sftpClient.end();
 
