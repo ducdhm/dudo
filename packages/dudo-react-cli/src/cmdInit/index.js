@@ -5,6 +5,6 @@ module.exports = (program, logger) => {
         .option('-t, --title <title>', 'app title')
         .option('-d, --description <description>', 'app description')
         .option('-c, --color <color>', 'app color')
-        .description('init react app with enhance "create-react-app" strcture')
+        .description('init React app with enhance "create-react-app" structure')
         .action(require('./init')(logger));
 };
