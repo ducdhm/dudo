@@ -25,9 +25,9 @@ const LEVEL_COLOR = {
 };
 
 const DEFAULTS = {
-    labelIcon: false,
-    labelPrefix: '[',
-    labelSuffix: ']',
+    labelIcon: true,
+    labelPrefix: '',
+    labelSuffix: '',
 };
 
 module.exports = ({ labelIcon, labelPrefix, labelSuffix } = DEFAULTS) => {
