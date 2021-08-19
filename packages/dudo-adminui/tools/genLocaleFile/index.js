@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const rootPath = require('get-root-path').default;
+const localePath = path.join(__dirname, '../../locale');
 const locales = require('../../locale');
-const Handlebars = require('handlebars');
 let langs = [];
 
 for (let lang of locales.LANG) {
@@ -18,12 +17,9 @@ for (let locale in locales) {
     }
 }
 
-const template = fs.readFileSync(path.join(__dirname, './index.hbs'), 'utf8');
 for (let lang of langs) {
     fs.writeFileSync(
-        path.join(rootPath, 'locale', `${lang.LANG}.js`),
-        Handlebars.compile(template)({
-            content: JSON.stringify(lang, ' ', 4).replace(/"([^"]+)":/g, '$1:'),
-        }),
+        path.join(localePath, `${lang.LANG}.js`),
+        `const LOCALE = window.LOCALE = ${JSON.stringify(lang, ' ', 4).replace(/"([^"]+)":/g, '$1:')};\nexport default LOCALE;\n`
     );
 }
