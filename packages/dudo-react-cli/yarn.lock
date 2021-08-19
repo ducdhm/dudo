@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@dudojs/init-structure@^1.1.1":
+"@dudojs/init-structure@^1.1.3":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@dudojs/init-structure/-/init-structure-1.1.1.tgz#d8a725b1486844e08813469ebd4f6bb5e288296d"
   integrity sha512-E24WVMKqg4UJ9LxkXR2ODUu/3uFIvKvpn6QQrdEfvNbqZGmxYXeZAI5RBszPaQHxJIdcS0dET3/T7f3RuATSew==
@@ -11,7 +11,7 @@
     handlebars "^4.7.7"
     make-dir "^3.1.0"
 
-"@dudojs/logger@^1.0.6":
+"@dudojs/logger@^1.0.6", "@dudojs/logger@^1.0.8":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.0.6.tgz#1e86def1d95c9bdba79bed20e8e6cb3a43fb6222"
   integrity sha512-jSRmrBdsdaFLf+uExcP9DjGNxDu/FOJUZ9CIj5QKQRGPhB8WMhNz5mnD17gykCMpG+qn3YZNHEpCOAjKmAjnJg==
