@@ -3,7 +3,12 @@ Awesome logger with text or icon label!
 
 ## Usage
 ```javascript
-const logger = require('@dudojs/logger')();
+/**
+ * @option {Boolean} labelIcon Show label as icon or not
+ * @option {String} labelPrefix Label prefix string
+ * @option {String} labelPrefix Label suffix string
+ */
+const logger = require('@dudojs/logger')({ labelIcon, labelPrefix, labelPrefix });
 logger.info('Info message');
 logger.debug('Debug message');
 logger.success('Success message');

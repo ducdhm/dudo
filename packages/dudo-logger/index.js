@@ -6,7 +6,6 @@ const LEVEL_ICON = {
     success: 'v',
     warn: '!',
     error: 'x',
-    question: '?',
 };
 
 const LEVEL_LABEL = {
@@ -15,7 +14,6 @@ const LEVEL_LABEL = {
     success: 'SUCCESS',
     warn: 'WARN',
     error: 'ERROR',
-    question: 'QUESTION',
 };
 
 const LEVEL_COLOR = {
@@ -24,40 +22,49 @@ const LEVEL_COLOR = {
     success: colors.green,
     warn: colors.yellow,
     error: colors.red,
-    question: colors.gray,
 };
 
-const getLabel = (level, isIcon) => {
-    return LEVEL_COLOR[level](isIcon ? LEVEL_ICON[level] : LEVEL_LABEL[level]);
+const DEFAULTS = {
+    labelIcon: false,
+    labelPrefix: '[',
+    labelSuffix: ']',
 };
 
-const genDepth = (depth) => ''.padStart(depth * 4, ' ');
+module.exports = ({ labelIcon, labelPrefix, labelSuffix } = DEFAULTS) => {
+    const genDepth = (depth) => ''.padStart(depth * 4, ' ');
 
-const log = (level, iconLabel, msg, depth = 0) => {
-    const label = `[${getLabel(level, iconLabel)}]`;
-    
-    console.log(`${label} ${genDepth(depth)}${msg}`);
-};
+    const getLabel = (level) => {
+        return (
+            labelPrefix
+            +
+            LEVEL_COLOR[level](labelIcon ? LEVEL_ICON[level] : LEVEL_LABEL[level])
+            +
+            labelSuffix
+        );
+    };
 
-module.exports = (iconLabel) => {
+    const log = (level, msg, depth = 0) => {
+        console.log(`${getLabel(level)} ${genDepth(depth)}${msg}`);
+    };
+
     return {
         info: (msg, depth) => {
-            log('info', iconLabel, msg, depth);
+            log('info', msg, depth);
         },
         debug: (msg, depth) => {
-            log('debug', iconLabel, msg, depth);
+            log('debug', msg, depth);
         },
         success: (msg, depth) => {
-            log('success', iconLabel, msg, depth);
+            log('success', msg, depth);
         },
         warn: (msg, depth) => {
-            log('warn', iconLabel, msg, depth);
+            log('warn', msg, depth);
         },
         error: (msg, depth) => {
-            log('error', iconLabel, msg, depth);
+            log('error', msg, depth);
         },
         question: (msg, depth) => {
-            log('question', iconLabel, msg, depth);
+            log('question', msg, depth);
         },
     };
 };
