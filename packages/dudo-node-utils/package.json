@@ -31,10 +31,9 @@
 		"xlsx": "^0.16.3"
 	},
 	"devDependencies": {
-		"@dudojs/logger": "^1.0.7",
 		"jest": "^26.1.0",
 		"make-dir": "^3.1.0",
 		"update-index": "^1.0.3"
 	},
-	"gitHead": "02b4143729bb26457a6a8b4fadf1fd997047880a"
+	"gitHead": "d74f707a1503fd437fe07fe08f13f1e672e032ca"
 }
