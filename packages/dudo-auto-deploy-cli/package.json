@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-cli#readme",
     "dependencies": {
+        "@dudojs/logger": "^1.0.9",
         "clear": "^0.1.0",
         "colors": "^1.4.0",
         "commander": "^6.0.0",

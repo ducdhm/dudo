@@ -2,6 +2,8 @@ const formatCurrency = require('../src/formatNumber');
 
 it('normalizeSpace', () => {
     expect(formatCurrency()).toEqual('0');
+    expect(formatCurrency(100000000, 4)).toEqual('100,000,000.0000');
+    expect(formatCurrency(100000000, 0)).toEqual('100,000,000');
     expect(formatCurrency(100000000.333, 4)).toEqual('100,000,000.3330');
     expect(formatCurrency(100000000.333, 3)).toEqual('100,000,000.333');
     expect(formatCurrency(100000000.333, 2)).toEqual('100,000,000.33');

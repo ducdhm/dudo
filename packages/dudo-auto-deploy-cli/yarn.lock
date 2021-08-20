@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@dudojs/logger@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.0.6.tgz#1e86def1d95c9bdba79bed20e8e6cb3a43fb6222"
-  integrity sha512-jSRmrBdsdaFLf+uExcP9DjGNxDu/FOJUZ9CIj5QKQRGPhB8WMhNz5mnD17gykCMpG+qn3YZNHEpCOAjKmAjnJg==
+"@dudojs/logger@^1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.0.9.tgz#937003a63dd41bc7710e494bc34236021074262c"
+  integrity sha512-6qXemq+6tOj72L2Y4HTAsCIldMbn7IE005zmA6FPHme2QzfUS3q4nUwo4bR9UT6vR2MFlD4/lBlaM50NW6PNGQ==
   dependencies:
     colors "^1.4.0"
 

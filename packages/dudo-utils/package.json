@@ -20,6 +20,7 @@
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-utils#readme",
     "scripts": {
         "test": "jest",
+        "test:coverage": "jest --coverage",
         "prepare": "node tools/genIndex"
     },
     "devDependencies": {
