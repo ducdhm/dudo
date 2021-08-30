@@ -8,6 +8,7 @@ module.exports = {
     newError: require('./src/newError'),
     normalizeSpace: require('./src/normalizeSpace'),
     range: require('./src/range'),
+    regex: require('./src/regex'),
     removeTone: require('./src/removeTone'),
     toCamelCase: require('./src/toCamelCase'),
     toKebabCase: require('./src/toKebabCase'),
