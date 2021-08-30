@@ -32,7 +32,7 @@ const myFormat = printf(info => {
     let label = colors.magenta(info.label);
     let message = info.message;
 
-    return `[${timestamp}]  [${level}]  [${label}]  ${message}`;
+    return `${timestamp}  ${level}  ${label}  ${message}`;
 });
 
 module.exports = (category, level, logFile, appName = 'MEEN') => {
