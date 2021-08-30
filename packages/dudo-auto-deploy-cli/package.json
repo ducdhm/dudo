@@ -4,7 +4,8 @@
     "description": "Awesome Auto Deploy CLI!",
     "main": "index.js",
     "bin": {
-        "auto-deploy": "index.js"
+        "auto-deploy": "index.js",
+        "autodeploy": "index.js"
     },
     "repository": {
         "type": "git",

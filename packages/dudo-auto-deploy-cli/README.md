@@ -28,7 +28,6 @@ Commands:
   server [options] [action]  manage server. <action> can be "list", "add", "edit" or "delete"
   project [action]           manage project. <action> can be "list", "add", "edit", "delete" and "deploy"
   help [command]             display help for command
-
 ```
 
 ## License
