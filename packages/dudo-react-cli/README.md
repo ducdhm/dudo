@@ -28,7 +28,6 @@ Commands:
   build [options]          build and zip "build" folder
   init [options] [target]  init React app with enhance "create-react-app" structure
   help [command]           display help for command
-
 ```
 
 ## License
