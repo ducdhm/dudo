@@ -15,6 +15,8 @@ const { ... } = require('@dudojs/utils');
  * [loopArray](./src/loopArray.js)
  * [newError](./src/newError.js)
  * [normalizeSpace](./src/normalizeSpace.js)
+ * [range](./src/range.js)
+ * [regex](./src/regex.js)
  * [removeTone](./src/removeTone.js)
  * [toCamelCase](./src/toCamelCase.js)
  * [toKebabCase](./src/toKebabCase.js)
@@ -22,6 +24,7 @@ const { ... } = require('@dudojs/utils');
  * [toSentenceCase](./src/toSentenceCase.js)
  * [toSnakeCase](./src/toSnakeCase.js)
  * [toTitleCase](./src/toTitleCase.js)
+ * [tryParseJson](./src/tryParseJson.js)
 
 ## License
 Please read at [here](./LICENSE.md)
