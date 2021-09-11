@@ -14,8 +14,10 @@
     "keywords": [
         "javascript",
         "js",
-        "react",
-        "cli"
+        "auto",
+        "cli",
+        "deploy",
+        "autodeploy"
     ],
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
