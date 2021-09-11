@@ -57,10 +57,10 @@ if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) 
 }
 
 
-// Print banner when no command
+// When no command
 // -----------------------------------------
 if (process.argv.length <= 2) {
-    printBanner();
+    require('./src/cmdProject/project')('deploy');
 }
 
 
