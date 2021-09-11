@@ -60,7 +60,8 @@ if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) 
 // When no command
 // -----------------------------------------
 if (process.argv.length <= 2) {
-    require('./src/cmdProject/project')('deploy');
+    process.argv.push('project');
+    process.argv.push('deploy');
 }
 
 
