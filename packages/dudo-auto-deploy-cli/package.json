@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/auto-deploy-cli",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "description": "Awesome Auto Deploy CLI!",
     "main": "index.js",
     "bin": {
@@ -36,5 +36,5 @@
         "ssh2-sftp-client": "^7.0.1",
         "table": "^6.7.1"
     },
-    "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"
+    "gitHead": "2eeba266276843e55a6a249d2b29b91e8608a23a"
 }
