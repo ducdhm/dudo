@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/auto-deploy-cli",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Awesome Auto Deploy CLI!",
     "main": "index.js",
     "bin": {
