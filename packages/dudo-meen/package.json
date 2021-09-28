@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/meen",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)",
     "main": "index.js",
     "repository": {
