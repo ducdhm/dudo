@@ -10,9 +10,6 @@ module.exports = {
     },
     baseUrl: '',
     preset: null,
-    loadLocalPackage: {
-        enabled: false,
-    },
     info: {
         title: 'M.E.E.N',
         version: '1.0.0',
