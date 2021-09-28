@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/adminui",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "Awesome admin UIKit based-on AdminLTE v3!",
     "repository": {
         "type": "git",
@@ -23,7 +23,7 @@
         "prepare": "node tools/genLocaleFile"
     },
     "dependencies": {
-        "@dudojs/sass": "^1.0.11",
+        "@dudojs/sass": "^1.0.12",
         "@dudojs/webpack": "^1.1.1",
         "@sweetalert2/theme-bootstrap-4": "^4.0.2",
         "admin-lte": "^3.1.0",
