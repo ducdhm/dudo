@@ -1,6 +1,5 @@
 const express = require('express');
 const http = require('http');
-const { getWinstonLogger } = require('@dudojs/node-utils');
 const buildMenu = require('./methods/buildMenu');
 const initResolver = require('./methods/initResolver');
 const initUploader = require('./methods/initUploader');
@@ -15,6 +14,7 @@ const returnJsonError = require('./methods/returnJsonError');
 const setLocals = require('./methods/setLocals');
 const getUrl = require('./methods/getUrl');
 const getConfig = require('./getConfig');
+const getWinstonLogger = require('./getWinstonLogger');
 
 module.exports = (appName, config, modules) => {
     const logger = getWinstonLogger('composeApp', 'info');
@@ -40,7 +40,7 @@ module.exports = (appName, config, modules) => {
     // Get logger with app name
     // --------------------------------
     app.logger = (category) => {
-        return getWinstonLogger(category, appConfig.logger.level, appConfig.logger.logFile, appName);
+        return getWinstonLogger(category, appConfig.logger.level);
     };
 
     // Alias of "listen" method
