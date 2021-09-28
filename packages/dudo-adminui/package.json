@@ -23,7 +23,6 @@
         "prepare": "node tools/genLocaleFile"
     },
     "dependencies": {
-        "@dudojs/fonts": "^1.0.7",
         "@dudojs/sass": "^1.0.11",
         "@dudojs/webpack": "^1.1.1",
         "@sweetalert2/theme-bootstrap-4": "^4.0.2",
