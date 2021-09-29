@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/node-utils",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Collection of awesome NodeJS utilities!",
     "main": "index.js",
     "repository": {
