@@ -17,9 +17,9 @@
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ducdhm/meen/issues"
+        "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/meen#readme",
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen#readme",
     "scripts": {
         "prepare": "node tools/genLocaleFile && node tools/genIndex"
     },

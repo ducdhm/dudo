@@ -1,7 +1,6 @@
 # @dudojs/meen
 Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)
 
-
 ## Methods
 ### `composeApp`
 ```javascript

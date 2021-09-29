@@ -1,5 +1,5 @@
 # @dudojs/meen-cli
-Awsome CLI for M.E.E.N stack
+Awesome CLI for M.E.E.N stack!
 
 ## Installation
 ```shell

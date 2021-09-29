@@ -1,7 +1,7 @@
 {
     "name": "@dudojs/meen-cli",
     "version": "1.0.3",
-    "description": "Awsome CLI for M.E.E.N stack",
+    "description": "Awesome CLI for M.E.E.N stack!",
     "main": "index.js",
     "bin": {
         "meen": "index.js"
@@ -21,9 +21,9 @@
     "author": "Duc Doan <ducdhm@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/ducdhm/meen/issues"
+        "url": "https://github.com/ducdhm/dudo/issues"
     },
-    "homepage": "https://github.com/ducdhm/meen#readme",
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen-cli#readme",
     "dependencies": {
         "@dudojs/init-structure": "^1.1.5",
         "@dudojs/logger": "^1.1.0",
