@@ -1,5 +1,5 @@
-# update-index
-A utility to create/update `index.js` file
+# @dudojs/update-index
+An awesome utility to create/update `index.js` file
 
 ## Usage
 ```js
