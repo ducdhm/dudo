@@ -63,8 +63,5 @@ module.exports = ({ labelIcon, labelPrefix, labelSuffix } = DEFAULTS) => {
         error: (msg, depth) => {
             log('error', msg, depth);
         },
-        question: (msg, depth) => {
-            log('question', msg, depth);
-        },
     };
 };
