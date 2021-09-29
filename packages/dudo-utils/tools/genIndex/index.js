@@ -1,4 +1,8 @@
 const path = require('path');
-const updateIndex = require('update-index');
+const updateIndex = require('@dudojs/update-index');
 
-updateIndex(path.join(__dirname, '..', '..', 'src'), path.join(__dirname, '..', '..'), 'FILE');
+updateIndex({
+    target: path.join(__dirname, '..', '..', 'src'),
+    destination: path.join(__dirname, '..', '..'),
+    mode: 'FILE',
+});

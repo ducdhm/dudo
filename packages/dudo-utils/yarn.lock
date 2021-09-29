@@ -303,6 +303,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@dudojs/update-index@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.0.tgz#5512d049170f0d6aad88d97dd4ba9107e7c91997"
+  integrity sha512-5h17me8mSHXF9Z0XPOdSrum+mOa9bXecXPYzWGQ6ma9cELHAngvDxFXWIYjL/X4dwQvG9c6bHtgnUcusD8lwgw==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -3216,11 +3221,6 @@ unset-value@^1.0.0:
   dependencies:
     has-value "^0.3.1"
     isobject "^3.0.0"
-
-update-index@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/update-index/-/update-index-1.0.3.tgz#ae9231a81c75ea0f6a55d82a5b65229d30fe19d3"
-  integrity sha512-ExZkDgFS3a8C86qqrmRLDA2A9tC0Vn/oI2zXW7ePkYtB325lDs1pgt9nJmJ8Xzxp9OKV29FUpHWflR05RuXFmw==
 
 urix@^0.1.0:
   version "0.1.0"
