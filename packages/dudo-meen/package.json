@@ -46,7 +46,7 @@
         "winston": "^3.3.3"
     },
     "devDependencies": {
-        "handlebars": "^4.7.6",
-        "update-index": "^1.0.3"
+        "@dudojs/update-index": "^1.0.0",
+        "handlebars": "^4.7.6"
     }
 }
