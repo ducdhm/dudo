@@ -1,15 +1,16 @@
 const getFileList = require('../src/getFileList');
 const makeDir = require('make-dir');
 const fs = require('fs');
-const FOLDER_PATH = '../temp/';
-const SUB_FOLDER_PATH = '../temp/subFolder';
-const FILE1_PATH = '../temp/file-01.txt';
-const FILE2_PATH = '../temp/file-02.txt';
-const FILE3_PATH = '../temp/subFolder/file-03.txt';
+const path = require('path');
+const FOLDER_PATH = path.join(__dirname, '../temp/getFileList/');
+const SUB_FOLDER_PATH = path.join(__dirname, '../temp/getFileList/subFolder');
+const FILE1_PATH = path.join(__dirname, '../temp/getFileList/file-01.txt');
+const FILE2_PATH = path.join(__dirname, '../temp/getFileList/file-02.txt');
+const FILE3_PATH = path.join(__dirname, '../temp/getFileList/subFolder/file-03.txt');
 
 beforeEach(() => {
-    makeDir(FOLDER_PATH);
-    makeDir(SUB_FOLDER_PATH);
+    makeDir.sync(FOLDER_PATH);
+    makeDir.sync(SUB_FOLDER_PATH);
     fs.writeFileSync(FILE1_PATH, 'Test', 'utf8');
     fs.writeFileSync(FILE2_PATH, 'Test', 'utf8');
     fs.writeFileSync(FILE3_PATH, 'Test', 'utf8');
@@ -28,12 +29,9 @@ afterEach(() => {
 });
 
 it('getFileList', () => {
-    // Replace `\` to `/` when testing on Windows
-    const fileList = getFileList(FOLDER_PATH).map(item => item.replace(/[\\]/g, '/'));
-
-    expect(fileList).toEqual([
-        '../temp/file-01.txt',
-        '../temp/file-02.txt',
-        '../temp/subFolder/file-03.txt',
+    expect(getFileList(FOLDER_PATH)).toEqual([
+        FILE1_PATH,
+        FILE2_PATH,
+        FILE3_PATH,
     ]);
 });

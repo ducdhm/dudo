@@ -2,8 +2,9 @@ const getExcelSheetData = require('../src/getExcelSheetData');
 const xlsx = require('xlsx');
 const makeDir = require('make-dir');
 const fs = require('fs');
-const FOLDER_PATH = '../temp/';
-const FILE_PATH = '../temp/test.xls';
+const path = require('path');
+const FOLDER_PATH = path.join(__dirname, '../temp/getExcelSheetData/');
+const FILE_PATH = path.join(__dirname, '../temp/getExcelSheetData/test.xls');
 const SHEET_NAME = 'Sheet Test';
 const SHEET_DATA = [
     [
@@ -24,7 +25,7 @@ const SHEET_DATA = [
 ];
 
 beforeEach(() => {
-    makeDir(FOLDER_PATH);
+    makeDir.sync(FOLDER_PATH);
     const wb = xlsx.utils.book_new();
     const ws = xlsx.utils.aoa_to_sheet(SHEET_DATA);
     xlsx.utils.book_append_sheet(wb, ws, SHEET_NAME);
