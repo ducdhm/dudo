@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/auto-deploy-cli",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Awesome Auto Deploy CLI!",
     "main": "index.js",
     "bin": {
@@ -26,7 +26,7 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-cli#readme",
     "dependencies": {
-        "@dudojs/logger": "^1.0.9",
+        "@dudojs/logger": "^1.1.0",
         "clear": "^0.1.0",
         "colors": "^1.4.0",
         "commander": "^6.0.0",
