@@ -14,7 +14,7 @@ const returnJsonError = require('./methods/returnJsonError');
 const setLocals = require('./methods/setLocals');
 const getUrl = require('./methods/getUrl');
 const getConfig = require('./getConfig');
-const getWinstonLogger = require('./getWinstonLogger');
+const { getWinstonLogger } = require('@dudojs/node-utils');
 
 module.exports = (appName, config, modules) => {
     const logger = getWinstonLogger('composeApp', 'info');

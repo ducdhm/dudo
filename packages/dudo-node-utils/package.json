@@ -25,7 +25,9 @@
     },
     "dependencies": {
         "get-root-path": "^2.0.2",
-        "xlsx": "^0.17.2"
+        "xlsx": "^0.17.2",
+        "split": "^1.0.1",
+        "winston": "^3.3.3"
     },
     "devDependencies": {
         "@dudojs/update-index": "^1.0.0",
