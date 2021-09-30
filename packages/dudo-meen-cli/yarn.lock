@@ -11,19 +11,19 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@dudojs/init-structure@^1.1.0":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@dudojs/init-structure/-/init-structure-1.1.4.tgz#60171205d15518505aa1200d90bac3017cb8a91a"
-  integrity sha512-9VTRH+afXodprWGYTFux+/XBlpGEridaUQHURIk8g1qoodSTbyih6dVDJ6EkhBc+bp//MwD6V0yAhSma8Qa5kw==
+"@dudojs/init-structure@^1.1.5":
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@dudojs/init-structure/-/init-structure-1.1.5.tgz#d3bf69713332181a0d145bca2b9d137612166f3e"
+  integrity sha512-7YazKGKZsFNEMd5g08FoyVEQanvorg5WrtL/LsugKlveUHeUEnJkWrnhmnqy2dS6Tn2ac78hQxuIGKtnGSyNbw==
   dependencies:
-    "@dudojs/logger" "^1.0.9"
+    "@dudojs/logger" "^1.1.0"
     handlebars "^4.7.7"
     make-dir "^3.1.0"
 
-"@dudojs/logger@^1.0.2", "@dudojs/logger@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.0.9.tgz#937003a63dd41bc7710e494bc34236021074262c"
-  integrity sha512-6qXemq+6tOj72L2Y4HTAsCIldMbn7IE005zmA6FPHme2QzfUS3q4nUwo4bR9UT6vR2MFlD4/lBlaM50NW6PNGQ==
+"@dudojs/logger@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.1.0.tgz#8fdcce8caf999c9deee7c26b15be0407ee7222cf"
+  integrity sha512-ezhFedDtfxmBZ1T85l/83TIZqkA0cFI/uwFUnrmha+vFSJaRKlpnlHF8n9cFoLAS8K3esKuBLIolUNxhy3mXUQ==
   dependencies:
     colors "^1.4.0"
 
@@ -38,10 +38,10 @@
     winston-daily-rotate-file "^4.5.0"
     xlsx "^0.16.3"
 
-"@dudojs/utils@^1.0.4":
-  version "1.1.7"
-  resolved "https://registry.yarnpkg.com/@dudojs/utils/-/utils-1.1.7.tgz#3d5f5f201d8c94da9214071e85f186ee86225175"
-  integrity sha512-MODccHnvbrA56YOY4jOnWTGxVUmb3K68/Ygly10rEIMjSjqDEUu69IH4ylNx1/nSBp2PLSsrNr1iRE0cjgxCUQ==
+"@dudojs/utils@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@dudojs/utils/-/utils-1.2.1.tgz#55e893ed828d9e42200b82a6934e121085e5fca7"
+  integrity sha512-uAFmzksMmKwoyyW7ei9juaMRH2FFkFTph7uOAEoaSDkR+MmO1f5520CBnJ2gO/72TScalRRY4Ce4ZbY4ql3Xdw==
 
 adler-32@~1.2.0:
   version "1.2.0"
