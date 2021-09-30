@@ -40,7 +40,7 @@ const updateIndex = ({target, destination, mode, prefix, suffix, filter} = DEFAU
     let content = '';
     content += 'module.exports = {';
     for (let key in acceptList) {
-        content += `    ${key}: require('${acceptList[key]}'),`;
+        content += `    ${key}: require('${acceptList[key]}'),\n`;
     }
     content += '}\n';
 
