@@ -22,7 +22,6 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
     "dependencies": {
-        "@dudojs/utils": "^1.2.1",
         "react": "^17.0.1"
     },
     "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"

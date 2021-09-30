@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import utils from '@dudojs/utils';
+
+const range = (start, end) => Array.from({ length: end - start }, (v, k) => k + start);
 
 const createRange = (start, end, currentPage) => {
-    return utils.range(start, end).map(index => ({
+    return range(start, end).map(index => ({
         active: index === currentPage,
         page: index,
         goPage: index,
