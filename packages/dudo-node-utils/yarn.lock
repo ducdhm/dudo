@@ -312,10 +312,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@dudojs/update-index@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.0.tgz#5512d049170f0d6aad88d97dd4ba9107e7c91997"
-  integrity sha512-5h17me8mSHXF9Z0XPOdSrum+mOa9bXecXPYzWGQ6ma9cELHAngvDxFXWIYjL/X4dwQvG9c6bHtgnUcusD8lwgw==
+"@dudojs/update-index@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.1.tgz#4ad5edbeee76c4ef1ea4cbe9af2c6113bc85bf3e"
+  integrity sha512-YaO1iqAFyaBYqj+3JbHt3PTMRIpcjNV5D1yG2Ds8MALbWON7EasQS6YcEWnct5T5Ll1StY85ZnqVwySEPc9fpg==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
