@@ -6,7 +6,6 @@ Stack of awesome!
  * [@dudojs/adminui](./packages/dudo-adminui): Awesome admin UIKit based-on AdminLTE v3!
  * [@dudojs/auto-deploy-cli](./packages/dudo-auto-deploy-cli): Awesome Auto Deploy CLI!!
  * [@dudojs/browser-utils](packages/dudo-browser-utils): Collection of awesome browser utilities! 
- * [@dudojs/easing](./packages/dudo-easing): Collection of awesome easing functions!
  * [@dudojs/init-structure](./packages/dudo-init-structure): The awesome tool to initialize folder structure with pre-defined structure and template!
  * [@dudojs/logger](./packages/dudo-logger): Awesome logger with text or icon label!
  * [@dudojs/meen](./packages/dudo-meen): Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)
