@@ -37,10 +37,12 @@ const updateIndex = ({target, destination, mode, prefix, suffix, filter} = DEFAU
     }
 
 
-    const template = fs.readFileSync(path.join(__dirname, 'index.hbs'), 'utf8');
-    const content = Handlebars.compile(template)({
-        acceptList,
-    });
+    let content = '';
+    content += 'module.exports = {';
+    for (let key in acceptList) {
+        content += `    ${key}: require('${acceptList[key]}'),`;
+    }
+    content += '}\n';
 
     fs.writeFileSync(path.join(destination, 'index.js'), content);
 };

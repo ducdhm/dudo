@@ -18,7 +18,5 @@
         "url": "https://github.com/ducdhm/dudo/issues"
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-update-index#readme",
-    "devDependencies": {
-        "handlebars": "^4.7.6"
-    }
+    "devDependencies": {}
 }
