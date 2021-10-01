@@ -27,14 +27,12 @@
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-cli#readme",
     "dependencies": {
         "@dudojs/logger": "^1.1.0",
-        "clear": "^0.1.0",
         "colors": "^1.4.0",
         "commander": "^6.0.0",
-        "figlet": "^1.5.0",
         "inquirer": "^8.1.2",
-        "realm": "^10.6.1",
-        "ssh2-sftp-client": "^7.0.1",
-        "table": "^6.7.1"
+        "realm": "^10.8.0",
+        "ssh2-sftp-client": "^7.0.4",
+        "table": "^6.7.2"
     },
     "gitHead": "2eeba266276843e55a6a249d2b29b91e8608a23a"
 }
