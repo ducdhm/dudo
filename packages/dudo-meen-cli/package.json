@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/meen-cli",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "Awesome CLI for M.E.E.N stack!",
     "main": "index.js",
     "bin": {
@@ -25,8 +25,8 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen-cli#readme",
     "dependencies": {
-        "@dudojs/init-structure": "^1.1.5",
-        "@dudojs/logger": "^1.1.0",
+        "@dudojs/init-structure": "^1.1.6",
+        "@dudojs/logger": "^1.1.1",
         "@dudojs/node-utils": "^0.9.2",
         "@dudojs/utils": "^1.2.3",
         "clear": "^0.1.0",
