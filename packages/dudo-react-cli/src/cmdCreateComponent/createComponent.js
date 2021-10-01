@@ -28,5 +28,5 @@ module.exports = (name, options) => {
         },
     });
 
-    logger.info(`Done!`);
+    logger.info(`=> Done!`);
 };
