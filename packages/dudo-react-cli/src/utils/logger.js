@@ -1,5 +1,3 @@
-const logger = require('@dudojs/logger')({
-    labelSuffix: ' ',
-});
+const logger = require('@dudojs/logger')();
 
 module.exports = logger;
