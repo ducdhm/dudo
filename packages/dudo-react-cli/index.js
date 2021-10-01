@@ -2,30 +2,6 @@
 
 const packageJson = require('./package');
 const program = require('commander');
-const logger = require('@dudojs/logger')();
-const clear = require('clear');
-const figlet = require('figlet');
-const color = require('colors/safe');
-
-const printBanner = () => {
-    clear();
-    console.log(
-        color.blue(
-            '======================[ (c) Duc Doan ]======================'
-            +
-            '\n'
-            +
-            figlet.textSync('  DREACT', {
-                horizontalLayout: 'full',
-            })
-            +
-            '\n'
-            +
-            '====================[ ducdhm@gmail.com ]===================='
-        )
-    );
-};
-
 
 
 // Setup program
@@ -40,8 +16,8 @@ program.usage(`[command] [options] `);
 
 // Commands
 // -----------------------------------------
-require('./src/cmdBuild')(program, logger);
-require('./src/cmdInit')(program, logger);
+require('./src/cmdBuild')(program);
+require('./src/cmdCreateComponent')(program);
 
 
 // Invalid command
@@ -52,17 +28,10 @@ program.on('command:*', () => {
 });
 
 
-// Print banner if printing help
-// -----------------------------------------
-if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
-    printBanner();
-}
-
-
-// Print banner when no command
+// When no command
 // -----------------------------------------
 if (process.argv.length <= 2) {
-    printBanner();
+    process.argv.push('-h');
 }
 
 

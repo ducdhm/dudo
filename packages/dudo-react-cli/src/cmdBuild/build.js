@@ -1,11 +1,11 @@
-const { getTargetPath, getFileName } = require('../utils');
+const { getTargetPath, getFileName, logger } = require('../utils');
 const { execSync } = require('child_process');
 const archiver = require('archiver');
 const logUpdate = require('log-update');
 const moment = require('moment');
 const fs = require('fs');
 
-module.exports = (logger) => (options) => {
+module.exports = (options) => {
     const { script = 'npm run build', prefix } = options;
     logger.info('Building source...');
     execSync(script);

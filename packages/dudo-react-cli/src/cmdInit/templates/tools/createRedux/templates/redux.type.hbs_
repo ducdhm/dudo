@@ -1,2 +1,0 @@
-export const {{nameUppercase}}_LOAD = '{{nameUppercase}}_LOAD';
-export const {{nameUppercase}}_LOADED = '{{nameUppercase}}_LOADED';
