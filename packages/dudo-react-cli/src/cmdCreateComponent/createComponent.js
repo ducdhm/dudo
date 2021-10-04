@@ -18,7 +18,7 @@ module.exports = (name, options) => {
     structure[name] = {};
     structure[name][`index.js`] = path.join(__dirname, './template/component.index.hbs');
     structure[name][`${name}.component.js`] = path.join(__dirname, './template/component.component.hbs');
-    structure[name][`${name}.component.scss`] = path.join(__dirname, './template/component.style.hbs');
+    structure[name][`${name}.style.scss`] = path.join(__dirname, './template/component.style.hbs');
 
     initStructure({
         target: getTargetPath(`src/${componentFolder}`),
