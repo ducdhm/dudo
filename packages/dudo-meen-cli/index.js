@@ -2,29 +2,6 @@
 
 const packageJson = require('./package');
 const program = require('commander');
-const color = require('colors/safe');
-const clear = require('clear');
-const figlet = require('figlet');
-const logger = require('@dudojs/logger')();
-
-const printBanner = () => {
-    clear();
-    console.log(
-        color.blue(
-            '=====================[ (c) Duc Doan ]====================='
-            +
-            '\n'
-            +
-            figlet.textSync('MEEN CLI', {
-                horizontalLayout: 'full',
-            })
-            +
-            '\n'
-            +
-            '===================[ ducdhm@gmail.com ]==================='
-        )
-    );
-};
 
 
 // Setup program
@@ -39,9 +16,9 @@ program.usage(`[command] [options] `);
 
 // Commands
 // -----------------------------------------
-require('./src/cmdCreateModel')(program, logger);
-require('./src/cmdCreateModule')(program, logger);
-require('./src/cmdCreateLocal')(program, logger);
+require('./src/cmdCreateModel')(program);
+require('./src/cmdCreateModule')(program);
+require('./src/cmdCreateLocal')(program);
 
 
 // Invalid command
@@ -52,17 +29,10 @@ program.on('command:*', () => {
 });
 
 
-// Print banner if printing help
-// -----------------------------------------
-if (process.argv.indexOf('-h') !== -1 || process.argv.indexOf('--help') !== -1) {
-    printBanner();
-}
-
-
-// Print banner when no command
+// When no command
 // -----------------------------------------
 if (process.argv.length <= 2) {
-    printBanner();
+    process.argv.push('-h');
 }
 
 

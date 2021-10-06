@@ -1,7 +1,6 @@
-module.exports = (program, logger) => {
+module.exports = (program) => {
     program
-        .command('model')
+        .command('model <name>')
         .description('create a model')
-        .requiredOption('-n, --name <name>', 'model name')
-        .action(require('./createModel')(logger));
+        .action(require('./createModel'));
 };

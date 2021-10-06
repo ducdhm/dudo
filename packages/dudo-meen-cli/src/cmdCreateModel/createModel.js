@@ -1,10 +1,9 @@
 const { getFolderList } = require('@dudojs/node-utils');
-const { getTargetPath } = require('../utils/');
+const { getTargetPath, logger } = require('../utils/');
 const initStructure = require('@dudojs/init-structure');
 const path = require('path');
 
-module.exports = (logger) => (options) => {
-    const { name } = options;
+module.exports = (name) => {
     logger.info(`Create "${name}" model`);
 
     const structure = {};
@@ -19,10 +18,11 @@ module.exports = (logger) => (options) => {
         },
     });
 
-    const folderList = getFolderList(getTargetPath('@local/models')).map(folder => path.parse(folder).name);
+    const folderList = getFolderList(getTargetPath('@local/models'), true);
     const structureModels = {
         'index.js': path.join(__dirname, './template/models.index.hbs'),
     };
+
     initStructure({
         target: getTargetPath('@local/models'),
         structure: structureModels,

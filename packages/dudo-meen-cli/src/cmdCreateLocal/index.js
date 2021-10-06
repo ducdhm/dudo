@@ -1,7 +1,6 @@
-module.exports = (program, logger) => {
+module.exports = (program) => {
     program
-        .command('local')
+        .command('local <name>')
         .description('create a local package')
-        .requiredOption('-n, --name <name>', 'local package name')
-        .action(require('./createLocal')(logger));
+        .action(require('./createLocal'));
 };
