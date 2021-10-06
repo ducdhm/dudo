@@ -3,9 +3,12 @@ const makeDir = require('make-dir');
 const fs = require('fs');
 const path = require('path');
 const FOLDER_PATH = path.join(__dirname, '../temp/getFolderList');
-const SUB_FOLDER1_PATH = path.join(__dirname, '../temp/getFolderList/subFolder1');
-const SUB_FOLDER2_PATH = path.join(__dirname, '../temp/getFolderList/subFolder2');
-const SUB_FOLDER3_PATH = path.join(__dirname, '../temp/getFolderList/subFolder3');
+const SUB_FOLDER1_NAME = 'subFolder1';
+const SUB_FOLDER2_NAME = 'subFolder2';
+const SUB_FOLDER3_NAME = 'subFolder3';
+const SUB_FOLDER1_PATH = path.join(__dirname, '../temp/getFolderList', SUB_FOLDER1_NAME);
+const SUB_FOLDER2_PATH = path.join(__dirname, '../temp/getFolderList', SUB_FOLDER2_NAME);
+const SUB_FOLDER3_PATH = path.join(__dirname, '../temp/getFolderList', SUB_FOLDER3_NAME);
 
 beforeEach(() => {
     makeDir.sync(FOLDER_PATH);
@@ -28,5 +31,13 @@ it('getFolderList', () => {
         SUB_FOLDER1_PATH,
         SUB_FOLDER2_PATH,
         SUB_FOLDER3_PATH,
+    ]);
+});
+
+it('getFolderList nameOnly=true', () => {
+    expect(getFolderList(FOLDER_PATH, true)).toEqual([
+        SUB_FOLDER1_NAME,
+        SUB_FOLDER2_NAME,
+        SUB_FOLDER3_NAME,
     ]);
 });

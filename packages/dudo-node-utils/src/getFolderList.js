@@ -1,15 +1,16 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (dir, folderList = []) => {
-    const files = fs.readdirSync(dir);
-    
-    for (const file of files) {
-        const stat = fs.statSync(path.join(dir, file));
+module.exports = (dir, nameOnly) => {
+    const children = fs.readdirSync(dir);
+    let folderList = [];
+
+    for (const child of children) {
+        const stat = fs.statSync(path.join(dir, child));
         if (stat.isDirectory()) {
-            folderList.push(path.join(dir, file));
+            folderList.push(nameOnly ? child : path.join(dir, child));
         }
     }
-    
+
     return folderList;
 };

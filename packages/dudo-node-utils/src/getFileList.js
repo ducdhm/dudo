@@ -1,18 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const getFileList = (dir, fileList = []) => {
-    const files = fs.readdirSync(dir);
-    
-    for (const file of files) {
-        const stat = fs.statSync(path.join(dir, file));
-        if (stat.isDirectory()) {
-            fileList = getFileList(path.join(dir, file), fileList);
-        } else {
-            fileList.push(path.join(dir, file));
+const getFileList = (target, nameOnly) => {
+    const children = fs.readdirSync(target);
+    let fileList = [];
+
+    for (const child of children) {
+        const stat = fs.statSync(path.join(target, child));
+        if (stat.isFile()) {
+            fileList.push(nameOnly ? child : path.join(target, child));
         }
     }
-    
+
     return fileList;
 };
 
