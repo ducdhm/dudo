@@ -25,6 +25,7 @@
     "dependencies": {
         "@dudojs/init-structure": "^1.1.6",
         "@dudojs/logger": "^1.1.1",
+        "@dudojs/node-utils": "^1.1.4",
         "archiver": "^5.3.0",
         "commander": "^6.0.0",
         "log-update": "^4.0.0",

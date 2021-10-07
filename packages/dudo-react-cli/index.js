@@ -18,6 +18,7 @@ program.usage(`[command] [options] `);
 // -----------------------------------------
 require('./src/cmdBuild')(program);
 require('./src/cmdCreateComponent')(program);
+require('./src/cmdCreateRedux')(program);
 
 
 // Invalid command
