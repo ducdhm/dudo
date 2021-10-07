@@ -12,7 +12,7 @@ body {
         }
     }
 
-    @include customScrollBar();
+    @include custom-scroll-bar();
 }
 
 // Add button follow the accent
@@ -44,7 +44,7 @@ body {
 // .custom-scrollbar class
 // -----------------------------------------------
 .custom-scrollbar {
-    @include customScrollBar();
+    @include custom-scroll-bar();
 }
 
 // Fix cursor for .close and a tag
