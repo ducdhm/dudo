@@ -3,12 +3,12 @@ module.exports = (app, Model, originItemPerPage = app.config.paginator.itemPerPa
         get: async (query, page, pageSize, improveQueryBuild) => {
             let currentPage = isNaN(page) ? 1 : +page;
 
-            if (!pageSize) {
+            if (typeof pageSize === 'function') {
+                improveQueryBuild = pageSize;
                 pageSize = originItemPerPage;
             }
 
-            if (typeof pageSize === 'function') {
-                improveQueryBuild = pageSize;
+            if (!pageSize) {
                 pageSize = originItemPerPage;
             }
 
