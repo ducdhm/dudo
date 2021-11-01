@@ -1,15 +1,15 @@
 module.exports = (app, Model, originItemPerPage = app.config.paginator.itemPerPage) => {
     return {
-        get: async (query, page, itemPerPage, improveQueryBuild) => {
+        get: async (query, page, pageSize, improveQueryBuild) => {
             let currentPage = isNaN(page) ? 1 : +page;
 
-            if (!itemPerPage) {
-                itemPerPage = originItemPerPage;
+            if (!pageSize) {
+                pageSize = originItemPerPage;
             }
 
-            if (typeof itemPerPage === 'function') {
-                improveQueryBuild = itemPerPage;
-                itemPerPage = originItemPerPage;
+            if (typeof pageSize === 'function') {
+                improveQueryBuild = pageSize;
+                pageSize = originItemPerPage;
             }
 
             let queryBuilder = Model.find(query);
@@ -18,14 +18,15 @@ module.exports = (app, Model, originItemPerPage = app.config.paginator.itemPerPa
             }
 
             const totalRecord = await Model.countDocuments(query);
-            const totalPage = Math.ceil(totalRecord / itemPerPage);
-            const data = await queryBuilder.skip((itemPerPage * currentPage) - itemPerPage).limit(itemPerPage);
+            const totalPage = Math.ceil(totalRecord / pageSize);
+            const data = await queryBuilder.skip((pageSize * currentPage) - pageSize).limit(pageSize);
 
             return {
                 data,
                 totalRecord,
                 totalPage,
                 currentPage,
+                pageSize,
             }
         },
     };
