@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 
-export default function useWindowSize() {
+export default function useWindowScroll() {
     const [state, setState] = useState({
         lastScrollTop: 0,
         bodyOffset: document.body.getBoundingClientRect(),
