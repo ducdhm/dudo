@@ -9,6 +9,7 @@ module.exports = {
         vi,
     },
     baseUrl: '',
+    routeStrict: false,
     preset: null,
     info: {
         title: 'M.E.E.N',

@@ -31,7 +31,9 @@ module.exports = (appName, config, modules) => {
     const appConfig = getConfig(appName, config, logger);
     const app = express();
     const server = http.createServer(app);
-    app.enable('strict routing');
+    if (appConfig.routeStrict) {
+        app.enable('strict routing');
+    }
     app.id = appName;
     app.server = server;
     app.config = appConfig;
