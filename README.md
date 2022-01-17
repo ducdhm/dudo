@@ -3,7 +3,6 @@ Stack of awesome!
 
 
 ## Packages
-* [@dudojs/adminui](./packages/dudo-adminui): Awesome admin UIKit based-on AdminLTE v3!
 * [@dudojs/auto-deploy-cli](./packages/dudo-auto-deploy-cli): Awesome Auto Deploy CLI!
 * [@dudojs/browser-utils](./packages/dudo-browser-utils): Collection of awesome browser utilities!
 * [@dudojs/init-structure](./packages/dudo-init-structure): The awesome tool to initialize folder structure with pre-defined structure and template!
@@ -17,6 +16,10 @@ Stack of awesome!
 * [@dudojs/update-index](./packages/dudo-update-index): An awesome utility to create/update index.js file
 * [@dudojs/utils](./packages/dudo-utils): Collection of awesome utilities!
 * [@dudojs/webpack](./packages/dudo-webpack): Compose webpack.config.js with awesome style!
+
+
+## DEPRECATED
+* [@dudojs/adminui](./deprecated/dudo-adminui): Awesome admin UIKit based-on AdminLTE v3!
 
 
 ## License
