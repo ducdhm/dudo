@@ -5,6 +5,6 @@
         "lerna": "^3.22.1"
     },
     "scripts": {
-        "publish": "node ./scripts/removePackageLock.js && lerna publish"
+        "publish": "node ./scripts/updateReadme.js && node ./scripts/removePackageLock.js && lerna publish"
     }
 }
