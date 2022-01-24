@@ -1,0 +1,25 @@
+{
+    "name": "@dudojs/antd",
+    "version": "0.9.9",
+    "description": "Awesome React components based-on AntDesign!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "react",
+        "react-component",
+        "antdesign",
+        "antd"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-antd#readme",
+    "dependencies": {
+        "antd": "^4.18.3"
+    }
+}
