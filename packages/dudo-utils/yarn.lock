@@ -303,10 +303,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@dudojs/update-index@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.2.tgz#ddddbe2ef2f7c021b94bff4f27917e4e555ef197"
-  integrity sha512-RAWYhml5UJQ/00X5K7ShCwMtwISzklWYe2xZDGROX0vaRNVPlyFG3w9CExpVicUVIgQeDsJJZGaEQHDa2IgP6g==
+"@dudojs/update-index@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.3.tgz#8ddd17abc8bea3be70c4e129b210d94cb2aab880"
+  integrity sha512-/17gOrxDPKWIQcaeNbpEASCpBPA0kjSgFzS9U8ObV/GaxF+QHVsSoV09glZyQ1kvQtNFKjGY9LHSOdmVVBGyJA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -3108,9 +3108,9 @@ throat@^5.0.0:
   integrity sha512-fcwX4mndzpLQKBS1DVYhGAcYaYt7vsHNIvQV+WXMvnow5cgjPphq5CaayLaGsjRdSCKZFNGt7/GYAuXaNOiYCA==
 
 tmpl@1.0.x:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
-  integrity sha1-I2QN17QtAEM5ERQIIOXPRA5SHdE=
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.5.tgz#8683e0b902bb9c20c4f726e3c0b69f36518c07cc"
+  integrity sha512-3f0uOEAQwIqGuWW2MVzYg8fV/QNnc/IpuJNG837rLuczAaLVHslWHZQj4IGiEl5Hs3kkbhwL9Ab7Hrsmuj+Smw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
