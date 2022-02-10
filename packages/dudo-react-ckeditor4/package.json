@@ -1,0 +1,27 @@
+{
+    "name": "@dudojs/react-ckeditor4",
+    "version": "0.9.9",
+    "description": "Awesome React component for CKEditor 4!",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ducdhm/dudo.git"
+    },
+    "keywords": [
+        "react",
+        "reactjs",
+        "ckeditor",
+        "ckeditor4",
+        "react-ckeditor"
+    ],
+    "author": "Duc Doan <ducdhm@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ducdhm/dudo/issues"
+    },
+    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-ckeditor4#readme",
+    "dependencies": {
+        "load-script": "^2.0.0",
+        "react": "^17.0.1"
+    }
+}
