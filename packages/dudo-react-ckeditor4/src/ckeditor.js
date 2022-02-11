@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import load from 'load-script';
 
-const DEFAULT_SCRIPT = 'https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js';
+const DEFAULT_SCRIPT = 'https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js';
 
 const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScriptLoaded, className, onReady, events = {} }) => {
     const ref = useRef(null);
