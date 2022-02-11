@@ -7,6 +7,7 @@ const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScript
     const ref = useRef(null);
     const [isMounting, setMounting] = useState(false);
     const [isLoaded, setLoaded] = useState(isScriptLoaded);
+    const [editor, setEditor] = useState(null);
 
     const initCKEditor = () => {
         if (isMounting) {
@@ -20,16 +21,17 @@ const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScript
             return;
         }
 
-        const editor = window.CKEDITOR.appendTo(ref, config, defaultContent);
+        const _editor = window.CKEDITOR.appendTo(ref, config, defaultContent);
+        setEditor(_editor);
 
         if (typeof onReady === 'function') {
-            onReady(editor);
+            onReady(_editor);
         }
 
         for (let event in events) {
             let eventHandler = events[event];
 
-            editor.on(event, eventHandler);
+            _editor.on(event, eventHandler);
         }
     };
 
@@ -42,9 +44,10 @@ const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScript
 
         return () => {
             setMounting(true);
+            editor && editor.destroy();
         };
 
-    }, [isLoaded]);
+    }, []);
 
     return (
         <div className={className} ref={ref} />
