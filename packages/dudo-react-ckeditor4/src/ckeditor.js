@@ -3,7 +3,7 @@ import load from 'load-script';
 
 const DEFAULT_SCRIPT = 'https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js';
 
-const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScriptLoaded, className, onReady, events = {} }) => {
+export default function Ckeditor({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScriptLoaded = false, className, onReady, events = {} }) {
     const ref = useRef(null);
     const [isMounting, setMounting] = useState(false);
     const [isLoaded, setLoaded] = useState(isScriptLoaded);
@@ -16,12 +16,12 @@ const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScript
 
         setLoaded(true);
 
-        if (window.CKEDITOR) {
+        if (!window.CKEDITOR) {
             console.log('CKEDITOR is not loaded!');
             return;
         }
 
-        const _editor = window.CKEDITOR.appendTo(ref, config, defaultContent);
+        const _editor = window.CKEDITOR.appendTo(ref.current, config, defaultContent);
         setEditor(_editor);
 
         if (typeof onReady === 'function') {
@@ -53,5 +53,3 @@ const CKEditor = ({ defaultContent, config, scriptUrl = DEFAULT_SCRIPT, isScript
         <div className={className} ref={ref} />
     );
 };
-
-export default CKEditor;

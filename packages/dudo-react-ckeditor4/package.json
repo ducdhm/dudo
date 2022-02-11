@@ -21,7 +21,7 @@
     },
     "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react-ckeditor4#readme",
     "dependencies": {
-        "load-script": "^2.0.0",
-        "react": "^17.0.1"
+        "babel-preset-react": "^6.24.1",
+        "load-script": "^2.0.0"
     }
 }
