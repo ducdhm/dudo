@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/react-ckeditor4",
-    "version": "0.9.9",
+    "version": "1.0.0",
     "description": "Awesome React component for CKEditor 4!",
     "main": "index.js",
     "repository": {
