@@ -9,4 +9,4 @@ module.exports = {
     publicFolder: require('./publicFolder'),
     session: require('./session'),
     view: require('./view'),
-}
+};

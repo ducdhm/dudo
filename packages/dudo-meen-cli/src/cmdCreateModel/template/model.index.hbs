@@ -1,9 +1,11 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 const {{ name }}Model = new Schema({
     name: {
         type: String,
     },
 }, { timestamps: true });
+
+const {{ name }}Model = model('{{ name }}', schema);
 
 module.exports = {{ name }}Model;
