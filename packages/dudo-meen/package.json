@@ -46,5 +46,6 @@
     "devDependencies": {
         "@dudojs/update-index": "^1.0.3",
         "handlebars": "^4.7.6"
-    }
+    },
+    "gitHead": "5fb42b7b7ec6d82a3dc08d479eaee3d733c2c40e"
 }

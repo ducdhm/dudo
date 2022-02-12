@@ -11,25 +11,25 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@dudojs/node-utils@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@dudojs/node-utils/-/node-utils-1.1.1.tgz#2d17e8827831576d6e24cbe06ed6dc90b4193224"
-  integrity sha512-wXJgABH3UctuiMvEXau1C788obVrdk8MCq1gS69Q3ljH6tqPM8lPpzm02tWLSo4PfLhI0aRPPYq3TO/C2WPLHw==
+"@dudojs/node-utils@^1.1.4":
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@dudojs/node-utils/-/node-utils-1.1.4.tgz#f2cd136d8454210a0db05160451e68f63f62711a"
+  integrity sha512-axX/1EoBq+Ha+uGmX7JUjr3P703MbPuT/Q0R08Ztupc9GdJaBDF53YPES5e1Za6wAdWg0GL9LXVFqTBwV0KmgQ==
   dependencies:
     get-root-path "^2.0.2"
     split "^1.0.1"
     winston "^3.3.3"
     xlsx "^0.17.2"
 
-"@dudojs/update-index@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.1.tgz#4ad5edbeee76c4ef1ea4cbe9af2c6113bc85bf3e"
-  integrity sha512-YaO1iqAFyaBYqj+3JbHt3PTMRIpcjNV5D1yG2Ds8MALbWON7EasQS6YcEWnct5T5Ll1StY85ZnqVwySEPc9fpg==
+"@dudojs/update-index@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.3.tgz#8ddd17abc8bea3be70c4e129b210d94cb2aab880"
+  integrity sha512-/17gOrxDPKWIQcaeNbpEASCpBPA0kjSgFzS9U8ObV/GaxF+QHVsSoV09glZyQ1kvQtNFKjGY9LHSOdmVVBGyJA==
 
-"@dudojs/utils@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@dudojs/utils/-/utils-1.2.1.tgz#55e893ed828d9e42200b82a6934e121085e5fca7"
-  integrity sha512-uAFmzksMmKwoyyW7ei9juaMRH2FFkFTph7uOAEoaSDkR+MmO1f5520CBnJ2gO/72TScalRRY4Ce4ZbY4ql3Xdw==
+"@dudojs/utils@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@dudojs/utils/-/utils-1.2.3.tgz#9eda348f5de5bede89ffc97a61138946696e2460"
+  integrity sha512-GVvC8Pb4MCn63tOHgDWH/iboBVLs5DdWGIdi8PfbahSFJAffTmOS4jDsVjbmQHjqZLKewsM7//OK9dcawuoCQA==
 
 "@tootallnate/once@1":
   version "1.1.2"
