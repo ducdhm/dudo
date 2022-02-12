@@ -1,10 +1,9 @@
-const { composeModel } = require('@dudojs/meen');
 const { Schema } = require('mongoose');
 
-module.exports = composeModel('{{ name }}', {
+const {{ name }}Model = new Schema({
     name: {
         type: String,
     },
-}, {
+}, { timestamps: true });
 
-});
+module.exports = {{ name }}Model;
