@@ -1,5 +1,10 @@
+{{#if isSub}}
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+{{else}}
 @import "../../assets/styles/variables";
 @import "../../assets/styles/mixins";
+{{/if}}
 
 .{{name}} {
 

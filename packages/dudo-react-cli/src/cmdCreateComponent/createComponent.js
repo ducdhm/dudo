@@ -8,6 +8,7 @@ module.exports = (name, options) => {
 
     const arr = name.replace(/\\/g, '/').split('/');
 
+    let isSub = false;
     let componentName = name;
     let componentFolder = 'components';
 
@@ -34,6 +35,7 @@ module.exports = (name, options) => {
         structure[pageName][componentName][`index.js`] = path.join(__dirname, './template/component.index.hbs');
         structure[pageName][componentName][`${componentName}.js`] = path.join(__dirname, './template/component.js.hbs');
         structure[pageName][componentName][`${componentName}.scss`] = path.join(__dirname, './template/component.scss.hbs');
+        isSub = true;
     }
 
     initStructure({
@@ -41,6 +43,7 @@ module.exports = (name, options) => {
         structure,
         fileData: {
             name: componentName,
+            isSub,
         },
     });
 
