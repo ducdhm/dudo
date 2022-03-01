@@ -5,4 +5,5 @@ export { getOffset } from './src/getOffset';
 export { getQueryString } from './src/getQueryString';
 export { getScrollbarWidth } from './src/getScrollbarWidth';
 export { openPopup } from './src/openPopup';
+export { scrollIntoView } from './src/scrollIntoView';
 export { scrollTo } from './src/scrollTo';
