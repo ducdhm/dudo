@@ -11,7 +11,6 @@ Stack of awesome!
 * [@dudojs/meen-cli](./packages/dudo-meen-cli): Awesome CLI for M.E.E.N stack!
 * [@dudojs/node-utils](./packages/dudo-node-utils): Collection of awesome NodeJS utilities!
 * [@dudojs/react](./packages/dudo-react): Awesome React staffs!
-* [@dudojs/react-ckeditor4](./packages/dudo-react-ckeditor4): Awesome React component for CKEditor 4!
 * [@dudojs/react-cli](./packages/dudo-react-cli): Awesome React CLI!
 * [@dudojs/sass](./packages/dudo-sass): Collection of awesome SASS variables, mixins and fonts!
 * [@dudojs/update-index](./packages/dudo-update-index): An awesome utility to create/update index.js file

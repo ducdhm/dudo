@@ -1,9 +1,10 @@
 import './{{ name }}.scss';
 import React from 'react';
+import classnames from 'classnames';
 
-export default function {{ name }}() {
+export default function {{ name }}({ className }) {
     return (
-        <div className="{{ name }}">
+        <div className={classnames('{{ name }}', className)}>
 
         </div>
     );

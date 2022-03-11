@@ -18,35 +18,6 @@ composeApp(appName, modules);
   1. `{appName}/config/app.js` (will be loaded if available)
 
 **Note 2**: Other files in `{appName}/config/app.js` will be load as properties of `app.config`. Such as `icon.js` will be available in `app.config.icon`.
-  
-  
-### `composeModel`
-```javascript
-/**
- * Compose a Mongoose model
- * @param {String} modelName Name of model
- * @param {Object} schema Schema options of mongoose
- * @param {Object} options
- * @param {Object} options.index Equals with `mongooseSchema.index` method
- * @param {Object} options.virtual List of virtual properties with key is name of virtual and value is virtual options. If you pass value as function, it will be getter. 
- * Example: 
- * {
- *     url: {
- *         get: function () {
- *             return `/url/${this._id}`;
- *         }
- *     },
- *     type: function () {
- *         return this.type;
- *     }
- * }
- * @param {Array} options.plugins Each plugin will be passed via `mongooseSchema.plugin` method
- * @param {Object} options.index Same as `mongooseSchema.index` method
- * @param {Object} options.set Same as `mongooseSchema.set` method
- * @param {Object} options.static Static properties will be added to model
- */
-composeModel(modelName, schema, options, dontEnhance);
-```
 
 
 ## Built-in modules
