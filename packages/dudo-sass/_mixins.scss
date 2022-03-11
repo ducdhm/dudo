@@ -164,12 +164,10 @@
 
 // Custom scroll bar
 // ===============================================================
-@mixin custom-scroll-bar() {
-    $scrollbar-color: #c8c8c8;
-
+@mixin custom-scroll-bar($scrollbar-color: #c8c8c8, $scrollbar-color-hover: #a2a2a2, $scrollbar-background: transparent) {
     & {
         -ms-overflow-style: -ms-autohiding-scrollbar;
-        scrollbar-color: $scrollbar-color transparent;
+        scrollbar-color: $scrollbar-color $scrollbar-background;
         scrollbar-width: thin;
     }
 
@@ -206,8 +204,8 @@
     }
 
     &::-webkit-scrollbar {
-        height: 18px;
-        width: 18px;
+        height: 8px;
+        width: 8px;
     }
 
     &::-webkit-scrollbar:disabled {
@@ -232,8 +230,8 @@
     &::-webkit-scrollbar-button:vertical:decrement:hover,
     &::-webkit-scrollbar-button:vertical:increment,
     &::-webkit-scrollbar-button:vertical:increment:hover {
-        height: 18px;
-        width: 18px;
+        height: 8px;
+        width: 8px;
         display: none;
     }
 
@@ -249,13 +247,13 @@
     }
 
     html &::-webkit-scrollbar-track {
-        background: transparent;
+        background: $scrollbar-background;
     }
 
     html &::-webkit-scrollbar-thumb,
     html &::-webkit-scrollbar-thumb:hover {
-        border-radius: 9px;
-        border: solid 6px transparent;
+        border-radius: 0;
+        border: solid 0 transparent;
         background-clip: content-box;
     }
 
@@ -264,7 +262,7 @@
     }
 
     html &::-webkit-scrollbar-thumb:hover {
-        background-color: #98a3a6;
+        background-color: $scrollbar-color-hover;
     }
 
     &::-webkit-scrollbar-thumb:vertical {
