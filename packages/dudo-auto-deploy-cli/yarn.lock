@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@dudojs/logger@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.1.0.tgz#8fdcce8caf999c9deee7c26b15be0407ee7222cf"
-  integrity sha512-ezhFedDtfxmBZ1T85l/83TIZqkA0cFI/uwFUnrmha+vFSJaRKlpnlHF8n9cFoLAS8K3esKuBLIolUNxhy3mXUQ==
+"@dudojs/logger@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.1.1.tgz#c50ac337f17f6068df078838c06aabe9eadc6b73"
+  integrity sha512-u1FeV/km6YhnKM2S0W6RQP7epV9IIfI+S3JlHs1eWMVaKqEb4KExIsgjT8Rp3CLsrv7jqKIhm5sJPPOXGKB7qw==
   dependencies:
     colors "^1.4.0"
 
@@ -867,9 +867,9 @@ mimic-response@^2.0.0:
   integrity sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==
 
 minimist@^1.2.0, minimist@^1.2.3:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass@^3.0.0:
   version "3.1.5"
