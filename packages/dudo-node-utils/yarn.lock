@@ -312,10 +312,10 @@
     enabled "2.0.x"
     kuler "^2.0.0"
 
-"@dudojs/update-index@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.2.tgz#ddddbe2ef2f7c021b94bff4f27917e4e555ef197"
-  integrity sha512-RAWYhml5UJQ/00X5K7ShCwMtwISzklWYe2xZDGROX0vaRNVPlyFG3w9CExpVicUVIgQeDsJJZGaEQHDa2IgP6g==
+"@dudojs/update-index@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@dudojs/update-index/-/update-index-1.0.3.tgz#8ddd17abc8bea3be70c4e129b210d94cb2aab880"
+  integrity sha512-/17gOrxDPKWIQcaeNbpEASCpBPA0kjSgFzS9U8ObV/GaxF+QHVsSoV09glZyQ1kvQtNFKjGY9LHSOdmVVBGyJA==
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
@@ -755,9 +755,9 @@ assign-symbols@^1.0.0:
   integrity sha1-WWZ/QfrdTyDMvCu5a41Pf3jsA2c=
 
 async@^3.1.0:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.1.tgz#d3274ec66d107a47476a4c49136aacdb00665fc8"
-  integrity sha512-XdD5lRO/87udXCMC9meWdYiR+Nq6ZjUfXidViUZGu2F1MO4T3XwZ1et0hb2++BgLfhyJwy44BGB/yx80ABx8hg==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.3.tgz#ac53dafd3f4720ee9e8a160628f18ea91df196c9"
+  integrity sha512-spZRyzKL5l5BZQrr/6m/SqFdBN0q3OCI0f9rjfBzCMBIP4p75P620rR3gTmaksNOhmzgdxcaxdNfMy6anrbM0g==
 
 asynckit@^0.4.0:
   version "0.4.0"
