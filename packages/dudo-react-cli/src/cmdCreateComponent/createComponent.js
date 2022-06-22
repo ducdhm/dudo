@@ -3,22 +3,28 @@ const initStructure = require('@dudojs/init-structure');
 const path = require('path');
 
 module.exports = (name, options) => {
-    const { page } = options;
+    let { target, layout, page } = options;
     logger.info(`Create "${name}" component`);
+
+    if (!target) {
+        target = './src/components';
+    }
+
+    if (layout) {
+        target = './src/layouts';
+    }
+
+    if (page) {
+        target = './src/pages';
+    }
 
     const arr = name.replace(/\\/g, '/').split('/');
 
     let isSub = false;
     let componentName = name;
-    let componentFolder = 'components';
-
-    if (page) {
-        componentFolder = 'pages';
-    }
 
     if (arr.length > 1) {
         componentName = arr[1];
-        componentFolder = 'pages';
     }
 
     const structure = {};
@@ -39,7 +45,7 @@ module.exports = (name, options) => {
     }
 
     initStructure({
-        target: getTargetPath(`src/${componentFolder}`),
+        target: getTargetPath(target),
         structure,
         fileData: {
             name: componentName,
