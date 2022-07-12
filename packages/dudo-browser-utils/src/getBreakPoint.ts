@@ -1,4 +1,10 @@
-const DEFAULTS = [
+interface BreakPointOption {
+    name: string;
+    min?: number;
+    max?: number;
+}
+
+const DEFAULTS: Array<BreakPointOption> = [
     {
         name: 'xs',
         max: 576,
@@ -24,25 +30,23 @@ const DEFAULTS = [
     },
 ];
 
-export const getBreakPoint = (option = DEFAULTS) => {
+export default function getBreakPoint(option: Array<BreakPointOption> = DEFAULTS) {
     const width = window.innerWidth;
-
+    
     for (let opt of option) {
         // Has max only
         if (!opt.min && opt.max && width < opt.max) {
             return opt.name;
         }
-
+        
         // Has min and max
         if (opt.min && opt.max && width >= opt.min && width < opt.max) {
             return opt.name;
         }
-
+        
         // Has min only
         if (opt.min && !opt.max && width >= opt.min) {
             return opt.name;
         }
     }
 };
-
-export default getBreakPoint;

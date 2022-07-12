@@ -1,41 +1,34 @@
-const fallbackCopyTextToClipboard = (text, onSuccess, onError) => {
+const fallbackCopyTextToClipboard = (text: string, onSuccess: Function, onError: Function) => {
     const textArea = document.createElement('textarea');
     textArea.value = text;
-
+    
     // Avoid scrolling to bottom
     textArea.style.top = '0';
     textArea.style.left = '0';
     textArea.style.position = 'fixed';
-
+    
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-
+    
     try {
-        let isOk = document.execCommand('copy');
-        if (isOk) {
-            typeof onSuccess === 'function' && onSuccess();
-        } else {
-            typeof onError === 'function' && onError();
-        }
+        document.execCommand('copy') ? onSuccess() : onError();
     } catch (error) {
-        typeof onError === 'function' && onError(error);
+        onError(error);
     }
-
+    
     document.body.removeChild(textArea);
 };
 
-export const copyToClipboard = (text, onSuccess, onError) => {
+export default function copyToClipboard(text: string, onSuccess: Function, onError: Function) {
     if (!navigator.clipboard) {
         fallbackCopyTextToClipboard(text, onSuccess, onError);
         return;
     }
-
+    
     navigator.clipboard.writeText(text).then(function () {
-        typeof onSuccess === 'function' && onSuccess();
+        onSuccess();
     }, function (error) {
-        typeof onError === 'function' && onError(error);
+        onError(error);
     });
 };
-
-export default copyToClipboard;

@@ -1,6 +1,7 @@
 .idea
 node_modules
 packages/**/node_modules
+packages/**/lib
 *.log
 package-lock.json
 packages/**/package-lock.json
