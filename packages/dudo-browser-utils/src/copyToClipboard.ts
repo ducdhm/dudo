@@ -1,4 +1,4 @@
-const fallbackCopyTextToClipboard = (text: string, onSuccess: Function, onError: Function) => {
+const fallbackCopyTextToClipboard = (text: string, onSuccess: Function, onError?: Function) => {
     const textArea = document.createElement('textarea');
     textArea.value = text;
     
