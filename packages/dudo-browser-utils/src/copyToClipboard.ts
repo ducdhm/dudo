@@ -20,7 +20,7 @@ const fallbackCopyTextToClipboard = (text: string, onSuccess: Function, onError?
     document.body.removeChild(textArea);
 };
 
-export default function copyToClipboard(text: string, onSuccess: Function, onError: Function) {
+export default function copyToClipboard(text: string, onSuccess: Function, onError?: Function) {
     if (!navigator.clipboard) {
         fallbackCopyTextToClipboard(text, onSuccess, onError);
         return;

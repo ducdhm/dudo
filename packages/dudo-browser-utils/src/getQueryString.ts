@@ -1,3 +1,3 @@
-export default function getQueryString () {
-    new URLSearchParams(document.location.search.substring(1));
+export default function getQueryString(): URLSearchParams {
+    return new URLSearchParams(document.location.search.substring(1));
 };

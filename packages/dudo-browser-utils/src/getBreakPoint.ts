@@ -30,7 +30,7 @@ const DEFAULTS: Array<BreakPointOption> = [
     },
 ];
 
-export default function getBreakPoint(option: Array<BreakPointOption> = DEFAULTS) {
+export default function getBreakPoint(option: Array<BreakPointOption> = DEFAULTS): string | null {
     const width = window.innerWidth;
     
     for (let opt of option) {
@@ -49,4 +49,6 @@ export default function getBreakPoint(option: Array<BreakPointOption> = DEFAULTS
             return opt.name;
         }
     }
+    
+    return null;
 };
