@@ -1,6 +1,6 @@
 {
     "name": "@dudojs/meen",
-    "version": "1.1.9",
+    "version": "1.1.10",
     "description": "Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)",
     "main": "index.js",
     "repository": {
@@ -25,7 +25,7 @@
     },
     "dependencies": {
         "@dudojs/node-utils": "^1.1.4",
-        "@dudojs/utils": "^1.2.4",
+        "@dudojs/utils": "^1.2.5",
         "body-parser": "^1.19.0",
         "compression": "^1.7.4",
         "cookie-parser": "^1.4.5",
