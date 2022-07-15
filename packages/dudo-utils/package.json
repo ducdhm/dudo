@@ -32,7 +32,7 @@
         "jest": "^28.1.2",
         "typescript": "^4.7.4"
     },
-    "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd",
+    "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178",
     "dependencies": {
         "@types/jest": "^28.1.4",
         "ts-jest": "^28.0.5"
