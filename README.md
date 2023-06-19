@@ -20,7 +20,6 @@ Stack of awesome!
 
 ## DEPRECATED
 * [@dudojs/adminui](./deprecated/dudo-adminui): Awesome admin UIKit based-on AdminLTE v3!
-* [@dudojs/antd](./deprecated/dudo-antd): Awesome React components based-on AntDesign!
 
 
 ## License
