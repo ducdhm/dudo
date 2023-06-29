@@ -17,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/ducdhm/dudo/issues"
   },
-  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-update-index#readme"
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-update-index#readme",
+  "gitHead": "ff6d618bdd3fc6c95d01c28024aacc11e7b14db5"
 }

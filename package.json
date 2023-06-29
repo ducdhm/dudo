@@ -1,11 +1,11 @@
 {
-    "name": "root",
-    "private": true,
-    "devDependencies": {
-        "lerna": "3.22.1",
-        "typescript": "4.7.4"
-    },
-    "scripts": {
-        "publish": "lerna run tsc && node ./scripts/updateReadme.js && lerna publish"
-    }
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "3.22.1",
+    "typescript": "4.7.4"
+  },
+  "scripts": {
+    "publish": "lerna run tsc && node ./scripts/updateReadme.js && lerna publish"
+  }
 }
