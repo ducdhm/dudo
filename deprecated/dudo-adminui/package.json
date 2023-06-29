@@ -1,43 +1,43 @@
 {
-    "name": "@dudojs/adminui",
-    "version": "1.1.10",
-    "description": "Awesome admin UIKit based-on AdminLTE v3!",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo.git"
-    },
-    "keywords": [
-        "admin",
-        "uikit",
-        "javascript",
-        "sass",
-        "js"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-adminui#readme",
-    "scripts": {
-        "prepare": "node tools/genLocaleFile"
-    },
-    "dependencies": {
-        "@dudojs/sass": "^1.0.12",
-        "@dudojs/webpack": "^1.1.3",
-        "@sweetalert2/theme-bootstrap-4": "^4.0.2",
-        "admin-lte": "^3.1.0",
-        "clipboard": "^2.0.6",
-        "cropperjs": "^1.5.9",
-        "dropzone": "^5.7.2",
-        "expose-loader": "^1.0.3",
-        "jquery": "^3.5.1",
-        "jquery-cropper": "^1.0.1",
-        "jquery.niceform": "^1.1.9",
-        "jquery.reload": "^1.0.3",
-        "sweetalert2": "^10.13.3",
-        "timeago": "^1.6.7",
-        "urijs": "^1.19.5"
-    },
-    "gitHead": "02b4143729bb26457a6a8b4fadf1fd997047880a"
+  "name": "@dudojs/adminui",
+  "version": "1.1.10",
+  "description": "Awesome admin UIKit based-on AdminLTE v3!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/dudo.git"
+  },
+  "keywords": [
+    "admin",
+    "uikit",
+    "javascript",
+    "sass",
+    "js"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-adminui#readme",
+  "scripts": {
+    "prepare": "node tools/genLocaleFile"
+  },
+  "dependencies": {
+    "@dudojs/sass": "^1.0.12",
+    "@dudojs/webpack": "^1.1.3",
+    "@sweetalert2/theme-bootstrap-4": "^4.0.2",
+    "admin-lte": "^3.1.0",
+    "clipboard": "^2.0.6",
+    "cropperjs": "^1.5.9",
+    "dropzone": "^5.7.2",
+    "expose-loader": "^1.0.3",
+    "jquery": "^3.5.1",
+    "jquery-cropper": "^1.0.1",
+    "jquery.niceform": "^1.1.9",
+    "jquery.reload": "^1.0.3",
+    "sweetalert2": "^10.13.3",
+    "timeago": "^1.6.7",
+    "urijs": "^1.19.5"
+  },
+  "gitHead": "02b4143729bb26457a6a8b4fadf1fd997047880a"
 }

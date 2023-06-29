@@ -1,14 +1,18 @@
 # @dudojs/adminui
+
 Awesome admin UIKit based-on AdminLTE v3!
 
 ## Usage
+
 ### Styles and scripts
+
 ```javascript
 import '@dudojs/adminui/locale/{lang}'; // "lang" can be "vi" or "en" 
 import '@dudojs/adminui/';
 ```
 
 ### `composeWebpack` method
+
 Same as `composeWebpack` of [@dudojs/webpack](https://www.npmjs.com/package/@dudojs/webpack):
 
 ```javascript
@@ -29,6 +33,7 @@ module.exports = composeWebpack({
 ```
 
 but have pre-defined Webpack options as following:
+
 ```javascript
 {
     module: {
@@ -69,7 +74,9 @@ but have pre-defined Webpack options as following:
     },
 }
 ```
+
 These options let `@dudojs/adminui`'s script can be runnable!
 
 ## License
+
 Please read at [here](./LICENSE.md)

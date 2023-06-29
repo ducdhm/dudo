@@ -1,297 +1,297 @@
-@import '~@dudojs/sass/SourceSansPro';
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
-@import '~@dudojs/sass/variables';
-@import '~@dudojs/sass/mixins';
+@import "~@dudojs/sass/SourceSansPro";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~@dudojs/sass/variables";
+@import "~@dudojs/sass/mixins";
 
 body {
-    &.iframe-mode {
-        .content-wrapper {
-            margin: 0 !important;
-        }
+  &.iframe-mode {
+    .content-wrapper {
+      margin: 0 !important;
     }
+  }
 
-    @include custom-scroll-bar();
+  @include custom-scroll-bar();
 }
 
 // Add button follow the accent
 // -----------------------------------------------
 @each $color, $value in $accent-colors {
-    .btn-#{$color} {
-        @include button-variant($value, $value);
-    }
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
 }
 
 @each $color, $value in $accent-colors {
-    .btn-outline-#{$color} {
-        @include button-outline-variant($value);
-    }
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
 }
 
 // .content class
 // -----------------------------------------------
 .content-wrapper > .content {
-    border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 // .strong class
 // -----------------------------------------------
 .strong {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 // .custom-scrollbar class
 // -----------------------------------------------
 .custom-scrollbar {
-    @include custom-scroll-bar();
+  @include custom-scroll-bar();
 }
 
 // Fix cursor for .close and a tag
 // -----------------------------------------------
 a,
 .close {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .close {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 // Fix size when adding .text-sm
 // -----------------------------------------------
 .text-sm {
-    .btn.btn-xs {
-        font-size: .75rem !important;
+  .btn.btn-xs {
+    font-size: .75rem !important;
+  }
+
+  &.brand-link,
+  & .brand-link {
+    .brand-image {
+      margin-left: .8rem;
+    }
+  }
+
+  .sidebar-collapse .nav-flat .nav-icon {
+    margin-left: 0.6rem;
+  }
+
+  // Fix height of main content
+  .wrapper .content-wrapper {
+    min-height: calc(100vh - calc(3.5rem) - calc(2.5rem));
+  }
+
+  // Make .nav-icon center vertical in .nav-item and bigger
+  .nav-sidebar > .nav-item {
+    .nav-link {
+      color: #c2c7d0;
     }
 
-    &.brand-link,
-    & .brand-link {
-        .brand-image {
-            margin-left: .8rem;
-        }
+    > .nav-link {
+      padding-bottom: .6rem;
+      padding-top: .6rem;
     }
 
-    .sidebar-collapse .nav-flat .nav-icon {
-        margin-left: 0.6rem;
+    .nav-icon {
+      font-size: 1rem !important;
+      transform: translateY(2px);
     }
 
-    // Fix height of main content
-    .wrapper .content-wrapper {
-        min-height: calc(100vh - calc(3.5rem) - calc(2.5rem));
+    .nav-icon ~ .fas {
+      margin-top: 2px;
     }
+  }
 
-    // Make .nav-icon center vertical in .nav-item and bigger
-    .nav-sidebar > .nav-item {
-        .nav-link {
-            color: #c2c7d0;
-        }
-
-        > .nav-link {
-            padding-top: .6rem;
-            padding-bottom: .6rem;
-        }
-
-        .nav-icon {
-            transform: translateY(2px);
-            font-size: 1rem !important;
-        }
-
-        .nav-icon ~ .fas {
-            margin-top: 2px;
-        }
+  // Correct line-height of .btn in .input-group
+  .input-group:not(.input-group-lg) {
+    .btn {
+      line-height: 24px;
     }
-
-    // Correct line-height of .btn in .input-group
-    .input-group:not(.input-group-lg) {
-        .btn {
-            line-height: 24px;
-        }
-    }
+  }
 }
 
 // Table
 // -----------------------------------------------
 .table-responsive {
-    .table {
-        margin-bottom: 0;
-    }
+  .table {
+    margin-bottom: 0;
+  }
 }
 
 // Make textarea resizable vertically only
 // -----------------------------------------------
 textarea.form-control {
-    resize: vertical;
+  resize: vertical;
 }
 
 // Error state for CKEditor
 // -----------------------------------------------
 .form-group.has-error .cke_chrome {
-    border-color: #dc3545;
+  border-color: #dc3545;
 }
 
 // ICheck
 // -----------------------------------------------
 [class*=icheck-] > input.is-invalid:first-child + input[type=hidden] + label::before,
 [class*=icheck-] > input.is-invalid:first-child + label::before {
-    border-color: #dc3545 !important;
+  border-color: #dc3545 !important;
 }
 
 .icheck-wrapper {
-    width: 22px;
-    overflow: hidden;
+  overflow: hidden;
+  width: 22px;
 }
 
 // Dropzone
 // -----------------------------------------------
 .dropzone {
-    border: 3px dashed #ddd !important;
-    border-radius: 5px !important;
+  border: 3px dashed #ddd !important;
+  border-radius: 5px !important;
 
-    .dz-message {
-        font-size: 24px;
-        color: #bbb;
-    }
+  .dz-message {
+    color: #bbb;
+    font-size: 24px;
+  }
 }
 
 // SweetAlert2
 // -----------------------------------------------
 .swal2-header {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 // Ekko Lightbox
 // -----------------------------------------------
 .ekko-lightbox {
-    .modal-title {
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }
+  .modal-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 // Model drop image
 // -----------------------------------------------
 .modal-crop-image {
-    .modal-dialog {
-        @include screen-sm {
-            max-width: calc(100% - 2.4rem);
-        }
+  .modal-dialog {
+    @include screen-sm {
+      max-width: calc(100% - 2.4rem);
     }
+  }
 
-    .image-container {
-        img {
-            max-height: calc(100vh - 28px - 28px - 69px - 69px - 16px - 16px - 2px);
-        }
+  .image-container {
+    img {
+      max-height: calc(100vh - 28px - 28px - 69px - 69px - 16px - 16px - 2px);
     }
+  }
 
-    .modal-footer {
-        .input-group {
-            width: 200px;
-        }
+  .modal-footer {
+    .input-group {
+      width: 200px;
     }
+  }
 }
 
 // Image
 // -----------------------------------------------
 .image {
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
 
-    &:before {
-        content: '';
-        display: block;
-        padding-top: 100%;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  .image-bg {
+    background: #f5f5f5 no-repeat 50% 50% / contain;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .image-overlay {
+    background-color: rgba(0, 0, 0, .7);
+    bottom: 0;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    .image-overlay-inner {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+
+      .btn:not(:last-child) {
+        margin-right: 5px;
+      }
     }
+  }
 
-    .image-bg {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        background: #f5f5f5 no-repeat 50% 50% / contain;
-    }
-
+  &:hover {
     .image-overlay {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 1;
-        background-color: rgba(0, 0, 0, .7);
-        display: none;
-
-        .image-overlay-inner {
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translate(0, -50%);
-
-            .btn:not(:last-child) {
-                margin-right: 5px;
-            }
-        }
+      display: block;
     }
-
-    &:hover {
-        .image-overlay {
-            display: block;
-        }
-    }
+  }
 }
 
 // Loading
 // -----------------------------------------------
 .loading {
-    position: relative;
-    background: #fff !important;
-    overflow: hidden;
-    padding: 30px;
-    height: 120px;
+  background: #fff !important;
+  height: 120px;
+  overflow: hidden;
+  padding: 30px;
+  position: relative;
 
-    &:before {
-        position: absolute;
-        content: '';
-        top: 50%;
-        left: 50%;
-        width: 60px;
-        height: 60px;
-        margin: -30px 0 0 -30px;
-        background: no-repeat 50% 50%;
-        background-size: 50px 50px;
-        animation: rotate 1.6s infinite linear;
-        z-index: 999;
-    }
+  &:before {
+    animation: rotate 1.6s infinite linear;
+    background: no-repeat 50% 50%;
+    background-size: 50px 50px;
+    content: "";
+    height: 60px;
+    left: 50%;
+    margin: -30px 0 0 -30px;
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    z-index: 999;
+  }
 }
 
 @keyframes rotate {
-    0% {
-        transform: rotate(0);
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    100% {
-        transform: rotate(360deg);
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 // Error page
 // -----------------------------------------------
 .page-error .content-header {
-    display: none;
+  display: none;
 }
 
 // Utilities
 // -----------------------------------------------
 @for $i from 1 through 100 {
-    .w-#{$i}rem {
-        width: #{$i}rem;
-    }
+  .w-#{$i}rem {
+    width: #{$i}rem;
+  }
 }
