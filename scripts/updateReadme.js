@@ -23,9 +23,8 @@ fs.writeFileSync(
   path.join(__dirname, '../README.md'),
   [
     '# DudoJS',
-    '',
-    '',
     'Stack of awesome!',
+    '',
     '',
     '## Packages',
     packageListText,
@@ -35,6 +34,7 @@ fs.writeFileSync(
     '',
     '## License',
     'Please read at [here](./LICENSE.md)',
+    '',
   ].join('\n'),
   'utf8',
 )
