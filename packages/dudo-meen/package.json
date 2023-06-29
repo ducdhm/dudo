@@ -1,6 +1,6 @@
 {
   "name": "@dudojs/meen",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)",
   "main": "index.js",
   "repository": {
@@ -24,7 +24,7 @@
     "prepare": "node tools/genLocaleFile && node tools/genIndex"
   },
   "dependencies": {
-    "@dudojs/node-utils": "^1.1.9",
+    "@dudojs/node-utils": "^1.1.10",
     "@dudojs/utils": "^1.2.10",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
@@ -44,7 +44,7 @@
     "rate-limit-mongo": "^2.2.0"
   },
   "devDependencies": {
-    "@dudojs/update-index": "^1.0.8",
+    "@dudojs/update-index": "^1.0.9",
     "handlebars": "^4.7.6"
   },
   "gitHead": "ff6d618bdd3fc6c95d01c28024aacc11e7b14db5"
