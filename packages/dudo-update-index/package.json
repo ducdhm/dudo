@@ -1,6 +1,6 @@
 {
   "name": "@dudojs/update-index",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "An awesome utility to create/update index.js file",
   "main": "index.js",
   "repository": {

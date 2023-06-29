@@ -1,6 +1,6 @@
 {
   "name": "@dudojs/browser-utils",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "Collection of awesome browser utilities!",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
