@@ -6,6 +6,6 @@
     "typescript": "4.7.4"
   },
   "scripts": {
-    "publish": "lerna run tsc && node ./scripts/updateReadme.js && lerna publish"
+    "lerna:publish": "lerna run tsc && node ./scripts/updateReadme.js && lerna publish"
   }
 }
