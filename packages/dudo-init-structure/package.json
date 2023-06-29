@@ -1,6 +1,6 @@
 {
   "name": "@dudojs/init-structure",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "The awesome tool to initialize folder structure with pre-defined structure and template!",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-init-structure#readme",
   "dependencies": {
-    "@dudojs/logger": "^1.1.1",
+    "@dudojs/logger": "^1.1.2",
     "handlebars": "^4.7.7",
     "make-dir": "^3.1.0"
   },
