@@ -1,21 +1,21 @@
 {
-    "name": "@dudojs/update-index",
-    "version": "1.0.3",
-    "description": "An awesome utility to create/update index.js file",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/update-index.git"
-    },
-    "keywords": [
-        "index.js",
-        "update",
-        "create"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-update-index#readme"
+  "name": "@dudojs/update-index",
+  "version": "1.0.3",
+  "description": "An awesome utility to create/update index.js file",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/update-index.git"
+  },
+  "keywords": [
+    "index.js",
+    "update",
+    "create"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-update-index#readme"
 }

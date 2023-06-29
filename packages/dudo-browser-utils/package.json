@@ -1,35 +1,35 @@
 {
-    "name": "@dudojs/browser-utils",
-    "version": "1.2.2",
-    "description": "Collection of awesome browser utilities!",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "files": [
-        "lib/**/*"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo.git"
-    },
-    "keywords": [
-        "javascript",
-        "js",
-        "dom",
-        "browser-util",
-        "util"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-browser-utils#readme",
-    "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178",
-    "devDependencies": {
-        "typescript": "^4.7.4"
-    },
-    "scripts": {
-        "build": "tsc",
-        "prepare": "npm run build"
-    }
+  "name": "@dudojs/browser-utils",
+  "version": "1.2.2",
+  "description": "Collection of awesome browser utilities!",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/dudo.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "dom",
+    "browser-util",
+    "util"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-browser-utils#readme",
+  "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  }
 }

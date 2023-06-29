@@ -1,38 +1,38 @@
 {
-    "name": "@dudojs/node-utils",
-    "version": "1.1.4",
-    "description": "Collection of awesome NodeJS utilities!",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo.git"
-    },
-    "keywords": [
-        "javascript",
-        "js",
-        "nodejs",
-        "util"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-node-utils#readme",
-    "scripts": {
-        "test": "jest",
-        "prepare": "node tools/genIndex"
-    },
-    "dependencies": {
-        "get-root-path": "^2.0.2",
-        "split": "^1.0.1",
-        "winston": "^3.3.3",
-        "xlsx": "^0.17.2"
-    },
-    "devDependencies": {
-        "@dudojs/update-index": "^1.0.3",
-        "jest": "^26.1.0",
-        "make-dir": "^3.1.0"
-    },
-    "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"
+  "name": "@dudojs/node-utils",
+  "version": "1.1.4",
+  "description": "Collection of awesome NodeJS utilities!",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/dudo.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "nodejs",
+    "util"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-node-utils#readme",
+  "scripts": {
+    "test": "jest",
+    "prepare": "node tools/genIndex"
+  },
+  "dependencies": {
+    "get-root-path": "^2.0.2",
+    "split": "^1.0.1",
+    "winston": "^3.3.3",
+    "xlsx": "^0.17.2"
+  },
+  "devDependencies": {
+    "@dudojs/update-index": "^1.0.3",
+    "jest": "^26.1.0",
+    "make-dir": "^3.1.0"
+  },
+  "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"
 }

@@ -1,80 +1,80 @@
 const { {{ namePascal }}Model } = require('@local/models');
 
 module.exports = (app, config) => {
-    const { LOCALE } = app;
-    const logger = app.logger('controller/{{ name }}');
-    const controller = {};
-    const paginator = app.initPaginator({{ namePascal }}Model, config.itemPerPage);
+const { LOCALE } = app;
+const logger = app.logger('controller/{{ name }}');
+const controller = {};
+const paginator = app.initPaginator({{ namePascal }}Model, config.itemPerPage);
 
-    controller.resolver = app.initResolver({{ namePascal }}Model, '{{ name }}');
+controller.resolver = app.initResolver({{ namePascal }}Model, '{{ name }}');
 
-    controller.show{{ namePascal }}List = async (req, res, next) => {
-        logger.info('show{{ namePascal }}List');
+controller.show{{ namePascal }}List = async (req, res, next) => {
+logger.info('show{{ namePascal }}List');
 
-        try {
-            const {
-                totalPage,
-                currentPage,
-                data: {{ name }}List,
-            } = await paginator.get({}, req.query.page);
-            logger.info('=> %s {{ name }}(s)', {{ name }}List.length);
+try {
+const {
+totalPage,
+currentPage,
+data: {{ name }}List,
+} = await paginator.get({}, req.query.page);
+logger.info('=> %s {{ name }}(s)', {{ name }}List.length);
 
-            res.render('{{ name }}/index', {
-                title: `{{ titleSentence }}`,
-                {{ name }}List,
-                totalPage,
-                currentPage
-            });
-        } catch (err) {
-            return next(err);
-        }
-    };
+res.render('{{ name }}/index', {
+title: `{{ titleSentence }}`,
+{{ name }}List,
+totalPage,
+currentPage
+});
+} catch (err) {
+return next(err);
+}
+};
 
-    controller.show{{ namePascal }}Details = async (req, res, next) => {
-        const id = req.params.id;
-        logger.info('show{{ namePascal }}Details: %s', id);
+controller.show{{ namePascal }}Details = async (req, res, next) => {
+const id = req.params.id;
+logger.info('show{{ namePascal }}Details: %s', id);
 
-        try {
-            const {{ name }} = id === 'new' ? null : req.{{ name }};
+try {
+const {{ name }} = id === 'new' ? null : req.{{ name }};
 
-            return res.render('{{ name }}/details', {
-                title: id === 'new' ? 'Thêm {{ titleLower }}' : 'Sửa {{ titleLower }}',
-                {{ name }},
-            });
-        } catch (err) {
-            next(err);
-        }
-    };
+return res.render('{{ name }}/details', {
+title: id === 'new' ? 'Thêm {{ titleLower }}' : 'Sửa {{ titleLower }}',
+{{ name }},
+});
+} catch (err) {
+next(err);
+}
+};
 
-    controller.save{{ namePascal }} = async (req, res, next) => {
-        logger.info('save{{ namePascal }}: %s', req.params.id);
+controller.save{{ namePascal }} = async (req, res, next) => {
+logger.info('save{{ namePascal }}: %s', req.params.id);
 
-        try {
-            const {{ name }} = req.{{ name }};
-            {{ name }}.name = req.body.name;
-            await {{ name }}.save();
+try {
+const {{ name }} = req.{{ name }};
+{{ name }}.name = req.body.name;
+await {{ name }}.save();
 
-            return res.json({
-                status: true,
-            });
-        } catch (error) {
-            return next(error);
-        }
-    };
+return res.json({
+status: true,
+});
+} catch (error) {
+return next(error);
+}
+};
 
-    controller.delete{{ namePascal }} = async (req, res, next) => {
-        logger.info('delete{{ namePascal }}: %s', req.params.id);
+controller.delete{{ namePascal }} = async (req, res, next) => {
+logger.info('delete{{ namePascal }}: %s', req.params.id);
 
-        try {
-            await req.{{ name }}.delete();
+try {
+await req.{{ name }}.delete();
 
-            return res.json({
-                status: true,
-            });
-        } catch (error) {
-            return next(error);
-        }
-    };
+return res.json({
+status: true,
+});
+} catch (error) {
+return next(error);
+}
+};
 
-    return controller;
+return controller;
 };

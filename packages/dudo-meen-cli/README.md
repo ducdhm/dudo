@@ -1,12 +1,15 @@
 # @dudojs/meen-cli
+
 Awesome CLI for M.E.E.N stack!
 
 ## Installation
+
 ```shell
 npm install -g @dudojs/react-cli
 ```
 
 ## Usage
+
 ```
 =====================[ (c) Duc Doan ]=====================
   __  __   _____   _____   _   _      ____   _       ___
@@ -32,4 +35,5 @@ Commands:
 ```
 
 ## License
+
 Please read at [here](./LICENSE.md)

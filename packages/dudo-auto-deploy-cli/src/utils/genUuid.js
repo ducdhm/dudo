@@ -1,5 +1,5 @@
-const { UUID } = require('realm').BSON;
+const {UUID} = require('realm').BSON
 
-const getUuid = () => new UUID().toString();
+const getUuid = () => new UUID().toString()
 
-module.exports = getUuid;
+module.exports = getUuid

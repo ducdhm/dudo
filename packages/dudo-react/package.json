@@ -1,24 +1,24 @@
 {
-    "name": "@dudojs/react",
-    "version": "1.1.8",
-    "description": "Awesome React staffs!",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/dudo.git"
-    },
-    "keywords": [
-        "javascript",
-        "js",
-        "react"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
-    "dependencies": {
-        "react": "^17.0.1"
-    },
-    "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"
+  "name": "@dudojs/react",
+  "version": "1.1.8",
+  "description": "Awesome React staffs!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/dudo.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "react"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-react#readme",
+  "dependencies": {
+    "react": "^17.0.1"
+  },
+  "gitHead": "627e7c918265dddaf3d6f58814d48d53c18c56dd"
 }

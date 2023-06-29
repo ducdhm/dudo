@@ -1,9 +1,9 @@
-export { default as copyToClipboard } from './copyToClipboard';
-export { default as dataUriToBlob } from './dataUriToBlob';
-export { default as getBreakPoint } from './getBreakPoint';
-export { default as getElement } from './getElement';
-export { default as getOffset } from './getOffset';
-export { default as getQueryString } from './getQueryString';
-export { default as getScrollbarWidth } from './getScrollbarWidth';
-export { default as openPopup } from './openPopup';
-export { default as scrollTo } from './scrollTo';
+export {default as copyToClipboard} from './copyToClipboard'
+export {default as dataUriToBlob} from './dataUriToBlob'
+export {default as getBreakPoint} from './getBreakPoint'
+export {default as getElement} from './getElement'
+export {default as getOffset} from './getOffset'
+export {default as getQueryString} from './getQueryString'
+export {default as getScrollbarWidth} from './getScrollbarWidth'
+export {default as openPopup} from './openPopup'
+export {default as scrollTo} from './scrollTo'

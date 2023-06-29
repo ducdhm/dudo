@@ -1,9 +1,9 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = (targetPath) => {
-    const currentFolder = process.cwd();
+  const currentFolder = process.cwd()
 
-    return targetPath
-        ? path.isAbsolute(targetPath) ? targetPath : path.join(currentFolder, targetPath)
-        : currentFolder;
-};
+  return targetPath
+    ? path.isAbsolute(targetPath) ? targetPath : path.join(currentFolder, targetPath)
+    : currentFolder
+}

@@ -1,12 +1,15 @@
 # @dudojs/react-cli
+
 Awesome React CLI!
 
 ## Installation
+
 ```shell
 npm install -g @dudojs/react-cli
 ```
 
 ## Usage
+
 ```
 ======================[ (c) Duc Doan ]======================
       ____    ____    _____      _       ____   _____ 
@@ -31,4 +34,5 @@ Commands:
 ```
 
 ## License
+
 Please read at [here](./LICENSE.md)

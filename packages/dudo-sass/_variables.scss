@@ -12,18 +12,18 @@ $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mon
 $accent-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $accent-colors: map-merge(
-        (
-            "indigo": #6610f2,
-            "lightblue": #3c8dbc,
-            "navy": #001f3f,
-            "purple": #6f42c1,
-            "fuchsia": #f012be,
-            "pink": #e83e8c,
-            "maroon": #d81b60,
-            "orange ": #fd7e14,
-            "lime ": #01ff70,
-            "teal ": #20c997,
-            "olive ": #3d9970,
-        ),
-        $accent-colors
+    (
+      "indigo": #6610f2,
+      "lightblue": #3c8dbc,
+      "navy": #001f3f,
+      "purple": #6f42c1,
+      "fuchsia": #f012be,
+      "pink": #e83e8c,
+      "maroon": #d81b60,
+      "orange ": #fd7e14,
+      "lime ": #01ff70,
+      "teal ": #20c997,
+      "olive ": #3d9970,
+    ),
+    $accent-colors
 );

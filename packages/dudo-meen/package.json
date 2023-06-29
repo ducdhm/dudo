@@ -1,51 +1,51 @@
 {
-    "name": "@dudojs/meen",
-    "version": "1.1.10",
-    "description": "Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)",
-    "main": "index.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/meen.git"
-    },
-    "keywords": [
-        "meen",
-        "mongodb",
-        "expressjs",
-        "edgejs",
-        "nodejs"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen#readme",
-    "scripts": {
-        "prepare": "node tools/genLocaleFile && node tools/genIndex"
-    },
-    "dependencies": {
-        "@dudojs/node-utils": "^1.1.4",
-        "@dudojs/utils": "^1.2.5",
-        "body-parser": "^1.19.0",
-        "compression": "^1.7.4",
-        "cookie-parser": "^1.4.5",
-        "cors": "^2.8.5",
-        "deep-extend": "^0.6.0",
-        "dotenv": "^8.2.0",
-        "express": "^4.17.1",
-        "express-edge": "^2.0.2",
-        "express-minify-html-2": "^1.0.1",
-        "express-rate-limit": "^5.1.3",
-        "express-session": "^1.17.1",
-        "mime-types": "^2.1.27",
-        "mongoose": "^5.9.21",
-        "morgan": "^1.10.0",
-        "multer": "^1.4.2",
-        "rate-limit-mongo": "^2.2.0"
-    },
-    "devDependencies": {
-        "@dudojs/update-index": "^1.0.3",
-        "handlebars": "^4.7.6"
-    },
-    "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178"
+  "name": "@dudojs/meen",
+  "version": "1.1.10",
+  "description": "Awesome NodeJS stack (M.E.E.N = MongoDB + ExpressJS + EdgeJS + NodeJS)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/meen.git"
+  },
+  "keywords": [
+    "meen",
+    "mongodb",
+    "expressjs",
+    "edgejs",
+    "nodejs"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen#readme",
+  "scripts": {
+    "prepare": "node tools/genLocaleFile && node tools/genIndex"
+  },
+  "dependencies": {
+    "@dudojs/node-utils": "^1.1.4",
+    "@dudojs/utils": "^1.2.5",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "deep-extend": "^0.6.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2",
+    "express-minify-html-2": "^1.0.1",
+    "express-rate-limit": "^5.1.3",
+    "express-session": "^1.17.1",
+    "mime-types": "^2.1.27",
+    "mongoose": "^5.9.21",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "rate-limit-mongo": "^2.2.0"
+  },
+  "devDependencies": {
+    "@dudojs/update-index": "^1.0.3",
+    "handlebars": "^4.7.6"
+  },
+  "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178"
 }

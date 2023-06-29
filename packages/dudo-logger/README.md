@@ -1,7 +1,9 @@
 # @dudojs/logger
+
 Awesome logger with text or icon label!
 
 ## Usage
+
 ```javascript
 /**
  * @option {Boolean} labelIcon Show label as icon or not
@@ -17,4 +19,5 @@ logger.error('Error message');
 ```
 
 ## License
+
 Please read at [here](./LICENSE.md)

@@ -1,7 +1,7 @@
 module.exports = (app, config) => {
-    require('./{{ name }}.route')(
-        app,
-        config,
-        require('./{{ name }}.controller')(app, config),
-    );
+require('./{{ name }}.route')(
+app,
+config,
+require('./{{ name }}.controller')(app, config),
+);
 };

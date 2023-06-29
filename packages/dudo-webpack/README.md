@@ -1,8 +1,11 @@
 # @dudojs/webpack
+
 Compose webpack.config.js with awesome style!
 
 ## Usage
+
 At your `webpack.config.js`,
+
 ```javascript
 const composeWebpack = require('@dudojs/webpack');
 module.exports = composeWebpack({
@@ -21,5 +24,6 @@ module.exports = composeWebpack({
 ```
 
 ## License
+
 Please read at [here](./LICENSE.md)
 

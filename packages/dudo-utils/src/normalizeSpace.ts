@@ -1,3 +1,3 @@
 export default function normalizeSpace(value): string {
-    return value.replace(/\s*([^\s]+\s?)\s*/g, '$1');
+  return value.replace(/\s*([^\s]+\s?)\s*/g, '$1')
 }

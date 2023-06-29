@@ -1,11 +1,11 @@
-import removeTone from "../removeTone";
+import removeTone from '../removeTone'
 
-const testStr = 'Đoàn Hoàng Minh Đức';
+const testStr = 'Đoàn Hoàng Minh Đức'
 
 it('removeTone', () => {
-    expect(removeTone(testStr)).toEqual('doan hoang minh duc');
-});
+  expect(removeTone(testStr)).toEqual('doan hoang minh duc')
+})
 
 it('removeTone > isCaseSensitive=true', () => {
-    expect(removeTone(testStr, true)).toEqual('Doan Hoang Minh Duc');
-});
+  expect(removeTone(testStr, true)).toEqual('Doan Hoang Minh Duc')
+})

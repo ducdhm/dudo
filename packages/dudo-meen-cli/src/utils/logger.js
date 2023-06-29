@@ -1,3 +1,3 @@
-const logger = require('@dudojs/logger')();
+const logger = require('@dudojs/logger')()
 
-module.exports = logger;
+module.exports = logger

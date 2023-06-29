@@ -1,36 +1,36 @@
 {
-    "name": "@dudojs/meen-cli",
-    "version": "1.1.7",
-    "description": "Awesome CLI for M.E.E.N stack!",
-    "main": "index.js",
-    "bin": {
-        "meen": "index.js"
-    },
-    "scripts": {},
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ducdhm/meen.git"
-    },
-    "keywords": [
-        "meen",
-        "mongodb",
-        "nodejs",
-        "expressjs",
-        "edgejs"
-    ],
-    "author": "Duc Doan <ducdhm@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ducdhm/dudo/issues"
-    },
-    "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen-cli#readme",
-    "dependencies": {
-        "@dudojs/init-structure": "^1.1.6",
-        "@dudojs/logger": "^1.1.1",
-        "@dudojs/node-utils": "^1.1.4",
-        "@dudojs/utils": "^1.2.5",
-        "colors": "^1.4.0",
-        "commander": "^6.0.0"
-    },
-    "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178"
+  "name": "@dudojs/meen-cli",
+  "version": "1.1.7",
+  "description": "Awesome CLI for M.E.E.N stack!",
+  "main": "index.js",
+  "bin": {
+    "meen": "index.js"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/meen.git"
+  },
+  "keywords": [
+    "meen",
+    "mongodb",
+    "nodejs",
+    "expressjs",
+    "edgejs"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-meen-cli#readme",
+  "dependencies": {
+    "@dudojs/init-structure": "^1.1.6",
+    "@dudojs/logger": "^1.1.1",
+    "@dudojs/node-utils": "^1.1.4",
+    "@dudojs/utils": "^1.2.5",
+    "colors": "^1.4.0",
+    "commander": "^6.0.0"
+  },
+  "gitHead": "1ca6903a4b13eae3c0039e99cd641a37356fb178"
 }

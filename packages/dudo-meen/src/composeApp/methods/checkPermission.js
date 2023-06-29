@@ -1,10 +1,10 @@
 module.exports = (app, req, permission) => {
-    let { config: { role } } = app;
-    let userPermission = role[req.user.role];
+  let {config: {role}} = app
+  let userPermission = role[req.user.role]
 
-    if (req.user.god) {
-        return true;
-    }
+  if (req.user.god) {
+    return true
+  }
 
-    return userPermission.indexOf(permission) !== -1;
-};
+  return userPermission.indexOf(permission) !== -1
+}

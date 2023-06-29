@@ -1,1 +1,1 @@
-export { default } from './Draggble.component';
+export {default} from './Draggble.component'

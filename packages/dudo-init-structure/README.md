@@ -1,4 +1,5 @@
 # @dudojs/init-structure
+
 The awesome tool to initialize folder structure with pre-defined structure and template!
 
 ## Usage
@@ -14,13 +15,17 @@ initStructure(target, structure, fileData, callback);
 ```
 
 ### Callback list
+
 1. `beforeCreate`: Will be called before initializing structure
 1. `onCreated`: Will be called after initializing structure
-1. `beforeItemCreate`: Will be called before initializing each item of structure. Available only when `structure` is `Array`
+1. `beforeItemCreate`: Will be called before initializing each item of structure. Available only when `structure`
+   is `Array`
 1. `onItemCreated`: Will be called after initializing each item of structure. Available only when `structure` is `Array`
 
 ### Callback params
-1. `options`: Includes `target`, `structure` and `fileData`. `structure` will be item of structure if `structure` is `Array`
+
+1. `options`: Includes `target`, `structure` and `fileData`. `structure` will be item of structure if `structure`
+   is `Array`
 1. `logger`: Available methods are `info`, `debug`, `success`, `warn` and `error`
 
 ## Example

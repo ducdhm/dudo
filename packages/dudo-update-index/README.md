@@ -1,7 +1,9 @@
 # @dudojs/update-index
+
 An awesome utility to create/update `index.js` file
 
 ## Usage
+
 ```js
 /**
  * @param {String} target Absolute path of target folder
@@ -14,6 +16,7 @@ updateIndex(target, destination, mode, prefix, suffix);
 ```
 
 ## Example
+
 ```js
 const updateIndex = require('update-index');
 const path = require('path');
@@ -21,4 +24,5 @@ updateIndex(path.join(__dirname, './utils'), path.join(__dirname, './'), 'FILE',
 ```
 
 ## License
+
 Please read at [here](./LICENSE.md)

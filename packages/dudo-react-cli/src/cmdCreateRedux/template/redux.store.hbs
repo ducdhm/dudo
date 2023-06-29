@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 {{#each featureList}}
-import {{this}}Reducer from './{{this}}/{{this}}.slice';
+  import {{this}}Reducer from './{{this}}/{{this}}.slice';
 {{/each}}
 
 export default configureStore({
-    reducer: {
-        {{#each featureList}}
-        {{this}}: {{this}}Reducer,
-        {{/each}}
-    },
+reducer: {
+{{#each featureList}}
+  {{this}}: {{this}}Reducer,
+{{/each}}
+},
 });
