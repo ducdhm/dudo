@@ -4,6 +4,9 @@
   ],
   "version": "independent",
   "command": {
+    "run": {
+      "npmClient": "yarn"
+    },
     "publish": {
       "ignoreChanges": [
         "ignored-file",

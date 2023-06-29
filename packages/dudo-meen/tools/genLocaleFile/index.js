@@ -22,7 +22,7 @@ for (let lang of langs) {
   fs.writeFileSync(
     path.join(__dirname, '..', '..', 'src', 'composeApp', 'locale', `${lang.LANG}.js`),
     Handlebars.compile(template)({
-      content: JSON.stringify(lang, ' ', 4).replace(/"([^"]+)":/g, '$1:'),
+      content: JSON.stringify(lang, ' ', 2).replace(/"([^"]+)":/g, '$1:'),
     }),
   )
 }
