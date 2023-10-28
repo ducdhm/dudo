@@ -11,7 +11,7 @@ const dataURItoBlob = (dataURI) => {
   for (let i = 0; i < byteString.length; i++) {
     ia[i] = byteString.charCodeAt(i)
   }
-  return new Blob([ab], {type: data[1]})
+  return new Blob([ab], { type: data[1] })
 }
 
 const getModalCrop = () => {
@@ -19,56 +19,56 @@ const getModalCrop = () => {
   let dataAccent = $(document.body).attr('data-accent')
 
   let modal = $(`
-        <div class="modal modal-crop-image" id="modal-crop-image-${randomId}">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">
-                            <i class="fas fa-crop-alt"></i>
-                            ${LOCALE.IMAGE_UPLOADER__MODAL_TITLE}
-                        </h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body" >
-                        <div class="image-container" >
-                            <img class="img-fluid" />
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <div class="pull-left">
-                            <span data-width></span>
-                            &nbsp;&ndash;&nbsp;
-                            <span data-height></span>
-                            &nbsp;&ndash;&nbsp;
-                            <span data-zoom></span>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">
-                                <i class="fas fa-times"></i>
-                                ${LOCALE.IMAGE_UPLOADER__MODAL_BTN_CLOSE}
-                            </button>
-                            <button type="button" class="btn btn-${dataAccent} btn-upload">
-                                <i class="fas fa-upload"></i>
-                                ${LOCALE.IMAGE_UPLOADER__MODAL_BTN_UPLOAD}
-                            </button>
-                            <button type="button" class="btn btn-${dataAccent} btn-crop-upload">
-                                <i class="fas fa-crop-alt"></i>
-${LOCALE.IMAGE_UPLOADER__MODAL_BTN_UPLOAD_CROP}
-                            </button>
-                        </div>
-                    </div>
-                </div>
+    <div class="modal modal-crop-image" id="modal-crop-image-${randomId}">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">
+              <i class="fas fa-crop-alt"></i>
+              ${LOCALE.IMAGE_UPLOADER__MODAL_TITLE}
+            </h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" >
+            <div class="image-container" >
+              <img class="img-fluid" />
             </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <div class="pull-left">
+              <span data-width></span>
+              &nbsp;&ndash;&nbsp;
+              <span data-height></span>
+              &nbsp;&ndash;&nbsp;
+              <span data-zoom></span>
+            </div>
+            <div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">
+                <i class="fas fa-times"></i>
+                ${LOCALE.IMAGE_UPLOADER__MODAL_BTN_CLOSE}
+              </button>
+              <button type="button" class="btn btn-${dataAccent} btn-upload">
+                <i class="fas fa-upload"></i>
+                ${LOCALE.IMAGE_UPLOADER__MODAL_BTN_UPLOAD}
+              </button>
+              <button type="button" class="btn btn-${dataAccent} btn-crop-upload">
+                <i class="fas fa-crop-alt"></i>
+                ${LOCALE.IMAGE_UPLOADER__MODAL_BTN_UPLOAD_CROP}
+              </button>
+            </div>
+          </div>
         </div>
-    `)
+      </div>
+    </div>
+  `)
   modal.appendTo(document.body)
 
   return modal
 }
 
-const initUploader = (wrapper, paramName) => {
+const initUploader = ({ wrapper, paramName, realInput, noCrop }) => {
   let cachedFilename
   let modalCrop = getModalCrop()
   let imgCrop = modalCrop.find('.image-container img')
@@ -125,22 +125,31 @@ const initUploader = (wrapper, paramName) => {
     }
 
     cachedFilename = file.name
-    uploader.removeFile(file)
+    if (!noCrop) {
+      uploader.removeFile(file)
+    }
 
     let reader = new FileReader()
     reader.onloadend = function () {
-      cropper.replace(reader.result)
-      modalCrop.modal('show')
+      if (noCrop) {
+        uploader.processQueue()
+      } else {
+        cropper.replace(reader.result)
+        modalCrop.modal('show')
+      }
     }
 
     reader.readAsDataURL(file)
   })
 
-  uploader.on('success', function (file) {
+  uploader.on('success', function (file, response) {
     uploader.removeFile(file)
     $('#images-wrapper').reload()
     modalCrop.modal('hide')
     Msg.success(LOCALE.IMAGE_UPLOADER__SUCCESS_MESSAGE)
+    if (realInput) {
+      realInput.val(response.data.fullUrl).trigger('change')
+    }
   })
 
   uploader.on('error', function (file, resp) {
@@ -196,8 +205,47 @@ export default () => {
     let name = input.attr('name')
     let uploadUrl = input.attr('data-url')
 
-    input.wrap(`<form method="post" action="${uploadUrl}" class="dropzone"><div class="fallback"></div></form>`)
+    if (input.hasClass('image-uploader-no-wrap')) {
+      let wrapper = input.parent('p')
+      if (wrapper.length > 0) {
+        wrapper.addClass('file-picker-wrapper')
+      } else {
+        input.wrap('<p class="file-picker-wrapper"></p>')
+        wrapper = input.parent()
+      }
 
-    initUploader(input.closest('.dropzone'), name)
+      const id = `image-uploader-${Math.random().toString().replace('.', '-')}`
+      const fakeInput = $(`<input type="file" style="display: none" />`)
+      fakeInput.appendTo(document.body)
+      fakeInput.wrap(`<form method="post" action="${uploadUrl}" class="dropzone" id="${id}" style="display: none"><div class="fallback"></div></form>`)
+      initUploader({
+        wrapper: fakeInput.closest('.dropzone'),
+        paramName: name,
+        realInput: input,
+        noCrop: input.hasClass('image-uploader-no-crop'),
+      })
+
+      input.prop('readonly', true)
+
+      let isDisabled = input.prop('disabled')
+      let button = $(`
+        <span class="input-group-append">
+            <button type="button" class="btn btn-default" ${isDisabled ? 'disabled' : ''}>${input.attr('data-button-text') || ''}</button>
+        </span>
+      `)
+      button.click(function () {
+        $(`#${id}`).click()
+      })
+      wrapper.addClass('input-group')
+      wrapper.append(button)
+    } else {
+      input.wrap(`<form method="post" action="${uploadUrl}" class="dropzone"><div class="fallback"></div></form>`)
+
+      initUploader({
+        wrapper: input.closest('.dropzone'),
+        paramName: name,
+        noCrop: input.hasClass('image-uploader-no-crop'),
+      })
+    }
   })
 };
