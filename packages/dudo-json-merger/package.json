@@ -1,0 +1,29 @@
+{
+  "name": "@dudojs/json-merger",
+  "version": "0.0.0",
+  "description": "Awesome JSON Merge CLI!",
+  "main": "index.js",
+  "bin": {
+    "json-merger": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ducdhm/dudo.git"
+  },
+  "keywords": [
+    "json",
+    "merge",
+    "cli"
+  ],
+  "author": "Duc Doan <ducdhm@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ducdhm/dudo/issues"
+  },
+  "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-json-merger#readme",
+  "dependencies": {
+    "glob": "10.3.10",
+    "json-merger": "1.1.10",
+    "yargs": "17.7.2"
+  }
+}
