@@ -23,7 +23,6 @@
   "homepage": "https://github.com/ducdhm/dudo/tree/master/packages/dudo-json-merger#readme",
   "dependencies": {
     "glob": "10.3.10",
-    "json-merger": "1.1.10",
     "yargs": "17.7.2"
   }
 }
