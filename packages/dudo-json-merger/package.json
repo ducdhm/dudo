@@ -6,6 +6,7 @@
   "bin": {
     "json-merger": "index.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ducdhm/dudo.git"
