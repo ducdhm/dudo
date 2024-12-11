@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@dudojs/logger@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.0.9.tgz#937003a63dd41bc7710e494bc34236021074262c"
-  integrity sha512-6qXemq+6tOj72L2Y4HTAsCIldMbn7IE005zmA6FPHme2QzfUS3q4nUwo4bR9UT6vR2MFlD4/lBlaM50NW6PNGQ==
+"@dudojs/logger@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@dudojs/logger/-/logger-1.1.1.tgz#c50ac337f17f6068df078838c06aabe9eadc6b73"
+  integrity sha512-u1FeV/km6YhnKM2S0W6RQP7epV9IIfI+S3JlHs1eWMVaKqEb4KExIsgjT8Rp3CLsrv7jqKIhm5sJPPOXGKB7qw==
   dependencies:
     colors "^1.4.0"
 
@@ -34,9 +34,9 @@ make-dir@^3.1.0:
     semver "^6.0.0"
 
 minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.8"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
+  integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
 neo-async@^2.6.0:
   version "2.6.2"
